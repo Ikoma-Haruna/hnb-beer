@@ -1,0 +1,316 @@
+@media only screen and (max-width: 1025px)
+	body
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 835px)
+	//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+	//  common
+	//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+	html
+		font-size: 119.7%
+		font-size: 1.197vw
+		// 10(px) / 835(px) * 100 = 1.197
+
+
+	@mixin widthL
+		width: 95%
+		margin: 0 auto
+	@mixin widthM
+		width: 90%
+		margin: 0 auto
+	@mixin widthS
+		width: 85%
+		margin: 0 auto
+
+	.widthL
+		@include widthL
+	.widthM
+		@include widthM
+	.widthS
+		@include widthS
+
+	.pc
+		display: none
+	.tablet
+		display: block
+	.sp
+		display: block
+
+
+
+
+	body
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  _Header
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		#Header
+			padding: 2.5rem 0
+			height: 14rem
+			background-color: $gray
+			.Contents
+				.copy
+					display: none
+				.Logo
+					background-image: url('#{$path}common/LogoWide.png')
+					width: 12.1rem
+					aspect-ratio: 433 / 311
+					mix-blend-mode: multiply
+				.sec
+					position: fixed
+					top: 17rem
+					right: 0
+					left: 0
+					margin: auto
+					width: 12rem
+					display: flex
+					flex-wrap: wrap
+					justify-content: center
+					.num
+						font-size: calc(12rem / 1.5)
+						line-height: calc(8.75rem / 1.5)
+						width: calc(9.5rem / 1.5)
+						height: calc(8.75rem / 1.5)
+					.name
+						width: 12rem
+						font-size: 1.5rem
+						.change
+							width: calc(12rem * 5)
+							span
+								text-align: center
+								width: 12rem
+					@for $i from 1 through 5
+						&.sec0#{$i}
+							.num .change
+								transform: translateY(-8.75rem / 1.5 * ($i - 1))
+							.name .change
+								transform: translateX(-12rem * ($i - 1))
+
+
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  _nav
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		nav#sideMenu
+			.Contents
+				.LeftBlock
+					width: 5.5rem
+					height: 8.2rem
+					top: 2.5rem
+					left: 2.5rem
+					bottom: auto
+					.LinkHolder
+						.online
+							.icon
+								width: 3.8rem
+							span
+								font-size: 1.4rem
+								line-height: 1.8rem
+						ul
+							display: none
+				.RightBlock
+					width: 4rem
+					height: 6.75rem
+					background: unset
+					top: 2.5rem
+					right: 2.5rem
+					bottom: auto
+					.menuOpen
+						.icon
+							width: 100%
+							-webkit-filter: brightness(0)
+							filter: brightness(0)
+						span
+							font-size: 1.4rem
+							color: $black
+			&.KV
+				.Contents
+					.LeftBlock
+						.LinkHolder
+							.online
+								.icon
+									-webkit-filter: brightness(0) invert(1)
+									filter: brightness(0) invert(1)
+								span
+									color: $white
+					.RightBlock
+						.menuOpen
+							.icon
+								-webkit-filter: brightness(0) invert(1)
+								filter: brightness(0) invert(1)
+							span
+								color: $white
+
+
+
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  topPage
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		&#topPage
+
+
+			section
+				.Footer 
+					display: none
+
+
+	
+			section#KV
+				.Section
+					padding: 0
+					.Contents
+						.Logo
+							background-image: url('#{$path}common/LogoW.png')
+							width: calc(58.9% / 1.5)
+						.ttlHolder,
+						.txtHolder
+							display: none
+						.movieHolder
+							width: 100%
+							height: 100%
+							.movieBlock
+								&:nth-child(1)
+									width: 100%
+									height: 100%
+									top: 0
+									left: 0
+									z-index: -1
+									.ttl
+										display: none
+								&:nth-child(2),
+								&:nth-child(3)
+									display: none
+
+
+
+			section#MainContents
+				.Section .Contents
+					.inBlock
+						width: 100% !important
+						order: 2
+					.Block
+						width: 100% !important
+						aspect-ratio: 880 / 506 !important
+						@include flexC
+						text-align: center
+						.Header
+							.ttl
+								font-size: 3.5rem
+							.sub
+								font-size: 1rem
+						&.Block02
+							order: 1
+						&.Block03
+							align-items: center
+							h3
+								font-size: 3.5rem
+								line-height: 2.5rem
+								@include flexC
+								gap: 1rem
+								margin: 0 0 0.3rem -0.35rem
+								span
+									width: auto
+							.ttl
+								font-size: 1.8rem
+						.text
+							display: none
+						&::after
+							transform: translateX(0)
+							opacity: 1
+
+
+
+			section#Instagram
+				.Section .Contents .Holder
+					.Block
+						width: calc((100% - 1rem) / 2)
+						&:nth-child(n + 7)
+							display: none
+
+
+
+			section#News
+				.Section .Contents .Holder
+					.Block
+						align-items: flex-start
+						padding: 0 0 1.5rem
+						margin: 0 0 2rem
+						span
+							&.date
+								width: 9.5rem
+							&.ttl
+								line-height: 2rem
+								margin: -.5rem 0 0
+
+
+
+			section#VisitUs
+				.Section .Contents .Holder
+					flex-wrap: wrap
+					.textArea
+						order: 2
+						width: 100%
+					.imgArea
+						order: 1
+						width: 100%
+						height: auto !important
+						aspect-ratio: 880 / 639 !important
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+@media only screen and (max-width: 480px)
+	//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+	//  common
+	//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+	html
+		font-size: 266.6%
+		font-size: 2.666vw
+		// 10(px) / 375(px) * 100 = 2.666
+
+	.pc
+		display: none
+	.tablet
+		display: none
+	.sp
+		display: block !important
+
+
+
+
+	body
+
+
+
+
+

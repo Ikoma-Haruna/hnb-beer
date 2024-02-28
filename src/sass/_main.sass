@@ -1,0 +1,1320 @@
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  @keyframes
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+@keyframes ig
+	0%
+		transform: translateY(3rem)
+		opacity: 0
+	100%
+		transform: translateY(0)
+		opacity: 1
+
+@keyframes TitleAnim
+	0%
+		transform: translateY(101%)
+	100%
+		transform: translateY(0)
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  common animation
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+.spanAnim,
+#topPage section#KV .Contents .ttlHolder
+#topPage section#Instagram .Section .Contents .Holder
+	visibility: visible !important
+	transform: translateY(0) scale(1) !important
+	opacity: 1 !important
+	transition: none !important
+
+h2.Header
+	.row
+		.Split
+			display: inline-block
+			padding: 0 0 .5rem
+			overflow: hidden
+			.SplitInner
+				display: inline-block
+				transform: translateY(101%)
+				&.space
+					width: 1rem
+	&.active
+		.row
+			.Split
+				@for $i from 1 through 30
+					&:nth-child(#{$i})
+						.SplitInner
+							animation: TitleAnim .75s ease-out .02s * $i 1 forwards
+
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  Loading
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  _Header
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+#Header
+	position: fixed
+	padding: 3rem 4rem 0
+	width: 100%
+	height: 19rem
+	pointer-events: none
+	z-index: 5
+	transition: .75s
+	.Contents
+		position: relative
+		@include fontEN
+		@include weightB
+		font-size: .95rem
+		.copy
+			position: absolute
+			top: 0
+			left: 0
+			@include writing
+			height: 16rem
+		.Logo
+			position: absolute
+			top: 0
+			right: 0
+			left: 0
+			margin: auto
+			width: 10.5rem
+			aspect-ratio: 379 / 467
+			background-image: url('#{$path}common/Logo.png')
+			pointer-events: auto
+		.sec 
+			position: absolute
+			top: 0
+			right: 0
+			.num
+				@include fontBebas
+				font-size: 12rem
+				line-height: 8.75rem
+				width: 9.5rem
+				height: 8.75rem
+				overflow: hidden
+				.change
+					width: 4.75rem
+					@include flexC
+					flex-wrap: wrap
+					transition: .75s
+			.name
+				width: 9.5rem
+				overflow: hidden
+				margin: 1rem 0 0
+				.change
+					width: calc(9.5rem * 5)
+					transition: .75s
+					span
+						display: inline-block
+						width: 9.5rem
+						text-align: right
+						@include textUpper
+			@for $i from 1 through 5
+				&.sec0#{$i}
+					.num .change
+						transform: translateY(-8.75rem * ($i - 1))
+					.name .change
+						transform: translateX(-9.5rem * ($i - 1))
+				// &:nth-child(#{$i})
+				// 	background-image: url('#{$path}index/LDfont0000#{$i}.png')
+
+			// &.sec01
+			// 	.num .change
+			// 		transform: translateY(0)
+			// 	.name .change
+			// 		transform: translateX(0)
+			// &.sec02
+			// 	.num .change
+			// 		transform: translateY(-8.75rem)
+			// 	.name .change
+			// 		transform: translateX(-9.5rem)
+					
+
+	&.KV
+		transform: translateY(calc(-19rem - 3rem))
+	
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  _Menu
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+#Menu
+	position: fixed
+	z-index: 6
+	pointer-events: none
+	height: 100%
+	width: 35rem
+	background-color: $black
+	top: 0
+	right: 0
+	transform: translateX(35rem)
+	transition: 1s
+	display: flex
+	.menuClose
+		width: 9rem
+		height: 100%
+		background-color: $black
+		pointer-events: auto
+		@include flexC
+		align-content: center
+		flex-wrap: wrap
+		.icon
+			background-image: url('#{$path}common/arrowW.png')
+			width: 2.5rem
+			aspect-ratio: 1 / 1
+			transform: rotate(180deg)
+		span
+			@include fontEN
+			@include weightB
+			font-size: 1rem
+			color: $white
+			@include textUpper
+			width: 100%
+			text-align: center
+			margin: 1rem 0 0
+		&:hover
+			@include hover
+
+	.Section
+		width: calc(100% - 9rem)
+		height: 100%
+		padding: 0 5rem 0 4.6rem
+		.Contents
+			width: 100%
+			height: 100%
+			@include flexC
+			.ConpanyMenu
+				display: none
+			.MainMenu
+				@include fontEN
+				h2
+					display: none
+				li
+					font-size: 2rem
+					line-height: 4rem
+					overflow: hidden
+					a
+						color: $white
+						@include weightB
+						position: relative
+						transition: .5s
+						&::after
+							content: ''
+							position: absolute
+							width: 100%
+							height: 2rem
+							background-color: $white
+							top: 0
+							left: 0
+							bottom: 0
+							margin: auto
+							transform: translateX(-101%)
+							transition: .5s
+							z-index: -1
+					&.clickNone
+						opacity: .2
+						
+					&:hover
+						a
+							color: $black
+							&::after
+								transform: translateX(0)
+					&.BtoB
+						line-height: 1rem
+						margin: 8rem 0 0
+						overflow: unset
+						a
+							span
+								display: inline-block
+								transition: .5s
+								&:nth-child(1)
+									@include weightR
+									font-size: 4rem
+									margin: 0 0 0 -.25rem
+								&:nth-child(2)
+									@include fontJP
+									@include weightL
+									font-size: 1.15rem
+									margin: 1.2rem 0 2rem
+									letter-spacing: .18em
+								&.arrow
+									background-image: url('#{$path}common/arrowLW.png')
+									background-size: 100% 100%
+									width: 13rem
+									aspect-ratio: 267 / 16
+							&::after
+								display: none
+						&:hover
+							span
+								&:nth-child(1),
+								&:nth-child(2)
+									padding: 0 0 0 1rem
+		.Foot
+			display: none
+							
+	&.active
+		pointer-events: auto
+		transform: translateX(0)
+	
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  _nav
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+nav#sideMenu
+	position: fixed
+	z-index: 5
+	pointer-events: none
+	width: 100%
+	height: 100%
+	.Contents 
+		.LeftBlock 
+			width: 4.6rem
+			height: 21.5rem
+			pointer-events: auto
+			position: absolute
+			top: 0
+			left: 4rem
+			bottom: 0
+			margin: auto
+			transform: translate(-8.6rem)
+			transition: .75s
+			.LinkHolder 
+				height: 100%
+				display: flex
+				flex-wrap: wrap
+				align-content: space-between
+				.online
+					.icon 
+						background-image: url('#{$path}common/iconEC.png')
+						width: 2.8rem
+						aspect-ratio: 57 / 50
+						margin: 0 0 .5rem
+					span
+						@include fontEN
+						@include weightB
+						@include textUpper
+						color: $black
+						text-decoration: underline
+						font-size: 1.35rem
+				ul 
+					width: 1.9rem
+					@include flexC
+					flex-wrap: wrap
+					gap: 1.25rem
+					li
+						background-size: 100% 100%
+						a
+							width: 100%
+							height: 100%
+						&.ig
+							background-image: url('#{$path}common/snsIG.png')
+							width: 1.9rem
+							aspect-ratio: 1 / 1
+						&.x
+							background-image: url('#{$path}common/snsX.png')
+							width: 1.9rem
+							aspect-ratio: 1 / 1
+						&.fb
+							background-image: url('#{$path}common/snsFB.png')
+							width: .95rem
+							aspect-ratio: 21 / 40
+						&.note
+							background-image: url('#{$path}common/snsNote.png')
+							width: 1.9rem
+							aspect-ratio: 1 / 1
+		.RightBlock 
+			width: 9rem
+			height: 16.9rem
+			background-color: $black
+			pointer-events: auto
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			margin: auto
+			transform: translateX(9rem)
+			transition: .75s
+			@include flexC
+			align-content: center
+			flex-wrap: wrap
+			.menuOpen 
+				@include flexC
+				align-content: center
+				flex-wrap: wrap
+				.icon
+					background-image: url('#{$path}common/arrowW.png')
+					width: 2.5rem
+					aspect-ratio: 1 / 1
+				span
+					@include fontEN
+					@include weightB
+					font-size: 1rem
+					color: $white
+					@include textUpper
+					width: 100%
+					text-align: center
+					margin: 1rem 0 0
+			&:hover
+				@include hover
+				width: 10rem
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  topPage
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+#topPage
+
+
+
+	section
+
+
+		.Linear
+			width: 0
+			height: 1px
+			background-color: $black
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			margin: auto
+			transition: 1.5s
+			&.active
+				width: 100%
+
+
+		.Footer 
+			position: absolute
+			bottom: 6rem
+			right: 0
+			left: 0
+			margin: auto
+			pointer-events: auto
+			@include flexC
+			gap: 5rem
+			li
+				width: 4.75rem
+				.andMore
+					color: $black
+					@include fontEN
+					@include weightB
+					font-size: 1rem
+					@include flexC
+					flex-wrap: wrap
+					&::after
+						content: ''
+						background-image: url('#{$path}common/arrowAll.png')
+						width: 2.5rem
+						aspect-ratio: 1 / 1
+						display: inline-block
+						background-size: 100% 100%
+						margin: .5rem auto 0
+						transition: .5s
+					&:hover
+						@include hover
+						&::after
+							transform: translateY(.5rem)
+				.secLink
+					color: $black
+					@include fontEN
+					@include weightB
+					font-size: 1rem
+					@include flexC
+					flex-wrap: wrap
+					&::after
+						content: ''
+						background-image: url('#{$path}common/arrowB.png')
+						width: 2.5rem
+						aspect-ratio: 1 / 1
+						display: inline-block
+						background-size: 100% 100%
+						margin: .5rem auto 0
+						transition: .5s
+					&:hover
+						@include hover
+						&::after
+							transform: translateY(.5rem)
+
+
+
+	section#KV
+		pointer-events: none
+
+		.Section
+			padding: 3.5rem 4rem
+
+			.Contents 
+				position: relative
+				width: 100%
+				height: 100%
+
+				.Logo
+					position: absolute
+					width: 18.85rem
+					aspect-ratio: 379 / 467
+					background-image: url('#{$path}common/Logo.png')
+					top: 0
+					right: 0
+					bottom: 0
+					left: 0
+					margin: auto
+
+				.ttlHolder
+					width: 100%
+					height: 100%
+					span
+						position: absolute
+						@include fontBebas
+						font-size: 24.25rem
+						line-height: 16.75rem
+						z-index: 10
+						padding: .5rem 0
+						overflow: hidden
+						&::after
+							content: ''
+							width: 100%
+							height: 104%
+							position: absolute
+							z-index: 1
+							background-color: $white
+							top: 0
+							bottom: 0
+							left: 0
+							margin: auto
+						&:nth-child(1)
+							top: -.5rem
+							left: 0
+						&:nth-child(2)
+							top: -.5rem
+							left: 10rem
+						&:nth-child(3)
+							top: -.5rem
+							right: 37rem
+						&:nth-child(4)
+							top: -.5rem
+							right: 0
+						&:nth-child(5)
+							bottom: -.25rem
+							left: 0
+						&:nth-child(6)
+							bottom: -.25rem
+							left: 10rem
+						&:nth-child(7)
+							bottom: -.25rem
+							left: 58rem
+						&:nth-child(8)
+							bottom: -.25rem
+							right: 45rem
+						&:nth-child(9)
+							bottom: -.25rem
+							right: 35rem
+					&.active
+						span
+							&:nth-child(1)
+								&:after
+									transition: 1s
+									transform: translateY(100%)
+							&:nth-child(2)
+								&::after
+									transition: .75s
+									transform: translateY(-100%)
+							&:nth-child(3)
+								&:after
+									transition: .5s
+									transform: translateX(100%)
+							&:nth-child(4)
+								&::after
+									transition: .75s
+									transform: translateX(-100%)
+							&:nth-child(5)
+								&:after
+									transition: 1s
+									transform: translateX(100%)
+							&:nth-child(6)
+								&::after
+									transition: 1s
+									transform: translateY(-100%)
+							&:nth-child(7)
+								&:after
+									transition: .75s
+									transform: translateY(100%)
+							&:nth-child(8)
+								&::after
+									transition: 1s
+									transform: translateX(-100%)
+							&:nth-child(9)
+								&::after
+									transition: .5s
+									transform: translateY(-100%)
+							
+
+				.txtHolder
+					.txtBlock
+						position: absolute
+						@include fontEN
+						@include weightB
+						font-size: 1.4rem
+						line-height: 1.6rem
+						margin: -.25rem 0 -.35rem
+						opacity: 0
+						transition: .5s
+						&:nth-child(1)
+							top: 0
+							left: 56rem
+							transform: translate(-100%, 0)
+						&:nth-child(2)
+							@include writing
+							top: 0
+							right: 14rem
+							transform: translate(0, -100%)
+						&:nth-child(3)
+							bottom: 0
+							left: 21rem
+							transform: translate(0, 100%)
+						&.active
+							transform: translate(0, 0)
+							opacity: 1
+
+				.movieHolder
+					.movieBlock
+						position: absolute
+						overflow: hidden
+						video
+							height: 100%
+						.ttl
+							@include fontEN
+							@include weightL
+							font-size: 1rem
+							color: $white
+							position: absolute
+							bottom: 1rem
+							left: 1rem
+						&::before
+							content: ''
+							background-image: url('#{$path}common/cover.png')
+							width: 100%
+							height: 100%
+							position: absolute
+							background-size: 100% auto
+							mix-blend-mode: color-burn
+						.cover
+							position: absolute
+							width: 200%
+							height: 100%
+							top: 0
+							left: 0
+							@include flexC
+							.white
+								width: 50%
+								height: 100%
+								background-color: $white
+							.black
+								width: 50%
+								height: 100%
+								background-color: $black
+						&:nth-child(1)
+							width: 37.5rem
+							aspect-ratio: 750 / 422
+							top: 0
+							left: 16.95rem
+						&:nth-child(2)
+							width: 20.5rem
+							aspect-ratio: 401 / 225
+							top: 49.5%
+							left: 27.3rem
+						&:nth-child(3)
+							width: 31.2rem
+							height: 65.25%
+							// aspect-ratio: 624 / 1110
+							bottom: 0
+							right: 0
+
+			.Footer
+				bottom: 3.25rem
+
+
+
+	section#ConceptMovie
+
+		.Section
+			padding: 19.5rem 0
+			overflow: hidden
+
+			.Contents 
+				position: absolute
+				height: calc(100% - 19.5rem * 2)
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				margin: auto
+				@include flexC
+				.Holder
+					position: absolute
+					@include fontJP
+					color: $white
+					.Header 
+						@include weightB
+						font-size: 1.75rem
+						line-height: 2.9rem
+						letter-spacing: .2em
+						width: 100%
+					p 
+						@include weightM
+						font-size: 1.35rem
+						line-height: 2.6rem
+						letter-spacing: .12em
+						width: 26rem
+						margin: 5.55rem auto 0
+						word-break: break-all
+						
+				.bg 
+					position: absolute
+					z-index: -1
+					width: 100%
+					height: 100%
+					overflow: hidden
+					video
+						height: 100%
+					&::before
+						content: ''
+						background-image: url('#{$path}common/cover.png')
+						width: 100%
+						height: 100%
+						position: absolute
+						background-size: cover
+						mix-blend-mode: color-burn
+
+
+
+	section#MainContents
+
+		.Section
+			padding: 19.5rem 0
+
+			.Linear
+
+			.Contents
+				display: flex
+				justify-content: space-between
+				flex-wrap: wrap
+				gap: .5rem
+				.Block
+					position: relative
+					overflow: hidden
+					color: $white
+					@include fontEN
+					padding: 2.5rem
+					.Header
+						h3
+							@include weightB
+							@include textUpper
+							font-size: 9rem
+							line-height: 7.5rem
+							margin: 0 0 1.3rem -.35rem
+							span
+								display: inline-block
+								width: 100%
+						.ttl
+							@include weightB
+							@include textUpper
+							font-size: 1.75rem
+						.sub
+							@include weightL
+							@include textUpper
+							font-size: .7rem
+							margin: .95rem 0 0
+					.text 
+						margin: 3.75rem auto 0 0
+						transform: translateY(5rem)
+						opacity: 0
+						transition: .5s
+						p
+							@include fontJP
+							@include weightM
+							font-size: 1.35rem
+							line-height: 2.6rem
+						.more
+							@include weightB
+							font-size: 1.25rem
+							position: relative
+							margin: 4.5rem 0 0
+							&::after
+								content: ''
+								background-image: url('#{$path}common/arrowLW.png')
+								width: 13.2rem
+								aspect-ratio: 267 / 16
+								position: absolute
+								bottom: -.5rem
+								left: 0
+								background-size: 100% 100%
+					.bg
+						position: absolute
+						top: 0
+						right: 0
+						bottom: 0
+						left: 0
+						margin: auto
+						width: 100%
+						height: 100%
+						z-index: -2
+					&::after
+						content: ''
+						width: 100%
+						height: 100%
+						background-color: $black06
+						position: absolute
+						top: 0
+						left: 0
+						z-index: -1
+						transform: translateX(-100%)
+						opacity: 0
+						transition: .5s
+					&:hover
+						@include hover
+						.text
+							transform: translateY(0)
+							opacity: 1
+						&::after
+							transform: translateX(0)
+							opacity: 1
+
+					&.Block01
+						width: 100%
+						aspect-ratio: 2080 / 969
+						order: 1
+						.text
+							width: 39.47%
+					&.Block02
+						width: calc(100% - 61.92% - .5rem)
+						aspect-ratio: 780 / 1570
+						order: 2
+						.text
+							width: 66.47%
+					&.Block03
+						width: 100%
+						aspect-ratio: 1288 / 958
+						display: flex
+						align-items: flex-end
+						.Header
+							transform: translateY(0)
+							transition: .5s
+						.text
+							position: absolute
+							left: 2.5rem
+							bottom: 4.75rem
+							width: 66.47%
+						&:hover
+							.Header
+								transform: translateY(-19.5rem)
+					&.Block04
+						width: calc(50% - .25rem)
+						aspect-ratio: 638 / 600
+						.text
+							width: 100%
+					&.Block05
+						width: calc(50% - .25rem)
+						aspect-ratio: 638 / 600
+						.text
+							width: 100%
+				.Holder
+					order: 2
+					width: 100%
+					display: flex
+					justify-content: space-between
+					flex-wrap: wrap
+					gap: .5rem
+					.inBlock
+						order: 1
+						width: 61.92%
+						display: flex
+						justify-content: space-between
+						flex-wrap: wrap
+						gap: .5rem
+
+
+
+	section#Instagram
+
+		.Section
+			padding: 19.5rem 0
+
+			.Contents
+				.Header
+					@include fontEN
+					@include weightB
+					font-size: 3.55rem
+					text-align: center
+					margin: 0 auto 3.8rem
+				.Holder 
+					display: flex
+					flex-wrap: wrap
+					gap: 1rem
+					.Block
+						width: calc((100% - 1rem * 5) / 6)
+						aspect-ratio: 1 / 1
+						background-color: $black
+						overflow: hidden
+						@include flexC
+						transform: translateY(3rem)
+						opacity: 0
+						.img
+							width: 100%
+							height: 100%
+							background-size: cover
+							transition: .5s
+						&:hover
+							@include hover
+							.img
+								opacity: .6
+								transform: scale(1.1)
+					&.active
+						.Block
+							&:nth-child(1),
+							&:nth-child(4),
+							&:nth-child(7)
+								animation: ig .75s linear .05s 1 forwards
+							&:nth-child(3),
+							&:nth-child(9),
+							&:nth-child(13)
+								animation: ig .75s linear .05s + .1s 1 forwards
+							&:nth-child(5),
+							&:nth-child(16),
+							&:nth-child(18)
+								animation: ig .75s linear .05s + .2s 1 forwards
+							&:nth-child(2),
+							&:nth-child(12),
+							&:nth-child(17)
+								animation: ig .75s linear .05s + .3s forwards
+							&:nth-child(6),
+							&:nth-child(10),
+							&:nth-child(11)
+								animation: ig .75s linear .05s + .4s 1 forwards
+							&:nth-child(8),
+							&:nth-child(14),
+							&:nth-child(15)
+								animation: ig .75s linear .05s + .5s 1 forwards
+
+
+
+	section#News
+
+		.Section
+			padding: 19.5rem 0
+
+			.Contents
+				.Header
+					@include fontEN
+					@include weightB
+					font-size: 3.55rem
+					text-align: center
+					margin: 0 auto 7.5rem
+				.Holder 
+					.Block
+						width: 100%
+						color: $black
+						padding: 0 0 1rem
+						margin: 0 0 3.4rem
+						position: relative
+						transition: .5s
+						display: flex
+						align-items: center
+						span
+							display: inline-block
+							&.date
+								@include fontEN
+								@include weightB
+								font-size: 1.25rem
+								width: 12.83%
+							&.ttl
+								@include fontJP
+								@include weightM
+								font-size: 1.5rem
+						&::after
+							content: ''
+							position: absolute
+							width: 100%
+							height: 1px
+							background-color: $black
+							bottom: 0
+							left: 0
+							transition: .5s
+						&:hover
+							padding: 0 0 1rem 2rem
+
+
+
+	section#VisitUs
+
+		.Section
+			padding: 19.5rem 0
+
+			.Contents
+				display: flex
+				flex-wrap: wrap
+				gap: 8rem			
+				.Holder 
+					width: 100%
+					display: flex
+					justify-content: space-between
+					.textArea 
+						width: 45.19%
+						@include fontEN
+						@include weightB
+						.online
+							width: 100%
+							@include flexC
+							justify-content: space-between
+							margin: 0 0 3.4rem
+							.Logo 
+								background-image: url('#{$path}common/LogoWide.png')
+								width: 45.85%
+								aspect-ratio: 433 / 311
+								margin: -1.25rem 0 0 -1.25rem
+							.arrow
+								width: 50.53%
+								font-size: 2.15rem
+								@include textUpper
+								letter-spacing: .04em
+								color: $black
+								position: relative
+								margin: 0 0 2.25rem
+								transition: .5s
+								&::after
+									content: ''
+									background-image: url('#{$path}common/arrowLB.png')
+									width: 100%
+									aspect-ratio: 477 / 47
+									position: absolute
+									bottom: -1rem
+									left: 0
+									background-size: 100% 100%
+							&:hover
+								.arrow
+									padding: 0 0 0 1rem
+						.cat
+							width: 100%
+							aspect-ratio: 940 / 62
+							background-color: $black
+							color: $white
+							padding: 0 2rem
+							font-size: 1.55rem
+							letter-spacing: .08em
+							@include flexC
+							justify-content: flex-start
+						.details 
+							display: flex
+							justify-content: space-between
+							align-items: flex-start
+							margin: 2.5rem 0 0
+							.Logo 
+								border: 1px solid $black
+								width: 40.31%
+								aspect-ratio: 1 / 1
+							.inBlock 
+								width: 50%
+								.name
+									margin: 0 0 1.6rem
+									padding: 0 0 1.6rem
+									border-bottom: 1px solid $black
+									span
+										display: inline-block
+										width: 100%
+										&:nth-child(1)
+											font-size: 1.5rem
+										&:nth-child(2)
+											@include fontJP
+											@include weightB
+											font-size: 2.65rem
+											margin: .25rem 0 0
+								.address
+									font-size: 1.15rem
+									margin: 0 0 1rem
+								.tel
+									&::before
+										content: 'Tel.'
+										margin: 0 .5rem 0 0
+									font-size: 1.15rem
+									color: $black
+								.open 
+									font-size: 1.15rem
+									position: relative
+									padding: 0 0 0 3.5rem
+									margin: .25rem 0 0
+									&::before
+										content: 'Open.'
+										margin: 0 .5rem 0 0
+										position: absolute
+										top: 0
+										left: 0
+									li
+										&.wd
+											&::before
+												content: 'weekday'
+												@include weightL
+												width: 5rem
+												display: inline-block
+										&.hd
+											&::before
+												content: 'holiday'
+												@include weightL
+												width: 5rem
+												display: inline-block
+								.gm
+									font-size: 1.25rem
+									position: relative
+									width: 55%
+									color: $black
+									margin: 8.25rem 0 0
+									&::after
+										content: ''
+										background-image: url('#{$path}common/arrowLB.png')
+										width: 100%
+										aspect-ratio: 477 / 47
+										position: absolute
+										bottom: -1rem
+										left: 0
+										background-size: 100% 100%
+									&:hover
+										padding: 0 0 0 .5rem
+
+					.imgArea
+						width: 50%
+						height: 100%
+						aspect-ratio: 1040 / 593
+
+					&:nth-child(1)
+						.textArea .details .inBlock .gm
+							margin: 4.25rem 0 0
+
+				.shopList
+					margin: 2.85rem auto 0
+					width: 100%
+					aspect-ratio: 2085 / 191
+					border: 1px solid $black
+					@include flexC
+					flex-wrap: wrap
+					align-content: center
+					color: $black
+					span
+						display: inline-block
+						width: 100%
+						text-align: center
+						@include weightB
+						&:nth-child(1)
+							@include fontEN
+							@include textUpper
+							font-size: 2.4rem
+							transition: .5s
+						&:nth-child(2)
+							@include fontJP
+							font-size: 1.25rem
+							letter-spacing: .2em
+							margin: 1rem 0 0
+					&:hover
+						span:nth-child(1)
+							letter-spacing: .1em
+						
+
+
+
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  _Footer
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+footer#Footer
+	.Section
+		background-color: $gray
+		@include fontEN
+		@include weightB
+
+		.Contents
+			width: 85.86%
+			margin: 0 auto
+			padding: 7rem 0 8rem
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+
+			.ConpanyMenu 
+				width: 40.19%
+				display: flex
+				flex-wrap: wrap
+				justify-content: space-between
+				align-items: flex-end
+				.Logo 
+					background-image: url('#{$path}common/Logo.png')
+					width: 16.3rem
+					aspect-ratio: 379 / 467
+				.LinkHolder 
+					width: calc(100% - 16.3rem - 14.5%)
+					margin: 0 0 .5rem
+					ul 
+						@include flexC
+						justify-content: space-between
+						flex-wrap: wrap
+						li
+							background-size: 100% 100%
+							a
+								width: 100%
+								height: 100%
+								color: $black
+							&.ig
+								background-image: url('#{$path}common/snsIG.png')
+								height: 2.6rem
+								aspect-ratio: 1 / 1
+							&.x
+								background-image: url('#{$path}common/snsX.png')
+								height: 2.6rem
+								aspect-ratio: 1 / 1
+							&.fb
+								background-image: url('#{$path}common/snsFB.png')
+								height: 2.6rem
+								aspect-ratio: 21 / 40
+							&.note
+								background-image: url('#{$path}common/snsNoteWide.png')
+								height: 4rem
+								aspect-ratio: 218 / 83
+							&.online
+								width: 100%
+								aspect-ratio: 489 / 126
+								border: 1px solid $black
+								font-size: 2.15rem
+								margin: 2.5rem 0 0
+								@include flexC
+								@include textUpper
+								a
+									@include flexC
+									padding: 0 0 .25rem
+									transition: .5s
+								&:hover
+									a
+										letter-spacing: .05em
+
+				.cw
+					width: 100%
+					font-size: 1.3rem
+					margin: 3.75rem 0 0
+
+			.MainMenu
+				width: 50%
+				margin: -.75rem 0 0
+				h2
+					font-size: 4rem
+				ul
+					font-size: 2rem
+					line-height: 3.25rem
+					// display: grid
+					// grid-auto-flow: column
+					// grid-template-rows: repeat(4, auto)
+					display: flex
+					flex-wrap: wrap
+					flex-direction: column
+					column-count: 2
+					height: 21.6rem
+					margin: 4rem 0 0
+					li
+						border-bottom: 1px solid $black
+						width: 33.41%
+						transition: .5s
+						&.clickNone
+							opacity: .2
+						a
+							color: $black
+							width: 100%
+						&:nth-child(1),
+						&:nth-child(2),
+						&:nth-child(3),
+						&:nth-child(4)
+							margin: 0 4.51% 1.5rem 0
+						&:nth-child(5),
+						&:nth-child(6),
+						&:nth-child(7),
+						&:nth-child(8)
+							margin: 0 0 1.5rem 0
+						&.BtoB
+							margin: 0 0 0 7.86%
+							height: 17.8rem
+							width: auto
+							aspect-ratio: 243 / 329
+							background-color: $black
+							a
+								color: $white
+								@include flexC
+								align-content: center
+								height: 100%
+								flex-wrap: wrap
+								span
+									display: inline-block
+									width: 100%
+									text-align: center
+									transition: .5s
+									&:nth-child(1)
+										font-size: 3.15rem
+										@include weightR
+									&:nth-child(2)
+										font-size: .85rem
+										@include fontJP
+										@include weightL
+										letter-spacing: .225em
+									&.arrow 
+										display: none
+						&:hover
+							@include hover
+							padding: 0 0 0 1rem
+							&.BtoB
+								padding: 0
+								a span:nth-child(1)
+									letter-spacing: .05em
+
+		.Foot 
+			width: 100%
+			background-color: $black
+			aspect-ratio: 2780 / 171
+			@include flexC
+			p 
+				color: $white
+				text-align: center
+				@include fontJP
+				@include weightR
+				font-size: 1.15rem
+				letter-spacing: .12em
+				span
+					@include weightB

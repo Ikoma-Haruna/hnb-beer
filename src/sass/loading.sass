@@ -1,0 +1,178 @@
+
+#Loading
+	width: 100vw
+	height: 100vh
+	position: fixed
+	z-index: 20
+	pointer-events: none
+	// background-image: url('../img/Loading/sample.png')
+	opacity: 0
+	transition: 1s
+
+	.tree
+		position: absolute
+		transition: 3s
+		&.treeC
+			background-image: url('../img/Loading/treeC.png')
+			width: 100%
+			height: 100%
+			top: 0
+			right: 0
+			left: 0
+			margin: auto
+			background-size: cover
+		&.treeL 
+			top: 0
+			left: 0
+			margin: auto
+			background-size: 100%
+		&.treeR 
+			top: 0
+			right: 0
+			margin: auto
+			background-size: 100%
+
+
+body#topPage
+	#Loading
+		.tree
+			&.treeL 
+				background-image: url('../img/Loading/treeL.png')
+				// width: 58.05rem
+				height: 100%
+				aspect-ratio: 1161 / 1660
+			&.treeR 
+				background-image: url('../img/Loading/treeR.png')
+				// width: 64.95rem
+				height: 100%
+				aspect-ratio: 1299 / 1660
+		
+		&.active
+			.tree
+				&.treeC
+					transform: scale(1.5)
+					opacity: 0
+					filter: blur(.5rem)
+
+				&.treeL
+					transform: translate(-100%, 0px) scale(1.5)
+					filter: blur(.5rem)
+					// opacity: 0
+
+				&.treeR
+					transform: translate(100%, 0px) scale(1.5)
+					filter: blur(.5rem)
+					// opacity: 0
+
+
+body#messagePage
+	#Loading
+		z-index: 5
+		position: relative
+		height: auto
+		.tree
+			transition: 2s
+			&.treeC
+				display: none
+			&.treeL 
+				background-image: url('../img/Loading/aboutMessage_TreeL.png')
+				width: calc(35.05rem * 2)
+				height: calc(181.7rem * 2)
+				top: -35rem
+			&.treeR 
+				background-image: url('../img/Loading/aboutMessage_TreeR.png')
+				width: calc(35.75rem * 2)
+				height: calc(178.3rem * 2)
+				top: -35rem
+
+		&.active
+			.tree
+				&.treeC
+					transform: scale(1.5)
+					opacity: 0
+					filter: blur(.5rem)
+
+				&.treeL
+					width: calc(35.05rem * 1.5)
+					height: calc(181.7rem * 1.5)
+
+				&.treeR
+					width: calc(35.75rem * 1.5)
+					height: calc(178.3rem * 1.5)
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 835px)
+	#Loading
+
+		.tree
+			&.treeL 
+				transform: translate(-40%, 0px)
+			&.treeR 
+				transform: translate(40%, 0px)
+
+
+		&.active
+			.tree
+				&.treeC
+					transform: scale(1.5)
+					opacity: 0
+					filter: blur(.5rem)
+
+				&.treeL
+					transform: translate(-100%, 0px) scale(1.5)
+					filter: blur(.5rem)
+					// opacity: 0
+
+				&.treeR
+					transform: translate(100%, 0px) scale(1.5)
+					filter: blur(.5rem)
+					// opacity: 0
+
+
+
+
+
+	body#messagePage
+		#Loading
+			width: 100vw
+			height: 100vh
+			position: fixed
+			z-index: 20
+			pointer-events: none
+			opacity: 0
+			transition: 1s
+			.tree
+				&.treeC
+					display: none
+				&.treeL 
+					background-image: url('../img/Loading/treeL.png')
+					height: 100% !important
+					aspect-ratio: 1161 / 1660
+					top: 0
+					left: 0
+					width: auto !important
+				&.treeR 
+					background-image: url('../img/Loading/treeR.png')
+					height: 100% !important
+					aspect-ratio: 1299 / 1660
+					top: 0
+					right: 0
+					width: auto !important
+
+			&.active
+				.tree
+					&.treeL
+						transform: translate(-100%, 0px) scale(1.5)
+						filter: blur(.5rem)
+						opacity: 0
+
+					&.treeR
+						transform: translate(100%, 0px) scale(1.5)
+						filter: blur(.5rem)
+						opacity: 0

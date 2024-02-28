@@ -1,0 +1,297 @@
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  base SetUp
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+// color
+$white: rgb(255, 255, 255)
+
+$black: rgb(35, 24, 21)
+$black01: rgba(35, 24, 21, .1)
+$black06: rgba(35, 24, 21, .6)
+
+$gray: #EFEFEF
+
+
+
+
+$path: '../img/'
+
+
+
+
+// hover none
+@mixin hover
+	@media (hover: hover)
+		cursor: pointer
+		@content
+
+
+
+
+// flex
+@mixin flexC
+	display: flex
+	justify-content: center
+	align-items: center
+
+
+
+
+// 縦文字
+@mixin writing
+	-ms-writing-mode: tb-rl
+	writing-mode: vertical-rl
+
+
+
+
+// 大文字
+@mixin textUpper
+	text-transform: uppercase
+
+
+
+
+// font
+@mixin weightL
+	font-weight: 300
+@mixin weightR
+	font-weight: 400
+@mixin weightM
+	font-weight: 500
+@mixin weightB
+	font-weight: 700
+
+
+@mixin fontJP
+	font-family: noto-sans-cjk-jp, sans-serif
+	font-style: normal
+	font-feature-settings: 'palt'
+	font-display: swap
+.fontJP
+	@include fontJP
+	&__L
+		@include weightL
+	&__R
+		@include weightR
+	&__M
+		@include weightM
+	&__B
+		@include weightB
+
+
+@mixin fontEN
+	font-family: roboto, sans-serif
+	font-style: normal
+	font-feature-settings: 'palt'
+	font-display: swap
+.fontEN
+	@include fontEN
+	&__L
+		@include weightL
+	&__R
+		@include weightR
+	&__B
+		@include weightB
+
+
+@mixin fontBebas
+	font-family: bebas-neue, sans-serif
+	font-style: normal
+	font-feature-settings: 'palt'
+	font-display: swap
+	@include weightR
+.fontBebas
+	@include fontBebas
+
+
+
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  common
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+html
+	// height: 100%
+	font-size: 69.4%
+	font-size: .694vw
+	// 10(px) / 1440(px) * 100 = .694
+
+
+body
+	// transition: 1s
+	height: 100%
+	// overflow: hidden
+	tap-highlight-color: rgba(0, 0, 0, 0)
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+	@include fontJP
+	color: $black
+	background-color: $white
+	// letter-spacing: 0
+	
+
+	&::-webkit-scrollbar
+		overflow: hidden
+		width: 4px
+		background: $black
+
+		&:horizontal
+			height: 1px
+
+	&::-webkit-scrollbar-button
+		display: none
+
+	&::-webkit-scrollbar-piece
+		background: $black
+
+		&:start
+			background: $black
+
+	&::-webkit-scrollbar-thumb,
+	&::-webkit-scrollbar-corner
+		background: $white
+
+	&.LoadingNow
+		overflow: hidden
+
+
+
+
+
+
+	#wrapper
+		overflow: hidden
+		position: relative
+		z-index: 3
+		scroll-snap-type: y mandatory
+
+
+
+	main
+		position: relative
+		z-index: 3
+		// transition: .5s
+		// transition-delay: .25s
+		// transition-property: opacity, transform
+
+
+
+
+
+	section
+		position: relative
+
+		.Section
+			// padding: 9.75rem 0 10rem
+			position: relative
+			z-index: 3
+
+
+
+
+
+
+
+
+@mixin widthL
+	max-width: 134.15rem
+	width: 93.15%
+	margin: 0 auto
+@mixin widthM
+	max-width: 104rem
+	width: 72.222%
+	margin: 0 auto
+// @mixin widthS
+// 	max-width: 93.35rem
+// 	width: 64.82%
+// 	margin: 0 auto
+
+.widthL
+	@include widthL
+.widthM
+	@include widthM
+// .widthS
+// 	@include widthS
+
+
+
+
+img
+	width: 100%
+
+p
+	word-wrap: break-word
+
+a
+	display: inline-block
+	tap-highlight-color: rgba(0, 0, 0, .1)
+	-webkit-tap-highlight-color: rgba(0, 0, 0, .1)
+	transition: .25s
+	@include hover
+
+.clickNone
+	// opacity: .2
+	pointer-events: none
+	
+
+
+
+
+
+// device
+.pc
+	display: block
+
+.sp
+	display: none
+
+
+
+h2
+	letter-spacing: 0
+
+
+
+.deviceHeight
+	height: 100dvh
+
+
+
+
+
+
+
+
+
+// //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+// //  cursor
+// //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+// #cursorConcept,
+// #cursorHistory
+// 	position: fixed
+// 	z-index: 10
+// 	left: 0
+// 	top: 0
+// 	pointer-events: none
+// 	will-change: transform
+
+// @media (hover: hover) and (pointer: fine)
+// 	.cursorConcept,
+// 	.cursorHistory
+// 		opacity: 0
+// 		transform: translate(-50%, -50%)
+// 		// transition: opacity .5s ease-in-out, transform .5s ease-in-out, width .5s ease-in-out, height .5s ease-in-out
+// 		z-index: 10000
+// 		position: relative
+// 		transition: .25s
+// 		width: 14rem
+// 		aspect-ratio: 282 / 290
+// 		&.active
+// 			opacity: 1
+// 	.cursorConcept
+// 		background-image: url('#{$path}/about/cursorConcept.png')
+// 	.cursorHistory
+// 		background-image: url('#{$path}/about/cursorHistory.png')

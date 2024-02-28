@@ -1,0 +1,211 @@
+*
+	box-sizing: border-box
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	font: inherit
+	vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+	display: block
+
+body
+	line-height: 1
+	overflow-x: hidden
+
+ol, ul
+	list-style: none
+
+blockquote, q
+	quotes: none
+
+blockquote:before, blockquote:after,
+
+q:before, q:after
+	content: ''
+	content: none
+
+table
+	border-spacing: 0
+	border-collapse: collapse
+
+body, html
+	margin: 0px
+	width: 100%
+	padding: 0px
+	// height: 100%
+	// font-size: 16px
+	font-weight: 300
+	position: relative
+	font-family: 游ゴシック, Yu Gothic, 游ゴシック体, YuGothic, YuGothic, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, ＭＳ Ｐゴシック, sans-serif
+
+.clearFix
+	clear: both
+	float: none !important
+
+.hide
+	display: none
+
+.noScroll
+	overflow: hidden
+
+.cage
+	margin: 0 auto
+	padding: 0 20px
+
+.flex
+	display: flex
+	position: relative
+	display: -webkit-box
+	display: -ms-flexbox
+	display: -webkit-flex
+
+.flexC
+	display: flex
+	position: relative
+	display: -webkit-box
+	display: -ms-flexbox
+	display: -webkit-flex
+	align-items: center
+	justify-content: center
+
+.animate
+	transition: 0.5s ease-in-out
+	-o-transition: 0.5s ease-in-out
+	-moz-transition: 0.5s ease-in-out
+	-webkit-transition: 0.5s ease-in-out
+
+
+/////////////////////////////
+// Form Style
+/////////////////////////////
+input, textarea, select
+	border: 0
+	width: 100%
+	display: block
+	border-radius: 0
+	font-size: 0.85rem
+	padding: 15px 15px
+	letter-spacing: 1px
+	border-style: solid
+	background: transparent
+	-webkit-appearance: none
+	-webkit-border-radius: 0px
+	border-bottom: 1px solid #cccccc
+
+	:focus
+		outline: none
+		outline-style: none
+		outline-color: transparent
+
+a
+	text-decoration: none
+
+
+/////////////////////////////
+//	DOM Element
+// .checkbox
+//		input#Animation(type='checkbox')
+//		label(for='Animation') Animation
+/////////////////////////////
+.checkbox
+	margin: 0 15px 25px 0
+	display: inline-block
+
+	[type="checkbox"]:not(:checked),
+	[type="checkbox"]:checked
+		left: -9999px
+		position: absolute
+
+	[type="checkbox"]:not(:checked) + label,
+	[type="checkbox"]:checked + label
+		color: #818181
+		cursor: pointer
+		position: relative
+		padding-left: 25px
+		font-size:  0.8rem
+
+	[type="checkbox"]:not(:checked) + label:before,
+	[type="checkbox"]:checked + label:before
+		left: 0
+		top: 0
+		content: ''
+		width: 14px
+		height: 14px
+		position: absolute
+		border: 1px solid #cccccc
+
+	[type="checkbox"]:not(:checked) + label:after,
+	[type="checkbox"]:checked + label:after
+		left: 0
+		top: -2px
+		position: absolute
+		transition: all .2s
+		content: url('../img/check.png')
+
+	[type="checkbox"]:not(:checked) + label:after
+		opacity: 0
+		transform: scale(0)
+
+	[type="checkbox"]:checked + label:after
+		opacity: 1
+		transform: scale(1)
+
+
+// @font-face
+// 	font-family: buffalo_inline_1_grungeRg
+// 	src: urlurl('buffaloinline2grunge-webfont.woff') format('woff'), ('buffaloinline2grunge-webfont.woff2') format('woff2')
+// 	font-weight: normal
+// 	font-style: normal
+
+
+/////////////////////////////
+//	Animation Template
+/////////////////////////////
+// animation: appearingText 1s ease forwards
+// @-webkit-keyframes appearingText
+// 	0%
+// 		transform: translate(0, 0)
+// 		-webkit-transform: scale(1.05, 1.05)
+
+// 	100%
+// 		transform: translate(0, 0)
+// 		-webkit-transform: scale(1, 1)
+
+// @-ms-keyframes appearingText
+// 	0%
+// 		transform: translate(0, 0)
+// 		-ms-transform: scale(1.05, 1.05)
+
+// 	100%
+// 		transform: translate(0, 0)
+// 		-ms-transform: scale(1, 1)
+
+// @keyframes appearingText
+// 	0%
+// 		transform: translate(0, 0)
+// 		transform: scale(1.05, 1.05)
+
+// 	100%
+// 		transform: translate(0, 0)
+// 		transform: scale(1, 1)
