@@ -28,9 +28,9 @@
 	//  common
 	//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 	html
-		font-size: 119.7%
-		font-size: 1.197vw
-		// 10(px) / 835(px) * 100 = 1.197
+		font-size: 130%
+		font-size: 1.3vw
+		// 10(px) / 1000(px) * 100 = 1.197
 
 
 	@mixin widthL
@@ -61,6 +61,39 @@
 
 
 	body
+
+
+
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  _con-menu
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		@mixin con-menu
+			.Section
+
+				.Contents
+					flex-wrap: wrap
+					padding: 7rem 0 5rem
+
+					.ConpanyMenu 
+						width: 100%
+						.LinkHolder 
+							width: calc(100% - 16.3rem - 31.5%)
+
+					.MainMenu
+						width: 100%
+						margin: 1rem auto 0
+						.Header
+							display: none
+					.cw
+						width: 100%
+						font-size: 1.3rem
+						margin: .75rem 0 0
+						text-align: center
+				.Foot 
+					width: 100%
+
+
+
 		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 		//  _Header
 		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -77,34 +110,48 @@
 					aspect-ratio: 433 / 311
 					mix-blend-mode: multiply
 				.sec
-					position: fixed
-					top: 17rem
-					right: 0
-					left: 0
-					margin: auto
-					width: 12rem
-					display: flex
-					flex-wrap: wrap
-					justify-content: center
-					.num
-						font-size: calc(12rem / 1.5)
-						line-height: calc(8.75rem / 1.5)
-						width: calc(9.5rem / 1.5)
-						height: calc(8.75rem / 1.5)
-					.name
-						width: 12rem
-						font-size: 1.5rem
-						.change
-							width: calc(12rem * 5)
-							span
-								text-align: center
-								width: 12rem
-					@for $i from 1 through 5
-						&.sec0#{$i}
-							.num .change
-								transform: translateY(-8.75rem / 1.5 * ($i - 1))
-							.name .change
-								transform: translateX(-12rem * ($i - 1))
+					display: none
+					// position: fixed
+					// top: 17rem
+					// right: 0
+					// left: 0
+					// margin: auto
+					// width: 12rem
+					// display: flex
+					// flex-wrap: wrap
+					// justify-content: center
+					// .num
+					// 	font-size: calc(12rem / 1.5)
+					// 	line-height: calc(8.75rem / 1.5)
+					// 	width: calc(9.5rem / 1.5)
+					// 	height: calc(8.75rem / 1.5)
+					// .name
+					// 	width: 12rem
+					// 	font-size: 1.5rem
+					// 	.change
+					// 		width: calc(12rem * 5)
+					// 		span
+					// 			text-align: center
+					// 			width: 12rem
+					// @for $i from 1 through 5
+					// 	&.sec0#{$i}
+					// 		.num .change
+					// 			transform: translateY(-8.75rem / 1.5 * ($i - 1))
+					// 		.name .change
+					// 			transform: translateX(-12rem * ($i - 1))
+
+
+
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  _Menu
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		#Menu
+			width: 31rem
+			.Section
+				width: calc(100% - 12rem)
+				padding: 0 0 0 1.6rem
+				.Contents .cw
+					display: none
 
 
 		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -169,6 +216,43 @@
 
 
 			section
+				.sec
+					position: absolute
+					top: 8.5rem
+					right: 0
+					left: 0
+					margin: auto
+					width: 11rem
+					display: flex !important
+					@include flexC
+					flex-wrap: wrap
+					.num
+						@include fontBebas
+						font-size: 12rem
+						line-height: 8.75rem
+						width: 9.5rem
+						height: 8.75rem
+						overflow: hidden
+						.change
+							width: 4.75rem
+							@include flexC
+							flex-wrap: wrap
+							transition: .75s
+						&.active
+							.change
+								transform: translateY(-8.8rem)
+					.name
+						@include fontEN
+						@include weightB
+						font-size: 1.5rem
+						text-align: center
+						margin: 1rem 0 0
+						.change
+							transition: .75s
+							span
+								display: inline-block
+								@include textUpper
+
 				.Footer 
 					display: none
 
@@ -202,85 +286,167 @@
 
 
 
+			section#ConceptMovie
+				.Section
+					padding: 27rem 0 6.5rem
+					height: auto
+					.Contents
+						@include widthM
+						height: auto
+						aspect-ratio: 1 / 1
+						position: relative
+						.sec
+							top: -14rem
+						.Holder
+							.Header
+								font-size: 2rem
+
+
+
 			section#MainContents
-				.Section .Contents
-					.inBlock
-						width: 100% !important
-						order: 2
-					.Block
-						width: 100% !important
-						aspect-ratio: 880 / 506 !important
-						@include flexC
-						text-align: center
-						.Header
-							.ttl
-								font-size: 3.5rem
-							.sub
-								font-size: 1rem
-						&.Block02
-							order: 1
-						&.Block03
-							align-items: center
-							h3
-								font-size: 3.5rem
-								line-height: 2.5rem
-								@include flexC
-								gap: 1rem
-								margin: 0 0 0.3rem -0.35rem
-								span
-									width: auto
-							.ttl
-								font-size: 1.8rem
-						.text
-							display: none
-						&::after
-							transform: translateX(0)
-							opacity: 1
+				.Section
+					padding: 22.5rem 0 6.5rem
+					.Contents
+						.inBlock
+							width: 100% !important
+							order: 2
+						.Block
+							width: 100% !important
+							aspect-ratio: 880 / 506 !important
+							@include flexC
+							text-align: center
+							.Header
+								.ttl
+									font-size: 3.5rem
+								.sub
+									font-size: 1rem
+							&.Block02
+								order: 1
+							&.Block03
+								align-items: center
+								h3
+									font-size: 3.5rem
+									line-height: 2.5rem
+									@include flexC
+									gap: 1rem
+									margin: 0 0 0.3rem -0.35rem
+									span
+										width: auto
+								.ttl
+									font-size: 1.8rem
+								.sub
+									margin: 1.95rem 0 0
+							.text
+								display: none
+							&::after
+								transform: translateX(0)
+								opacity: 1
 
 
 
 			section#Instagram
-				.Section .Contents .Holder
-					.Block
-						width: calc((100% - 1rem) / 2)
-						&:nth-child(n + 7)
-							display: none
+				.Section
+					padding: 22.5rem 0 6.5rem
+					.Contents .Holder
+						.Block
+							width: calc((100% - 1rem * 2) / 3)
+							&:nth-child(n + 10)
+								display: none
 
 
 
 			section#News
-				.Section .Contents .Holder
-					.Block
-						align-items: flex-start
-						padding: 0 0 1.5rem
-						margin: 0 0 2rem
-						span
-							&.date
-								width: 9.5rem
-							&.ttl
-								line-height: 2rem
-								margin: -.5rem 0 0
+				.Section
+					padding: 22.5rem 0 6.5rem
+					.Contents .Holder
+						.Block
+							align-items: flex-start
+							padding: 0 0 1.5rem
+							margin: 0 0 2rem
+							span
+								&.date
+									width: 9.5rem
+								&.ttl
+									line-height: 2rem
+									margin: -.5rem 0 0
 
 
 
 			section#VisitUs
-				.Section .Contents .Holder
-					flex-wrap: wrap
-					.textArea
-						order: 2
-						width: 100%
-					.imgArea
-						order: 1
-						width: 100%
-						height: auto !important
-						aspect-ratio: 880 / 639 !important
+				.Section
+					padding: 22.5rem 0
+					.Contents
+						.Holder
+							flex-wrap: wrap
+							.textArea
+								order: 2
+								width: 100%
+								margin: 3rem 0 0
+								.online
+									width: 47.4%
+									flex-wrap: wrap
+									justify-content: center
+									margin: 3rem auto 6rem
+									.Logo
+										background-image: url('#{$path}common/Logo.png')
+										width: 61.18%
+										aspect-ratio: 379 / 464
+										margin: 0 0 0 -1.25rem
+									.arrow
+										width: 100%
+										font-size: 2.9rem
+										margin: 3rem 0 2.25rem
+										padding: 0 0 0 5.75rem
+								.cat
+									justify-content: center
+									aspect-ratio: 880 / 62
+								.details
+									.Logo
+										width: 38.18%
+									.inBlock
+										width: 53.86%
+										.name
+											padding: 0 0 2rem
+											margin: 0 0 2rem
+											span
+												&:nth-child(1)
+													font-size: calc(1.5rem * 1.25)
+												&:nth-child(2)
+													font-size: calc(2.65rem * 1.25)
+													margin: .75rem 0 0
+										.address
+											font-size: calc(1.15rem * 1.25)
+											margin: 0 0 1.5rem
+										.tel
+											font-size: 1.6rem
+										.open 
+											font-size: 1.6rem
+											margin: .5rem 0 0
+											padding: 0 0 0 4.5rem
+											li
+												&::before
+													width: 6.5rem !important
+										.gm
+											font-size: calc(1.25rem * 1.25)
+											margin: 4.25rem 0 0
+
+							.imgArea
+								order: 1
+								width: 100%
+								height: auto !important
+								aspect-ratio: 880 / 545 !important
+
+						.shopList
+							aspect-ratio: 880 / 141
 
 
 
 
-
-
-
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  _Footer
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		footer#Footer
+			@include con-menu
 	
 
 
@@ -294,9 +460,12 @@
 	//  common
 	//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 	html
-		font-size: 266.6%
-		font-size: 2.666vw
-		// 10(px) / 375(px) * 100 = 2.666
+		// font-size: 266.6%
+		// font-size: 2.666vw
+		// // 10(px) / 375(px) * 100 = 2.666
+		font-size: 200%
+		font-size: 2vw
+		// 10(px) / 500(px) * 100 = 2
 
 	.pc
 		display: none
@@ -312,5 +481,313 @@
 
 
 
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  _con-menu
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		@mixin con-menu					
+			.Section
+				background-color: $gray
+				@include fontEN
+				@include weightB
+				width: 100%
+				padding: 0
+
+				.Contents
+					width: 85.86%
+					height: auto
+					margin: 0 auto
+					padding: 7rem 0 3rem
+					display: flex
+					justify-content: space-between
+					align-items: flex-start
+					flex-wrap: wrap
+
+					.ConpanyMenu 
+						width: 100%
+						display: unset
+						text-align: center
+						.Logo 
+							background-image: url('#{$path}common/Logo.png')
+							width: 16.3rem
+							aspect-ratio: 379 / 467
+						.LinkHolder 
+							width: 55.56%
+							margin: 3.25rem auto 0
+							ul 
+								@include flexC
+								justify-content: space-between
+								flex-wrap: wrap
+								li
+									background-size: 100% 100%
+									a
+										width: 100%
+										height: 100%
+										color: $black
+									&.ig
+										background-image: url('#{$path}common/snsIG.png')
+										height: 2.6rem
+										aspect-ratio: 1 / 1
+									&.x
+										background-image: url('#{$path}common/snsX.png')
+										height: 2.6rem
+										aspect-ratio: 1 / 1
+									&.fb
+										background-image: url('#{$path}common/snsFB.png')
+										height: 2.6rem
+										aspect-ratio: 21 / 40
+									&.note
+										background-image: url('#{$path}common/snsNoteWide.png')
+										height: 4rem
+										aspect-ratio: 218 / 83
+										margin: 0 -1rem 0 -1rem
+									&.online
+										width: 100%
+										aspect-ratio: 489 / 126
+										border: 1px solid $black
+										font-size: 2.15rem
+										margin: 1.6rem 0 0
+										letter-spacing: .08em
+										@include flexC
+										@include textUpper
+										a
+											@include flexC
+											padding: 0 0 .25rem
+											transition: .5s
+										&:hover
+											a
+												letter-spacing: .05em
+
+						.cw
+							width: 100%
+							font-size: 1.3rem
+							margin: 3.75rem 0 0
+
+					.MainMenu
+						width: 100%
+						margin: -.75rem 0 0
+						h2
+							font-size: 4rem
+						ul
+							line-height: 3.25rem
+							display: flex
+							flex-wrap: wrap
+							flex-direction: column
+							column-count: 2
+							margin: 4rem 0 0
+							padding: 0 0 13.75rem
+							gap: calc((50% - 47.27%) * 2)
+							height: 34rem
+							// font-size: 2.4rem
+							position: relative
+							li
+								border-bottom: 1px solid $black
+								transition: .5s
+								margin: 0 !important
+								width: 47.27%
+								font-size: 2.4rem
+								&.clickNone
+									opacity: .2
+								a
+									color: $black
+									width: 100%
+								&:nth-child(1),
+								&:nth-child(2),
+								&:nth-child(3),
+								&:nth-child(4)
+									margin: 0 4.51% 1.5rem 0
+								&:nth-child(5),
+								&:nth-child(6),
+								&:nth-child(7),
+								&:nth-child(8)
+									margin: 0 0 1.5rem 0
+								&.BtoB
+									aspect-ratio: 243 / 329
+									background-color: $black
+									width: 55.56%
+									height: 9.75rem
+									position: absolute
+									bottom: 0
+									left: 0
+									right: 0
+									margin: auto !important
+									a
+										color: $white
+										@include flexC
+										align-content: center
+										height: 100%
+										flex-wrap: wrap
+										span
+											display: inline-block
+											width: 100%
+											text-align: center
+											transition: .5s
+											&:nth-child(1)
+												font-size: 3.15rem
+												@include weightR
+												line-height: 2rem
+											&:nth-child(2)
+												font-size: 1.6rem
+												@include fontJP
+												@include weightL
+												letter-spacing: .225em
+												margin: 1.2rem 0 0
+												line-height: 2rem
+											&.arrow 
+												display: none
+								&:hover
+									@include hover
+									padding: 0 0 0 1rem
+									&.BtoB
+										padding: 0
+										a span:nth-child(1)
+											letter-spacing: .05em
+					.cw
+						width: 100%
+						font-size: 1.3rem
+						margin: 3.75rem 0 0
+						text-align: center
+
+				.Foot 
+					width: 100%
+					background-color: $black
+					aspect-ratio: 1000 / 103
+					@include flexC
+					p 
+						color: $white
+						text-align: center
+						@include fontJP
+						@include weightR
+						font-size: 1.15rem
+						letter-spacing: .12em
+						span
+							@include weightB
 
 
+
+
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  _Menu
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		#Menu
+			height: 100%
+			width: 100%
+			background-color: $gray
+			transform: translateX(100%)
+			.menuClose
+				position: absolute
+				background-color: unset
+				width: 4rem
+				height: 6.75rem
+				top: 2.5rem
+				right: 2.5rem
+				.icon
+					width: 100%
+					-webkit-filter: brightness(0)
+					filter: brightness(0)
+				span
+					font-size: 1.4rem
+					color: $black
+			@include con-menu
+			.Section
+				min-height: 100%
+				height: auto
+				overflow-y: scroll
+				.Contents
+					padding: 7rem 0
+				.Foot
+					position: absolute
+					bottom: 0
+
+	
+
+
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  topPage
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		&#topPage
+
+
+			section
+				.sec
+					.num
+						font-size: 7rem
+						width: 5.5rem
+						.change
+							width: 3rem
+					.name
+						margin: -.5rem 0 0
+
+
+
+			section#KV
+				.Section .Contents .Logo
+					width: 58.94%
+
+
+			section#ConceptMovie
+				.Section .Contents .Holder
+					.Header
+						width: 27rem
+						.row
+							@include flexC
+							flex-wrap: wrap
+					p
+						margin: 2rem auto 0
+
+
+			section#Instagram
+				.Section .Contents .Holder .Block
+					width: calc((100% - 1rem * 1) / 2)
+					&:nth-child(n + 7)
+						display: none
+
+
+			section#News
+				.Section .Contents .Holder .Block
+					margin: 0 0 2.5rem
+					span
+						&.date
+							font-size: 1.6rem
+							width: 12rem
+							margin: -.25rem 0 0
+						&.ttl
+							font-size: 1.8rem
+
+
+			section#VisitUs
+				.Section
+					padding: 22.5rem 0 10rem
+					.Contents
+						.Holder .textArea
+							.online .arrow
+								font-size: 1.85rem
+								padding: 0 0 0 3.65rem
+							.details .inBlock
+								.name
+									span
+										&:nth-child(1)
+											font-size: 1.5rem
+										&:nth-child(2)
+											font-size: 2.65rem
+								.address
+									font-size: 1.15rem
+									letter-spacing: .1em
+								.tel
+									font-size: 1.6rem
+								.open 
+									font-size: 1.6rem
+								.gm
+									font-size: 1.25rem
+									margin: 3.25rem 0 0
+						.shopList
+							aspect-ratio: 880 / 191
+							margin: 0 auto
+
+
+
+
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  _Footer
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		footer#Footer
+			@include con-menu

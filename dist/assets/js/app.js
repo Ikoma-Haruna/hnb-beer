@@ -172,13 +172,19 @@ $(window).on('load', function() {
 	//-_-_-_-_-  topPage
 	if ( window.document.body.id === 'topPage' ) {
 
+		if (windowWidth <= windowTB) {
+			var headerH = $('header#Header').innerHeight();
+		} else {
+			var headerH = ($('header#Header').innerHeight()) / 2;
+		}
+
 		var posKV = 0;
-		var pos01 = Math.round($("#ConceptMovie").offset().top);
-		var pos02 = Math.round($("#MainContents").offset().top);
-		var pos03 = Math.round($("#Instagram").offset().top);
-		var pos04 = Math.round($("#News").offset().top);
-		var pos05 = Math.round($("#VisitUs").offset().top);
-		var posFooter = Math.round($("#Footer").offset().top);
+		var pos01 = Math.round($("#ConceptMovie").offset().top) - headerH;
+		var pos02 = Math.round($("#MainContents").offset().top) - headerH;
+		var pos03 = Math.round($("#Instagram").offset().top) - headerH;
+		var pos04 = Math.round($("#News").offset().top) - headerH;
+		var pos05 = Math.round($("#VisitUs").offset().top) - headerH;
+		var posFooter = Math.round($("#Footer").offset().top) - headerH;
 
 		var headerSec = $('#Header .Contents .sec');
 
@@ -360,7 +366,7 @@ $(window).on('load', function() {
 	// scroller.reveal('.slideRight02', slideRight, 100);
 	// scroller.reveal('.slideRight03', slideRight, 100);
 
-	scroller.reveal('.spanAnim, section .Linear, #topPage section#Instagram .Contents .Holder', { afterReveal: MyAddClass });
+	scroller.reveal('.spanAnim, section .Linear, #topPage section#Instagram .Contents .Holder, #topPage section .sec .num', { afterReveal: MyAddClass });
 
 	function MyAddClass(el){
 		el.classList.add('active');

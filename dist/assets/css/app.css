@@ -388,7 +388,10 @@ h2 {
             transform: translateY(0);
   }
 }
-#topPage section#Instagram .Section .Contents .Holder {
+.spanAnim,
+#topPage section#KV .Contents .ttlHolder,
+#topPage section#Instagram .Section .Contents .Holder,
+#topPage section .sec .num {
   visibility: visible !important;
   -webkit-transform: translateY(0) scale(1) !important;
           transform: translateY(0) scale(1) !important;
@@ -1797,7 +1800,7 @@ nav#sideMenu .Contents .RightBlock:hover {
   content: "";
   position: absolute;
   width: 100%;
-  height: 1px;
+  height: 0.5px;
   background-color: rgb(35, 24, 21);
   bottom: 0;
   left: 0;
@@ -1806,6 +1809,9 @@ nav#sideMenu .Contents .RightBlock:hover {
 }
 #topPage section#News .Section .Contents .Holder .Block:hover {
   padding: 0 0 1rem 2rem;
+}
+#topPage section#News .Section .Contents .Holder .Block:last-child {
+  margin: 0;
 }
 #topPage section#VisitUs .Section {
   padding: 19.5rem 0;
@@ -2328,8 +2334,8 @@ footer#Footer .Section .Foot p span {
 
 @media only screen and (max-width: 835px) {
   html {
-    font-size: 119.7%;
-    font-size: 1.197vw;
+    font-size: 130%;
+    font-size: 1.3vw;
   }
   .widthL {
     width: 95%;
@@ -2367,77 +2373,17 @@ footer#Footer .Section .Foot p span {
     mix-blend-mode: multiply;
   }
   body #Header .Contents .sec {
-    position: fixed;
-    top: 17rem;
-    right: 0;
-    left: 0;
-    margin: auto;
-    width: 12rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    display: none;
   }
-  body #Header .Contents .sec .num {
-    font-size: 8rem;
-    line-height: 5.8333333333rem;
-    width: 6.3333333333rem;
-    height: 5.8333333333rem;
+  body #Menu {
+    width: 31rem;
   }
-  body #Header .Contents .sec .name {
-    width: 12rem;
-    font-size: 1.5rem;
+  body #Menu .Section {
+    width: calc(100% - 12rem);
+    padding: 0 0 0 1.6rem;
   }
-  body #Header .Contents .sec .name .change {
-    width: 60rem;
-  }
-  body #Header .Contents .sec .name .change span {
-    text-align: center;
-    width: 12rem;
-  }
-  body #Header .Contents .sec.sec01 .num .change {
-    -webkit-transform: translateY(0rem);
-            transform: translateY(0rem);
-  }
-  body #Header .Contents .sec.sec01 .name .change {
-    -webkit-transform: translateX(0rem);
-            transform: translateX(0rem);
-  }
-  body #Header .Contents .sec.sec02 .num .change {
-    -webkit-transform: translateY(-5.8333333333rem);
-            transform: translateY(-5.8333333333rem);
-  }
-  body #Header .Contents .sec.sec02 .name .change {
-    -webkit-transform: translateX(-12rem);
-            transform: translateX(-12rem);
-  }
-  body #Header .Contents .sec.sec03 .num .change {
-    -webkit-transform: translateY(-11.6666666667rem);
-            transform: translateY(-11.6666666667rem);
-  }
-  body #Header .Contents .sec.sec03 .name .change {
-    -webkit-transform: translateX(-24rem);
-            transform: translateX(-24rem);
-  }
-  body #Header .Contents .sec.sec04 .num .change {
-    -webkit-transform: translateY(-17.5rem);
-            transform: translateY(-17.5rem);
-  }
-  body #Header .Contents .sec.sec04 .name .change {
-    -webkit-transform: translateX(-36rem);
-            transform: translateX(-36rem);
-  }
-  body #Header .Contents .sec.sec05 .num .change {
-    -webkit-transform: translateY(-23.3333333333rem);
-            transform: translateY(-23.3333333333rem);
-  }
-  body #Header .Contents .sec.sec05 .name .change {
-    -webkit-transform: translateX(-48rem);
-            transform: translateX(-48rem);
+  body #Menu .Section .Contents .cw {
+    display: none;
   }
   body nav#sideMenu .Contents .LeftBlock {
     width: 5.5rem;
@@ -2487,6 +2433,78 @@ footer#Footer .Section .Foot p span {
   body nav#sideMenu.KV .Contents .RightBlock .menuOpen span {
     color: rgb(255, 255, 255);
   }
+  body#topPage section .sec {
+    position: absolute;
+    top: 8.5rem;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 11rem;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body#topPage section .sec .num {
+    font-family: bebas-neue, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 400;
+    font-size: 12rem;
+    line-height: 8.75rem;
+    width: 9.5rem;
+    height: 8.75rem;
+    overflow: hidden;
+  }
+  body#topPage section .sec .num .change {
+    width: 4.75rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-transition: 0.75s;
+    transition: 0.75s;
+  }
+  body#topPage section .sec .num.active .change {
+    -webkit-transform: translateY(-8.8rem);
+            transform: translateY(-8.8rem);
+  }
+  body#topPage section .sec .name {
+    font-family: roboto, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem 0 0;
+  }
+  body#topPage section .sec .name .change {
+    -webkit-transition: 0.75s;
+    transition: 0.75s;
+  }
+  body#topPage section .sec .name .change span {
+    display: inline-block;
+    text-transform: uppercase;
+  }
   body#topPage section .Footer {
     display: none;
   }
@@ -2517,6 +2535,26 @@ footer#Footer .Section .Foot p span {
   }
   body#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(2), body#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(3) {
     display: none;
+  }
+  body#topPage section#ConceptMovie .Section {
+    padding: 27rem 0 6.5rem;
+    height: auto;
+  }
+  body#topPage section#ConceptMovie .Section .Contents {
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    aspect-ratio: 1/1;
+    position: relative;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .sec {
+    top: -14rem;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .Holder .Header {
+    font-size: 2rem;
+  }
+  body#topPage section#MainContents .Section {
+    padding: 22.5rem 0 6.5rem;
   }
   body#topPage section#MainContents .Section .Contents .inBlock {
     width: 100% !important;
@@ -2575,6 +2613,9 @@ footer#Footer .Section .Foot p span {
   body#topPage section#MainContents .Section .Contents .Block.Block03 .ttl {
     font-size: 1.8rem;
   }
+  body#topPage section#MainContents .Section .Contents .Block.Block03 .sub {
+    margin: 1.95rem 0 0;
+  }
   body#topPage section#MainContents .Section .Contents .Block .text {
     display: none;
   }
@@ -2583,11 +2624,17 @@ footer#Footer .Section .Foot p span {
             transform: translateX(0);
     opacity: 1;
   }
-  body#topPage section#Instagram .Section .Contents .Holder .Block {
-    width: calc((100% - 1rem) / 2);
+  body#topPage section#Instagram .Section {
+    padding: 22.5rem 0 6.5rem;
   }
-  body#topPage section#Instagram .Section .Contents .Holder .Block:nth-child(n+7) {
+  body#topPage section#Instagram .Section .Contents .Holder .Block {
+    width: calc((100% - 2rem) / 3);
+  }
+  body#topPage section#Instagram .Section .Contents .Holder .Block:nth-child(n+10) {
     display: none;
+  }
+  body#topPage section#News .Section {
+    padding: 22.5rem 0 6.5rem;
   }
   body#topPage section#News .Section .Contents .Holder .Block {
     -webkit-box-align: start;
@@ -2603,6 +2650,9 @@ footer#Footer .Section .Foot p span {
     line-height: 2rem;
     margin: -0.5rem 0 0;
   }
+  body#topPage section#VisitUs .Section {
+    padding: 22.5rem 0;
+  }
   body#topPage section#VisitUs .Section .Contents .Holder {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -2612,6 +2662,70 @@ footer#Footer .Section .Foot p span {
         -ms-flex-order: 2;
             order: 2;
     width: 100%;
+    margin: 3rem 0 0;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .online {
+    width: 47.4%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 3rem auto 6rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .online .Logo {
+    background-image: url("../img/common/Logo.png");
+    width: 61.18%;
+    aspect-ratio: 379/464;
+    margin: 0 0 0 -1.25rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .online .arrow {
+    width: 100%;
+    font-size: 2.9rem;
+    margin: 3rem 0 2.25rem;
+    padding: 0 0 0 5.75rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .cat {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    aspect-ratio: 880/62;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .Logo {
+    width: 38.18%;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock {
+    width: 53.86%;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name {
+    padding: 0 0 2rem;
+    margin: 0 0 2rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(1) {
+    font-size: 1.875rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(2) {
+    font-size: 3.3125rem;
+    margin: 0.75rem 0 0;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .address {
+    font-size: 1.4375rem;
+    margin: 0 0 1.5rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .tel {
+    font-size: 1.6rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .open {
+    font-size: 1.6rem;
+    margin: 0.5rem 0 0;
+    padding: 0 0 0 4.5rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .open li::before {
+    width: 6.5rem !important;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .gm {
+    font-size: 1.5625rem;
+    margin: 4.25rem 0 0;
   }
   body#topPage section#VisitUs .Section .Contents .Holder .imgArea {
     -webkit-box-ordinal-group: 2;
@@ -2619,13 +2733,43 @@ footer#Footer .Section .Foot p span {
             order: 1;
     width: 100%;
     height: auto !important;
-    aspect-ratio: 880/639 !important;
+    aspect-ratio: 880/545 !important;
+  }
+  body#topPage section#VisitUs .Section .Contents .shopList {
+    aspect-ratio: 880/141;
+  }
+  body footer#Footer .Section .Contents {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 7rem 0 5rem;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu {
+    width: 100%;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder {
+    width: calc(100% - 16.3rem - 31.5%);
+  }
+  body footer#Footer .Section .Contents .MainMenu {
+    width: 100%;
+    margin: 1rem auto 0;
+  }
+  body footer#Footer .Section .Contents .MainMenu .Header {
+    display: none;
+  }
+  body footer#Footer .Section .Contents .cw {
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 0.75rem 0 0;
+    text-align: center;
+  }
+  body footer#Footer .Section .Foot {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 480px) {
   html {
-    font-size: 266.6%;
-    font-size: 2.666vw;
+    font-size: 200%;
+    font-size: 2vw;
   }
   .pc {
     display: none;
@@ -2635,5 +2779,683 @@ footer#Footer .Section .Foot p span {
   }
   .sp {
     display: block !important;
+  }
+  body #Menu {
+    height: 100%;
+    width: 100%;
+    background-color: #EFEFEF;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  body #Menu .menuClose {
+    position: absolute;
+    background-color: unset;
+    width: 4rem;
+    height: 6.75rem;
+    top: 2.5rem;
+    right: 2.5rem;
+  }
+  body #Menu .menuClose .icon {
+    width: 100%;
+    -webkit-filter: brightness(0);
+    filter: brightness(0);
+  }
+  body #Menu .menuClose span {
+    font-size: 1.4rem;
+    color: rgb(35, 24, 21);
+  }
+  body #Menu .Section {
+    background-color: #EFEFEF;
+    font-family: roboto, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 700;
+    width: 100%;
+    padding: 0;
+  }
+  body #Menu .Section .Contents {
+    width: 85.86%;
+    height: auto;
+    margin: 0 auto;
+    padding: 7rem 0 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body #Menu .Section .Contents .ConpanyMenu {
+    width: 100%;
+    display: unset;
+    text-align: center;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .Logo {
+    background-image: url("../img/common/Logo.png");
+    width: 16.3rem;
+    aspect-ratio: 379/467;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder {
+    width: 55.56%;
+    margin: 3.25rem auto 0;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li {
+    background-size: 100% 100%;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li a {
+    width: 100%;
+    height: 100%;
+    color: rgb(35, 24, 21);
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.ig {
+    background-image: url("../img/common/snsIG.png");
+    height: 2.6rem;
+    aspect-ratio: 1/1;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.x {
+    background-image: url("../img/common/snsX.png");
+    height: 2.6rem;
+    aspect-ratio: 1/1;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.fb {
+    background-image: url("../img/common/snsFB.png");
+    height: 2.6rem;
+    aspect-ratio: 21/40;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.note {
+    background-image: url("../img/common/snsNoteWide.png");
+    height: 4rem;
+    aspect-ratio: 218/83;
+    margin: 0 -1rem 0 -1rem;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.online {
+    width: 100%;
+    aspect-ratio: 489/126;
+    border: 1px solid rgb(35, 24, 21);
+    font-size: 2.15rem;
+    margin: 1.6rem 0 0;
+    letter-spacing: 0.08em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-transform: uppercase;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.online a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 0 0.25rem;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.online:hover a {
+    letter-spacing: 0.05em;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .cw {
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 3.75rem 0 0;
+  }
+  body #Menu .Section .Contents .MainMenu {
+    width: 100%;
+    margin: -0.75rem 0 0;
+  }
+  body #Menu .Section .Contents .MainMenu h2 {
+    font-size: 4rem;
+  }
+  body #Menu .Section .Contents .MainMenu ul {
+    line-height: 3.25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    margin: 4rem 0 0;
+    padding: 0 0 13.75rem;
+    gap: 5.46%;
+    height: 34rem;
+    position: relative;
+  }
+  body #Menu .Section .Contents .MainMenu ul li {
+    border-bottom: 1px solid rgb(35, 24, 21);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    margin: 0 !important;
+    width: 47.27%;
+    font-size: 2.4rem;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.clickNone {
+    opacity: 0.2;
+  }
+  body #Menu .Section .Contents .MainMenu ul li a {
+    color: rgb(35, 24, 21);
+    width: 100%;
+  }
+  body #Menu .Section .Contents .MainMenu ul li:nth-child(1), body #Menu .Section .Contents .MainMenu ul li:nth-child(2), body #Menu .Section .Contents .MainMenu ul li:nth-child(3), body #Menu .Section .Contents .MainMenu ul li:nth-child(4) {
+    margin: 0 4.51% 1.5rem 0;
+  }
+  body #Menu .Section .Contents .MainMenu ul li:nth-child(5), body #Menu .Section .Contents .MainMenu ul li:nth-child(6), body #Menu .Section .Contents .MainMenu ul li:nth-child(7), body #Menu .Section .Contents .MainMenu ul li:nth-child(8) {
+    margin: 0 0 1.5rem 0;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB {
+    aspect-ratio: 243/329;
+    background-color: rgb(35, 24, 21);
+    width: 55.56%;
+    height: 9.75rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto !important;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB a {
+    color: rgb(255, 255, 255);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    height: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB a span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB a span:nth-child(1) {
+    font-size: 3.15rem;
+    font-weight: 400;
+    line-height: 2rem;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB a span:nth-child(2) {
+    font-size: 1.6rem;
+    font-family: noto-sans-cjk-jp, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 300;
+    letter-spacing: 0.225em;
+    margin: 1.2rem 0 0;
+    line-height: 2rem;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB a span.arrow {
+    display: none;
+  }
+  body #Menu .Section .Contents .MainMenu ul li:hover {
+    padding: 0 0 0 1rem;
+  }
+}
+@media only screen and (max-width: 480px) and (hover: hover) {
+  body #Menu .Section .Contents .MainMenu ul li:hover {
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body #Menu .Section .Contents .MainMenu ul li:hover.BtoB {
+    padding: 0;
+  }
+  body #Menu .Section .Contents .MainMenu ul li:hover.BtoB a span:nth-child(1) {
+    letter-spacing: 0.05em;
+  }
+  body #Menu .Section .Contents .cw {
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 3.75rem 0 0;
+    text-align: center;
+  }
+  body #Menu .Section .Foot {
+    width: 100%;
+    background-color: rgb(35, 24, 21);
+    aspect-ratio: 1000/103;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body #Menu .Section .Foot p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: noto-sans-cjk-jp, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 400;
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+  }
+  body #Menu .Section .Foot p span {
+    font-weight: 700;
+  }
+  body #Menu .Section {
+    min-height: 100%;
+    height: auto;
+    overflow-y: scroll;
+  }
+  body #Menu .Section .Contents {
+    padding: 7rem 0;
+  }
+  body #Menu .Section .Foot {
+    position: absolute;
+    bottom: 0;
+  }
+  body#topPage section .sec .num {
+    font-size: 7rem;
+    width: 5.5rem;
+  }
+  body#topPage section .sec .num .change {
+    width: 3rem;
+  }
+  body#topPage section .sec .name {
+    margin: -0.5rem 0 0;
+  }
+  body#topPage section#KV .Section .Contents .Logo {
+    width: 58.94%;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .Holder .Header {
+    width: 27rem;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .Holder .Header .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .Holder p {
+    margin: 2rem auto 0;
+  }
+  body#topPage section#Instagram .Section .Contents .Holder .Block {
+    width: calc((100% - 1rem) / 2);
+  }
+  body#topPage section#Instagram .Section .Contents .Holder .Block:nth-child(n+7) {
+    display: none;
+  }
+  body#topPage section#News .Section .Contents .Holder .Block {
+    margin: 0 0 2.5rem;
+  }
+  body#topPage section#News .Section .Contents .Holder .Block span.date {
+    font-size: 1.6rem;
+    width: 12rem;
+    margin: -0.25rem 0 0;
+  }
+  body#topPage section#News .Section .Contents .Holder .Block span.ttl {
+    font-size: 1.8rem;
+  }
+  body#topPage section#VisitUs .Section {
+    padding: 22.5rem 0 10rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .online .arrow {
+    font-size: 1.85rem;
+    padding: 0 0 0 3.65rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(1) {
+    font-size: 1.5rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(2) {
+    font-size: 2.65rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .address {
+    font-size: 1.15rem;
+    letter-spacing: 0.1em;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .tel {
+    font-size: 1.6rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .open {
+    font-size: 1.6rem;
+  }
+  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .gm {
+    font-size: 1.25rem;
+    margin: 3.25rem 0 0;
+  }
+  body#topPage section#VisitUs .Section .Contents .shopList {
+    aspect-ratio: 880/191;
+    margin: 0 auto;
+  }
+  body footer#Footer .Section {
+    background-color: #EFEFEF;
+    font-family: roboto, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 700;
+    width: 100%;
+    padding: 0;
+  }
+  body footer#Footer .Section .Contents {
+    width: 85.86%;
+    height: auto;
+    margin: 0 auto;
+    padding: 7rem 0 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu {
+    width: 100%;
+    display: unset;
+    text-align: center;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .Logo {
+    background-image: url("../img/common/Logo.png");
+    width: 16.3rem;
+    aspect-ratio: 379/467;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder {
+    width: 55.56%;
+    margin: 3.25rem auto 0;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li {
+    background-size: 100% 100%;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li a {
+    width: 100%;
+    height: 100%;
+    color: rgb(35, 24, 21);
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li.ig {
+    background-image: url("../img/common/snsIG.png");
+    height: 2.6rem;
+    aspect-ratio: 1/1;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li.x {
+    background-image: url("../img/common/snsX.png");
+    height: 2.6rem;
+    aspect-ratio: 1/1;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li.fb {
+    background-image: url("../img/common/snsFB.png");
+    height: 2.6rem;
+    aspect-ratio: 21/40;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li.note {
+    background-image: url("../img/common/snsNoteWide.png");
+    height: 4rem;
+    aspect-ratio: 218/83;
+    margin: 0 -1rem 0 -1rem;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li.online {
+    width: 100%;
+    aspect-ratio: 489/126;
+    border: 1px solid rgb(35, 24, 21);
+    font-size: 2.15rem;
+    margin: 1.6rem 0 0;
+    letter-spacing: 0.08em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-transform: uppercase;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li.online a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 0 0.25rem;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li.online:hover a {
+    letter-spacing: 0.05em;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .cw {
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 3.75rem 0 0;
+  }
+  body footer#Footer .Section .Contents .MainMenu {
+    width: 100%;
+    margin: -0.75rem 0 0;
+  }
+  body footer#Footer .Section .Contents .MainMenu h2 {
+    font-size: 4rem;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul {
+    line-height: 3.25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    margin: 4rem 0 0;
+    padding: 0 0 13.75rem;
+    gap: 5.46%;
+    height: 34rem;
+    position: relative;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li {
+    border-bottom: 1px solid rgb(35, 24, 21);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    margin: 0 !important;
+    width: 47.27%;
+    font-size: 2.4rem;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li.clickNone {
+    opacity: 0.2;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li a {
+    color: rgb(35, 24, 21);
+    width: 100%;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li:nth-child(1), body footer#Footer .Section .Contents .MainMenu ul li:nth-child(2), body footer#Footer .Section .Contents .MainMenu ul li:nth-child(3), body footer#Footer .Section .Contents .MainMenu ul li:nth-child(4) {
+    margin: 0 4.51% 1.5rem 0;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li:nth-child(5), body footer#Footer .Section .Contents .MainMenu ul li:nth-child(6), body footer#Footer .Section .Contents .MainMenu ul li:nth-child(7), body footer#Footer .Section .Contents .MainMenu ul li:nth-child(8) {
+    margin: 0 0 1.5rem 0;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li.BtoB {
+    aspect-ratio: 243/329;
+    background-color: rgb(35, 24, 21);
+    width: 55.56%;
+    height: 9.75rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto !important;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li.BtoB a {
+    color: rgb(255, 255, 255);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    height: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li.BtoB a span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li.BtoB a span:nth-child(1) {
+    font-size: 3.15rem;
+    font-weight: 400;
+    line-height: 2rem;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li.BtoB a span:nth-child(2) {
+    font-size: 1.6rem;
+    font-family: noto-sans-cjk-jp, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 300;
+    letter-spacing: 0.225em;
+    margin: 1.2rem 0 0;
+    line-height: 2rem;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li.BtoB a span.arrow {
+    display: none;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li:hover {
+    padding: 0 0 0 1rem;
+  }
+}
+@media only screen and (max-width: 480px) and (hover: hover) {
+  body footer#Footer .Section .Contents .MainMenu ul li:hover {
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body footer#Footer .Section .Contents .MainMenu ul li:hover.BtoB {
+    padding: 0;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li:hover.BtoB a span:nth-child(1) {
+    letter-spacing: 0.05em;
+  }
+  body footer#Footer .Section .Contents .cw {
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 3.75rem 0 0;
+    text-align: center;
+  }
+  body footer#Footer .Section .Foot {
+    width: 100%;
+    background-color: rgb(35, 24, 21);
+    aspect-ratio: 1000/103;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body footer#Footer .Section .Foot p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: noto-sans-cjk-jp, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 400;
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+  }
+  body footer#Footer .Section .Foot p span {
+    font-weight: 700;
   }
 }

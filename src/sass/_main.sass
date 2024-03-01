@@ -24,8 +24,9 @@
 //  common animation
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 .spanAnim,
-#topPage section#KV .Contents .ttlHolder
-#topPage section#Instagram .Section .Contents .Holder
+#topPage section#KV .Contents .ttlHolder,
+#topPage section#Instagram .Section .Contents .Holder,
+#topPage section .sec .num
 	visibility: visible !important
 	transform: translateY(0) scale(1) !important
 	opacity: 1 !important
@@ -59,6 +60,175 @@ h2.Header
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 //  Loading
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+	
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  _con-menu
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+@mixin con-menu
+	.Section
+		background-color: $gray
+		@include fontEN
+		@include weightB
+
+		.Contents
+			width: 85.86%
+			margin: 0 auto
+			padding: 7rem 0 8rem
+			display: flex
+			justify-content: space-between
+			align-items: flex-start
+
+			.ConpanyMenu 
+				width: 40.19%
+				display: flex
+				flex-wrap: wrap
+				justify-content: space-between
+				align-items: flex-end
+				.Logo 
+					background-image: url('#{$path}common/Logo.png')
+					width: 16.3rem
+					aspect-ratio: 379 / 467
+				.LinkHolder 
+					width: calc(100% - 16.3rem - 14.5%)
+					margin: 0 0 .5rem
+					ul 
+						@include flexC
+						justify-content: space-between
+						flex-wrap: wrap
+						li
+							background-size: 100% 100%
+							a
+								width: 100%
+								height: 100%
+								color: $black
+							&.ig
+								background-image: url('#{$path}common/snsIG.png')
+								height: 2.6rem
+								aspect-ratio: 1 / 1
+							&.x
+								background-image: url('#{$path}common/snsX.png')
+								height: 2.6rem
+								aspect-ratio: 1 / 1
+							&.fb
+								background-image: url('#{$path}common/snsFB.png')
+								height: 2.6rem
+								aspect-ratio: 21 / 40
+							&.note
+								background-image: url('#{$path}common/snsNoteWide.png')
+								height: 4rem
+								aspect-ratio: 218 / 83
+							&.online
+								width: 100%
+								aspect-ratio: 489 / 126
+								border: 1px solid $black
+								font-size: 2.15rem
+								margin: 2.5rem 0 0
+								@include flexC
+								@include textUpper
+								a
+									@include flexC
+									padding: 0 0 .25rem
+									transition: .5s
+								&:hover
+									a
+										letter-spacing: .05em
+
+				.cw
+					width: 100%
+					font-size: 1.3rem
+					margin: 3.75rem 0 0
+
+			.MainMenu
+				width: 50%
+				margin: -.75rem 0 0
+				h2
+					font-size: 4rem
+				ul
+					font-size: 2rem
+					line-height: 3.25rem
+					// display: grid
+					// grid-auto-flow: column
+					// grid-template-rows: repeat(4, auto)
+					display: flex
+					flex-wrap: wrap
+					flex-direction: column
+					column-count: 2
+					height: 21.6rem
+					margin: 4rem 0 0
+					li
+						border-bottom: 1px solid $black
+						width: 33.41%
+						transition: .5s
+						&.clickNone
+							opacity: .2
+						a
+							color: $black
+							width: 100%
+						&:nth-child(1),
+						&:nth-child(2),
+						&:nth-child(3),
+						&:nth-child(4)
+							margin: 0 4.51% 1.5rem 0
+						&:nth-child(5),
+						&:nth-child(6),
+						&:nth-child(7),
+						&:nth-child(8)
+							margin: 0 0 1.5rem 0
+						&.BtoB
+							margin: 0 0 0 7.86%
+							height: 17.8rem
+							width: auto
+							aspect-ratio: 243 / 329
+							background-color: $black
+							a
+								color: $white
+								@include flexC
+								align-content: center
+								height: 100%
+								flex-wrap: wrap
+								span
+									display: inline-block
+									width: 100%
+									text-align: center
+									transition: .5s
+									&:nth-child(1)
+										font-size: 3.15rem
+										@include weightR
+									&:nth-child(2)
+										font-size: .85rem
+										@include fontJP
+										@include weightL
+										letter-spacing: .225em
+									&.arrow 
+										display: none
+						&:hover
+							@include hover
+							padding: 0 0 0 1rem
+							&.BtoB
+								padding: 0
+								a span:nth-child(1)
+									letter-spacing: .05em
+
+		.Foot 
+			width: 100%
+			background-color: $black
+			aspect-ratio: 2780 / 171
+			@include flexC
+			p 
+				color: $white
+				text-align: center
+				@include fontJP
+				@include weightR
+				font-size: 1.15rem
+				letter-spacing: .12em
+				span
+					@include weightB
 
 
 
@@ -966,13 +1136,15 @@ nav#sideMenu
 							content: ''
 							position: absolute
 							width: 100%
-							height: 1px
+							height: .5px
 							background-color: $black
 							bottom: 0
 							left: 0
 							transition: .5s
 						&:hover
 							padding: 0 0 1rem 2rem
+						&:last-child
+							margin: 0
 
 
 
@@ -1160,161 +1332,4 @@ nav#sideMenu
 //  _Footer
 //-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 footer#Footer
-	.Section
-		background-color: $gray
-		@include fontEN
-		@include weightB
-
-		.Contents
-			width: 85.86%
-			margin: 0 auto
-			padding: 7rem 0 8rem
-			display: flex
-			justify-content: space-between
-			align-items: flex-start
-
-			.ConpanyMenu 
-				width: 40.19%
-				display: flex
-				flex-wrap: wrap
-				justify-content: space-between
-				align-items: flex-end
-				.Logo 
-					background-image: url('#{$path}common/Logo.png')
-					width: 16.3rem
-					aspect-ratio: 379 / 467
-				.LinkHolder 
-					width: calc(100% - 16.3rem - 14.5%)
-					margin: 0 0 .5rem
-					ul 
-						@include flexC
-						justify-content: space-between
-						flex-wrap: wrap
-						li
-							background-size: 100% 100%
-							a
-								width: 100%
-								height: 100%
-								color: $black
-							&.ig
-								background-image: url('#{$path}common/snsIG.png')
-								height: 2.6rem
-								aspect-ratio: 1 / 1
-							&.x
-								background-image: url('#{$path}common/snsX.png')
-								height: 2.6rem
-								aspect-ratio: 1 / 1
-							&.fb
-								background-image: url('#{$path}common/snsFB.png')
-								height: 2.6rem
-								aspect-ratio: 21 / 40
-							&.note
-								background-image: url('#{$path}common/snsNoteWide.png')
-								height: 4rem
-								aspect-ratio: 218 / 83
-							&.online
-								width: 100%
-								aspect-ratio: 489 / 126
-								border: 1px solid $black
-								font-size: 2.15rem
-								margin: 2.5rem 0 0
-								@include flexC
-								@include textUpper
-								a
-									@include flexC
-									padding: 0 0 .25rem
-									transition: .5s
-								&:hover
-									a
-										letter-spacing: .05em
-
-				.cw
-					width: 100%
-					font-size: 1.3rem
-					margin: 3.75rem 0 0
-
-			.MainMenu
-				width: 50%
-				margin: -.75rem 0 0
-				h2
-					font-size: 4rem
-				ul
-					font-size: 2rem
-					line-height: 3.25rem
-					// display: grid
-					// grid-auto-flow: column
-					// grid-template-rows: repeat(4, auto)
-					display: flex
-					flex-wrap: wrap
-					flex-direction: column
-					column-count: 2
-					height: 21.6rem
-					margin: 4rem 0 0
-					li
-						border-bottom: 1px solid $black
-						width: 33.41%
-						transition: .5s
-						&.clickNone
-							opacity: .2
-						a
-							color: $black
-							width: 100%
-						&:nth-child(1),
-						&:nth-child(2),
-						&:nth-child(3),
-						&:nth-child(4)
-							margin: 0 4.51% 1.5rem 0
-						&:nth-child(5),
-						&:nth-child(6),
-						&:nth-child(7),
-						&:nth-child(8)
-							margin: 0 0 1.5rem 0
-						&.BtoB
-							margin: 0 0 0 7.86%
-							height: 17.8rem
-							width: auto
-							aspect-ratio: 243 / 329
-							background-color: $black
-							a
-								color: $white
-								@include flexC
-								align-content: center
-								height: 100%
-								flex-wrap: wrap
-								span
-									display: inline-block
-									width: 100%
-									text-align: center
-									transition: .5s
-									&:nth-child(1)
-										font-size: 3.15rem
-										@include weightR
-									&:nth-child(2)
-										font-size: .85rem
-										@include fontJP
-										@include weightL
-										letter-spacing: .225em
-									&.arrow 
-										display: none
-						&:hover
-							@include hover
-							padding: 0 0 0 1rem
-							&.BtoB
-								padding: 0
-								a span:nth-child(1)
-									letter-spacing: .05em
-
-		.Foot 
-			width: 100%
-			background-color: $black
-			aspect-ratio: 2780 / 171
-			@include flexC
-			p 
-				color: $white
-				text-align: center
-				@include fontJP
-				@include weightR
-				font-size: 1.15rem
-				letter-spacing: .12em
-				span
-					@include weightB
+	@include con-menu

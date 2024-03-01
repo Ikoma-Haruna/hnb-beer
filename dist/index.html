@@ -25,36 +25,63 @@
     <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
     <script>
       $(function(){
+      	var windowWidth = $(window).width();
+      	var windowTB = 835;
+      
       	$('html,body').animate({ scrollTop: 0 }, '1');
       	$('#Header').addClass('KV');
-      	setTimeout(function(){
-      		$('section#KV .Contents .ttlHolder').addClass('active');
-      		setTimeout(function(){
-      			$('section#KV .Contents .txtHolder .txtBlock').eq(0).addClass('active');
-      			setTimeout(function(){
-      				$('section#KV .Contents .txtHolder .txtBlock').eq(1).addClass('active');
-      				setTimeout(function(){
-      					$('section#KV .Contents .txtHolder .txtBlock').eq(2).addClass('active');
-      				}, 200);
-      			}, 200);
-      		}, 200);
-      	}, 1000);
-      	setTimeout(function(){
+      	
+      	function Loading01(){
       		$('section#KV .Section .Contents .movieHolder .movieBlock .cover').css({
       			'transform': 'translateX(-50%)',
       			'transition': '.5s'
       		});
       		$('body').removeClass('LoadingNow');
-      	}, 1800);
-      	setTimeout(function(){
+      	}
+      	function Loading02(){
       		$('section#KV .Section .Contents .movieHolder .movieBlock .cover').css({
-      			'transform': 'translateX(-100%)',
-      			'transition': '1s'
+      				'transform': 'translateX(-100%)',
+      				'transition': '1s'
       		});
-      	}, 2500);
-      	setTimeout(function(){
+      	}
+      	function Loading03(){
       		$('nav#sideMenu .Contents .LeftBlock, nav#sideMenu .Contents .RightBlock').css('transform', 'translate(0, 0)');
-      	}, 3500);
+      	}
+      
+      	if (windowWidth <= windowTB) {
+      	// TB
+      		setTimeout(function(){
+      			Loading01();
+      		},800);
+      		setTimeout(function(){
+      			Loading02();
+      		},1500);
+      		setTimeout(function(){
+      			Loading03();
+      		}, 2500);
+      	} else {
+      		setTimeout(function(){
+      			$('section#KV .Contents .ttlHolder').addClass('active');
+      			setTimeout(function(){
+      				$('section#KV .Contents .txtHolder .txtBlock').eq(0).addClass('active');
+      				setTimeout(function(){
+      					$('section#KV .Contents .txtHolder .txtBlock').eq(1).addClass('active');
+      					setTimeout(function(){
+      						$('section#KV .Contents .txtHolder .txtBlock').eq(2).addClass('active');
+      					}, 200);
+      				}, 200);
+      			}, 200);
+      		}, 1000);
+      		setTimeout(function(){
+      			Loading01();
+      		}, 1800);
+      		setTimeout(function(){
+      			Loading02();
+      		}, 2500);
+      		setTimeout(function(){
+      			Loading03();
+      		}, 3500);
+      	}
       	
       });
       
@@ -141,7 +168,7 @@
             <li class="BtoB"><a href=""><span>B to B </span><span>業務店様はこちら</span><span class="arrow"> </span></a></li>
           </ul>
         </div>
-        <div class="cw sp"></div>
+        <div class="cw sp">©2024. Brewing Peace, Blooming Smiles.</div>
       </div>
       <div class="Foot"> 
         <p><span>株式会社リレイ</span>　 広島県 広島市 中区 新天地 2-12</p>
@@ -216,6 +243,14 @@
         <div class="Section deviceHeight">
           <div class="Linear"></div>
           <div class="Contents widthM">
+            <div class="sec sp">
+              <div class="num flex"><span>0</span>
+                <div class="change"><span>0</span><span>1</span></div>
+              </div>
+              <div class="name">
+                <div class="change"><span>MESSAGE</span></div>
+              </div>
+            </div>
             <div class="Holder">
               <h2 class="Header spanAnim"><span class="row">ビールは平和だからこそ、おいしい</span></h2>
               <p class="slideUp">HIROSHIMA NEIGHBORLY BREWING（ヒロシマネイバリーブリューイング）は、広島の象徴である平和公園の東側、元安橋から本通りに入ってすぐ、広島の商業・文化の中心地の本通りにあり、2020年8月にOPENしました。<br>広島市内では一番大きな設備を構えるブルワリーです。</p>
@@ -232,7 +267,15 @@
       <section id="MainContents">
         <div class="Section">
           <div class="Linear"></div>
-          <div class="Contents widthM"><a class="Block Block01 slideUp targetBlank" href=""> 
+          <div class="Contents widthM">
+            <div class="sec sp">
+              <div class="num flex"><span>0</span>
+                <div class="change"><span>1</span><span>2</span></div>
+              </div>
+              <div class="name">
+                <div class="change"><span>main cotents</span></div>
+              </div>
+            </div><a class="Block Block01 slideUp targetBlank" href=""> 
               <div class="Header">
                 <div class="ttl">OUR BEER </div>
                 <div class="sub">HIROSHIMA NEIGHBORYLY BREWING  |  001</div>
@@ -292,6 +335,14 @@
         <div class="Section">
           <div class="Linear"></div>
           <div class="Contents widthM">
+            <div class="sec sp">
+              <div class="num flex"><span>0</span>
+                <div class="change"><span>2</span><span>3</span></div>
+              </div>
+              <div class="name">
+                <div class="change"><span>instagram</span></div>
+              </div>
+            </div>
             <h2 class="Header spanAnim"><span class="row">Our Instagram Feed! </span></h2>
             <div class="Holder"> <a class="Block targetBlank" href="https://www.instagram.com/p/C3otQ0BvLpK/">
                 <div class="img" style="background-image: url('assets/img/index/ig/00001.jpeg')"></div></a><a class="Block targetBlank" href="https://www.instagram.com/p/C3EwA4fvbO3/">
@@ -323,6 +374,14 @@
         <div class="Section">
           <div class="Linear"></div>
           <div class="Contents widthM">
+            <div class="sec sp">
+              <div class="num flex"><span>0</span>
+                <div class="change"><span>3</span><span>4</span></div>
+              </div>
+              <div class="name">
+                <div class="change"><span>news & now</span></div>
+              </div>
+            </div>
             <h2 class="Header spanAnim"><span class="row">NEWS & NOW</span></h2>
             <div class="Holder"> <a class="Block slideUp targetBlank" href=""><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></a><a class="Block slideUp targetBlank" href=""><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></a><a class="Block slideUp targetBlank" href=""><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></a><a class="Block slideUp targetBlank" href=""><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></a><a class="Block slideUp targetBlank" href=""><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></a></div>
           </div>
@@ -336,6 +395,14 @@
         <div class="Section">
           <div class="Linear"></div>
           <div class="Contents widthM">
+            <div class="sec sp">
+              <div class="num flex"><span>0</span>
+                <div class="change"><span>4</span><span>5</span></div>
+              </div>
+              <div class="name">
+                <div class="change"><span>visit us</span></div>
+              </div>
+            </div>
             <div class="Holder slideUp">
               <div class="textArea"> <a class="online targetBlank" href="">
                   <div class="Logo"> </div>
@@ -423,7 +490,7 @@
                 <li class="BtoB"><a href=""><span>B to B </span><span>業務店様はこちら</span><span class="arrow"> </span></a></li>
               </ul>
             </div>
-            <div class="cw sp"></div>
+            <div class="cw sp">©2024. Brewing Peace, Blooming Smiles.</div>
           </div>
           <div class="Foot"> 
             <p><span>株式会社リレイ</span>　 広島県 広島市 中区 新天地 2-12</p>
