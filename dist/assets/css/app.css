@@ -569,7 +569,7 @@ h2.Header.active .row .Split:nth-child(30) .SplitInner {
   right: 0;
   left: 0;
   margin: auto;
-  width: 10.5rem;
+  height: 10.75rem;
   aspect-ratio: 379/467;
   background-image: url("../img/common/Logo.png");
   pointer-events: auto;
@@ -1008,6 +1008,13 @@ nav#sideMenu .Contents .RightBlock:hover {
     cursor: pointer;
   }
 }
+nav#sideMenu .Contents .BottomBlock {
+  pointer-events: none;
+  -webkit-transform: translateY(8rem);
+          transform: translateY(8rem);
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+}
 
 #topPage section .Linear {
   width: 0;
@@ -1155,17 +1162,8 @@ nav#sideMenu .Contents .RightBlock:hover {
 }
 #topPage section#KV .Section .Contents .ttlHolder span {
   position: absolute;
-  font-family: bebas-neue, sans-serif;
-  font-style: normal;
-  -webkit-font-feature-settings: "palt";
-          font-feature-settings: "palt";
-  font-display: swap;
-  font-weight: 400;
-  font-size: 24.25rem;
-  line-height: 16.75rem;
-  z-index: 10;
-  padding: 0.5rem 0;
   overflow: hidden;
+  height: 17.15rem;
 }
 #topPage section#KV .Section .Contents .ttlHolder span::after {
   content: "";
@@ -1178,6 +1176,34 @@ nav#sideMenu .Contents .RightBlock:hover {
   bottom: 0;
   left: 0;
   margin: auto;
+}
+#topPage section#KV .Section .Contents .ttlHolder span.alpH {
+  background-image: url("../img/common/alpH.png");
+  aspect-ratio: 167/344;
+}
+#topPage section#KV .Section .Contents .ttlHolder span.alpI {
+  background-image: url("../img/common/alpI.png");
+  aspect-ratio: 53/344;
+}
+#topPage section#KV .Section .Contents .ttlHolder span.alpR {
+  background-image: url("../img/common/alpR.png");
+  aspect-ratio: 175/344;
+}
+#topPage section#KV .Section .Contents .ttlHolder span.alpO {
+  background-image: url("../img/common/alpO.png");
+  aspect-ratio: 15/32;
+}
+#topPage section#KV .Section .Contents .ttlHolder span.alpS {
+  background-image: url("../img/common/alpS.png");
+  aspect-ratio: 43/88;
+}
+#topPage section#KV .Section .Contents .ttlHolder span.alpM {
+  background-image: url("../img/common/alpM.png");
+  aspect-ratio: 241/344;
+}
+#topPage section#KV .Section .Contents .ttlHolder span.alpA {
+  background-image: url("../img/common/alpA.png");
+  aspect-ratio: 47/86;
 }
 #topPage section#KV .Section .Contents .ttlHolder span:nth-child(1) {
   top: -0.5rem;
@@ -2359,8 +2385,8 @@ footer#Footer .Section .Foot p span {
     display: block;
   }
   body #Header {
-    padding: 2.5rem 0;
-    height: 14rem;
+    padding: 1.8rem 0;
+    height: 12rem;
     background-color: #EFEFEF;
   }
   body #Header .Contents .copy {
@@ -2368,6 +2394,7 @@ footer#Footer .Section .Foot p span {
   }
   body #Header .Contents .Logo {
     background-image: url("../img/common/LogoWide.png");
+    height: auto;
     width: 12.1rem;
     aspect-ratio: 433/311;
     mix-blend-mode: multiply;
@@ -2418,6 +2445,83 @@ footer#Footer .Section .Foot p span {
   body nav#sideMenu .Contents .RightBlock .menuOpen span {
     font-size: 1.4rem;
     color: rgb(35, 24, 21);
+  }
+  body nav#sideMenu .Contents .BottomBlock {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 8rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: flex !important;
+    gap: 1px;
+    pointer-events: auto;
+  }
+  body nav#sideMenu .Contents .BottomBlock li {
+    width: calc((100% - 3px) / 4);
+    height: 100%;
+    background-color: rgb(35, 24, 21);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+  }
+  body nav#sideMenu .Contents .BottomBlock li::before {
+    content: "";
+    background-size: 100% 100%;
+    position: absolute;
+    top: 1.25rem;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+  body nav#sideMenu .Contents .BottomBlock li span {
+    font-family: roboto, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-size: 1.25rem;
+    padding: 3.5rem 0 0;
+  }
+  body nav#sideMenu .Contents .BottomBlock li.OurBeer::before {
+    background-image: url("../img/common/iconOurBeer.png");
+    height: 3.1rem;
+    aspect-ratio: 46/63;
+  }
+  body nav#sideMenu .Contents .BottomBlock li.OurConcept::before {
+    background-image: url("../img/common/iconOurConcept.png");
+    height: 2.9rem;
+    aspect-ratio: 44/59;
+  }
+  body nav#sideMenu .Contents .BottomBlock li.Instagram::before {
+    background-image: url("../img/common/iconInstagram.png");
+    height: 2.7rem;
+    aspect-ratio: 56/55;
+  }
+  body nav#sideMenu .Contents .BottomBlock li.VisitUs::before {
+    background-image: url("../img/common/iconVisitUs.png");
+    height: 2.65rem;
+    aspect-ratio: 68/55;
   }
   body nav#sideMenu.KV .Contents .LeftBlock .LinkHolder .online .icon {
     -webkit-filter: brightness(0) invert(1);
@@ -2605,13 +2709,13 @@ footer#Footer .Section .Foot p span {
         -ms-flex-align: center;
             align-items: center;
     gap: 1rem;
-    margin: 0 0 0.3rem -0.35rem;
+    margin: 0 0 1rem -0.35rem;
   }
   body#topPage section#MainContents .Section .Contents .Block.Block03 h3 span {
     width: auto;
   }
   body#topPage section#MainContents .Section .Contents .Block.Block03 .ttl {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   body#topPage section#MainContents .Section .Contents .Block.Block03 .sub {
     margin: 1.95rem 0 0;
@@ -3097,18 +3201,24 @@ footer#Footer .Section .Foot p span {
     position: absolute;
     bottom: 0;
   }
+  body#topPage section .sec {
+    top: 6.5rem;
+  }
   body#topPage section .sec .num {
-    font-size: 7rem;
-    width: 5.5rem;
+    font-size: 12rem;
+    width: 9.25rem;
   }
   body#topPage section .sec .num .change {
-    width: 3rem;
+    width: 4.5rem;
   }
   body#topPage section .sec .name {
-    margin: -0.5rem 0 0;
+    margin: 1rem 0 0;
   }
   body#topPage section#KV .Section .Contents .Logo {
     width: 58.94%;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .sec {
+    top: -16rem;
   }
   body#topPage section#ConceptMovie .Section .Contents .Holder .Header {
     width: 27rem;

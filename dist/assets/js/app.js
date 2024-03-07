@@ -179,42 +179,42 @@ $(window).on('load', function() {
 		}
 
 		var posKV = 0;
-		var pos01 = Math.round($("#ConceptMovie").offset().top) - headerH;
-		var pos02 = Math.round($("#MainContents").offset().top) - headerH;
-		var pos03 = Math.round($("#Instagram").offset().top) - headerH;
-		var pos04 = Math.round($("#News").offset().top) - headerH;
-		var pos05 = Math.round($("#VisitUs").offset().top) - headerH;
-		var posFooter = Math.round($("#Footer").offset().top) - headerH;
+		var pos01 = Math.round($("#ConceptMovie").offset().top);
+		var pos02 = Math.round($("#MainContents").offset().top);
+		var pos03 = Math.round($("#Instagram").offset().top);
+		var pos04 = Math.round($("#News").offset().top);
+		var pos05 = Math.round($("#VisitUs").offset().top);
+		var posFooter = Math.round($("#Footer").offset().top);
 
 		var headerSec = $('#Header .Contents .sec');
 
 		$(window).on('scroll',function(){
 			var posScroll = $(window).scrollTop();
 
-			if(posKV <= posScroll && posScroll < pos01) {
+			if(posKV <= posScroll && posScroll < pos01  - headerH) {
 				$('#Header').addClass('KV');
 				$('nav#sideMenu').addClass('KV');
 				headerSec.removeClass('sec01');
 				headerSec.addClass('secKV');
-			} else if(pos01 <= posScroll && posScroll < pos02) {
+			} else if(pos01  - headerH <= posScroll && posScroll < pos02 - headerH) {
 				$('#Header').removeClass('KV');
 				$('nav#sideMenu').removeClass('KV');
 				headerSec.removeClass('secKV');
 				headerSec.removeClass('sec02');
 				headerSec.addClass('sec01');
-			} else if(pos02 <= posScroll && posScroll < pos03) {
+			} else if(pos02 - headerH <= posScroll && posScroll < pos03 - headerH) {
 				headerSec.removeClass('sec01');
 				headerSec.removeClass('sec03');
 				headerSec.addClass('sec02');
-			} else if(pos03 <= posScroll && posScroll < pos04) {
+			} else if(pos03 - headerH <= posScroll && posScroll < pos04 - headerH) {
 				headerSec.removeClass('sec02');
 				headerSec.removeClass('sec04');
 				headerSec.addClass('sec03');
-			} else if(pos04 <= posScroll && posScroll < pos05) {
+			} else if(pos04 - headerH <= posScroll && posScroll < pos05 - headerH) {
 				headerSec.removeClass('sec03');
 				headerSec.removeClass('sec05');
 				headerSec.addClass('sec04');
-			} else if(pos05 <= posScroll && posScroll) {
+			} else if(pos05 - headerH <= posScroll && posScroll) {
 				headerSec.removeClass('sec04');
 				headerSec.addClass('sec05');
 			}
@@ -240,18 +240,35 @@ $(window).on('load', function() {
 		});
 
 
-		if (windowWidth <= windowTB) {
-		} else {
-			$(window).on('scroll',function(){
-				var posScroll = $(window).scrollTop();
-				var scrollNum = 1 + ((posScroll - pos01)) / 800;
-				if(1 <= scrollNum && scrollNum < 2) {
-					$('#topPage section#ConceptMovie .Section .Contents .bg').css('transform', 'scale('+scrollNum+')');
-				} else if(1 <= scrollNum && scrollNum > 2) {
-					$('#topPage section#ConceptMovie .Section .Contents .bg').css('transform', 'scale(2)');
-				}
-			});
-		}
+
+		var posOurBeer = Math.round($("#OurBeer").offset().top);
+		var posOurConcept = Math.round($("#OurConcept").offset().top);
+		$('.BottomBlock li').on('click', function(){
+			var speed = 600;
+			if($(this).hasClass('OurBeer')) {
+				$('body,html').animate({scrollTop:posOurBeer - headerH}, speed, 'swing');
+			} else if($(this).hasClass('OurConcept')) {
+				$('body,html').animate({scrollTop:posOurConcept - headerH}, speed, 'swing');
+			} else if($(this).hasClass('Instagram')) {
+				$('body,html').animate({scrollTop:pos03 - headerH}, speed, 'swing');
+			} else if($(this).hasClass('VisitUs')) {
+				$('body,html').animate({scrollTop:pos05 - headerH}, speed, 'swing');
+			}
+		});
+
+
+		// if (windowWidth <= windowTB) {
+		// } else {
+		// 	$(window).on('scroll',function(){
+		// 		var posScroll = $(window).scrollTop();
+		// 		var scrollNum = 1 + ((posScroll - pos01)) / 800;
+		// 		if(1 <= scrollNum && scrollNum < 2) {
+		// 			$('#topPage section#ConceptMovie .Section .Contents .bg').css('transform', 'scale('+scrollNum+')');
+		// 		} else if(1 <= scrollNum && scrollNum > 2) {
+		// 			$('#topPage section#ConceptMovie .Section .Contents .bg').css('transform', 'scale(2)');
+		// 		}
+		// 	});
+		// }
 
 
 

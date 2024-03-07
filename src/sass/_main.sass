@@ -266,7 +266,8 @@ h2.Header
 			right: 0
 			left: 0
 			margin: auto
-			width: 10.5rem
+			// width: 10.5rem
+			height: 10.75rem
 			aspect-ratio: 379 / 467
 			background-image: url('#{$path}common/Logo.png')
 			pointer-events: auto
@@ -465,6 +466,7 @@ nav#sideMenu
 	width: 100%
 	height: 100%
 	.Contents 
+		
 		.LeftBlock 
 			width: 4.6rem
 			height: 21.5rem
@@ -520,6 +522,7 @@ nav#sideMenu
 							background-image: url('#{$path}common/snsNote.png')
 							width: 1.9rem
 							aspect-ratio: 1 / 1
+
 		.RightBlock 
 			width: 9rem
 			height: 16.9rem
@@ -556,6 +559,10 @@ nav#sideMenu
 				@include hover
 				width: 10rem
 
+		.BottomBlock
+			pointer-events: none
+			transform: translateY(8rem)
+			transition: 0.75s
 
 
 
@@ -666,12 +673,13 @@ nav#sideMenu
 					height: 100%
 					span
 						position: absolute
-						@include fontBebas
-						font-size: 24.25rem
-						line-height: 16.75rem
-						z-index: 10
-						padding: .5rem 0
+						// @include fontBebas
+						// font-size: 24.25rem
+						// line-height: 16.75rem
+						// z-index: 10
+						// padding: .5rem 0
 						overflow: hidden
+						height: 17.15rem
 						&::after
 							content: ''
 							width: 100%
@@ -683,6 +691,27 @@ nav#sideMenu
 							bottom: 0
 							left: 0
 							margin: auto
+						&.alpH 
+							background-image: url('#{$path}common/alpH.png')
+							aspect-ratio: 167 / 344
+						&.alpI
+							background-image: url('#{$path}common/alpI.png')
+							aspect-ratio: 53 / 344
+						&.alpR
+							background-image: url('#{$path}common/alpR.png')
+							aspect-ratio: 175 / 344
+						&.alpO
+							background-image: url('#{$path}common/alpO.png')
+							aspect-ratio: 15 / 32
+						&.alpS
+							background-image: url('#{$path}common/alpS.png')
+							aspect-ratio: 43 / 88
+						&.alpM
+							background-image: url('#{$path}common/alpM.png')
+							aspect-ratio: 241 / 344
+						&.alpA
+							background-image: url('#{$path}common/alpA.png')
+							aspect-ratio: 47 / 86
 						&:nth-child(1)
 							top: -.5rem
 							left: 0

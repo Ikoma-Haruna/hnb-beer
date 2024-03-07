@@ -45,7 +45,7 @@
       		});
       	}
       	function Loading03(){
-      		$('nav#sideMenu .Contents .LeftBlock, nav#sideMenu .Contents .RightBlock').css('transform', 'translate(0, 0)');
+      		$('nav#sideMenu .Contents .LeftBlock, nav#sideMenu .Contents .RightBlock, nav#sideMenu .Contents .BottomBlock').css('transform', 'translate(0, 0)');
       	}
       
       	if (windowWidth <= windowTB) {
@@ -193,6 +193,12 @@
           <div class="icon"></div><span>menu</span>
         </div>
       </div>
+      <ul class="BottomBlock sp">
+        <li class="OurBeer"><span>our beer</span></li>
+        <li class="OurConcept"><span>our concept</span></li>
+        <li class="Instagram"><span>instagram</span></li>
+        <li class="VisitUs"><span>visit us</span></li>
+      </ul>
     </div>
   </nav>
   <div id="wrapper">
@@ -201,7 +207,7 @@
         <div class="Section deviceHeight">
           <div class="Contents"> 
             <div class="Logo"></div>
-            <h1 class="ttlHolder"><span>H </span><span>I</span><span>R</span><span>O</span><span>S</span><span>H </span><span>I</span><span>M</span><span>A</span></h1>
+            <h1 class="ttlHolder"><span class="alpH"> </span><span class="alpI"></span><span class="alpR"></span><span class="alpO"></span><span class="alpS"></span><span class="alpH"> </span><span class="alpI"></span><span class="alpM"></span><span class="alpA"></span></h1>
             <div class="txtHolder">
               <div class="txtBlock">CRAFT<br>BEER &<br>ORIGINAL<br>GOODS</div>
               <div class="txtBlock">RESTAURANT<br>SHOP<br>WEB SHOP<br>FACTORY</div>
@@ -275,7 +281,7 @@
               <div class="name">
                 <div class="change"><span>main cotents</span></div>
               </div>
-            </div><a class="Block Block01 slideUp targetBlank" href=""> 
+            </div><a class="Block Block01 slideUp targetBlank" id="OurBeer" href=""> 
               <div class="Header">
                 <div class="ttl">OUR BEER </div>
                 <div class="sub">HIROSHIMA NEIGHBORYLY BREWING  |  001</div>
@@ -295,7 +301,7 @@
                   <div class="more">View More </div>
                 </div>
                 <div class="bg" style="background-image: url('assets/img/index/main00002.jpg');"></div></a>
-              <div class="inBlock"><a class="Block Block03 slideUp targetBlank" href="">
+              <div class="inBlock"><a class="Block Block03 slideUp targetBlank" id="OurConcept" href="">
                   <div class="Header">
                     <h3><span>our </span><span>concept</span></h3>
                     <div class="ttl">FROM HIROSHIMA JAPAN.</div>
@@ -383,7 +389,13 @@
               </div>
             </div>
             <h2 class="Header spanAnim"><span class="row">NEWS & NOW</span></h2>
-            <div class="Holder"> <a class="Block slideUp targetBlank" href=""><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></a><a class="Block slideUp targetBlank" href=""><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></a><a class="Block slideUp targetBlank" href=""><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></a><a class="Block slideUp targetBlank" href=""><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></a><a class="Block slideUp targetBlank" href=""><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></a></div>
+            <div class="Holder"> 
+              <div class="Block slideUp"><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></div>
+              <div class="Block slideUp"><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></div>
+              <div class="Block slideUp"><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></div>
+              <div class="Block slideUp"><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></div>
+              <div class="Block slideUp"><span class="date">2024.00.00</span><span class="ttl">グラス付きセットの販売を開始いたしました！</span></div>
+            </div>
           </div>
           <ul class="Footer"> 
             <li><a class="andMore targetBlank" href="https://note.com/hiroshima_hnb/">And More</a></li>
