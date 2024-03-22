@@ -1481,6 +1481,32 @@ nav#sideMenu .Contents .BottomBlock {
   position: absolute;
   overflow: hidden;
 }
+#topPage section#KV .Section .Contents .movieHolder .movieBlock .cover {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#topPage section#KV .Section .Contents .movieHolder .movieBlock .cover .white {
+  width: 50%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+#topPage section#KV .Section .Contents .movieHolder .movieBlock .cover .black {
+  width: 50%;
+  height: 100%;
+  background-color: rgb(35, 24, 21);
+}
 #topPage section#KV .Section .Contents .movieHolder .movieBlock .img {
   width: 100%;
   height: 100%;
