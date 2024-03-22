@@ -674,12 +674,12 @@ h2.Header.active .row .Split:nth-child(30) .SplitInner {
   z-index: 6;
   pointer-events: none;
   height: 100%;
-  width: 35rem;
+  width: 95.5rem;
   background-color: rgb(35, 24, 21);
   top: 0;
   right: 0;
-  -webkit-transform: translateX(35rem);
-          transform: translateX(35rem);
+  -webkit-transform: translateX(95.5rem);
+          transform: translateX(95.5rem);
   -webkit-transition: 1s;
   transition: 1s;
   display: -webkit-box;
@@ -687,9 +687,12 @@ h2.Header.active .row .Split:nth-child(30) .SplitInner {
   display: flex;
 }
 #Menu .menuClose {
-  width: 9rem;
-  height: 100%;
-  background-color: rgb(35, 24, 21);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8rem;
+  aspect-ratio: 160/172;
+  background-color: #fdd000;
   pointer-events: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -706,11 +709,26 @@ h2.Header.active .row .Split:nth-child(30) .SplitInner {
       flex-wrap: wrap;
 }
 #Menu .menuClose .icon {
-  background-image: url("../img/common/arrowW.png");
-  width: 2.5rem;
+  width: 1.6rem;
   aspect-ratio: 1/1;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  position: relative;
+}
+#Menu .menuClose .icon span {
+  position: absolute;
+  width: 2.2rem;
+  height: 1px;
+  background-color: rgb(35, 24, 21);
+  margin: 0;
+  top: 50%;
+  left: -15%;
+}
+#Menu .menuClose .icon span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+#Menu .menuClose .icon span:nth-child(2) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 #Menu .menuClose span {
   font-family: roboto, sans-serif;
@@ -720,11 +738,11 @@ h2.Header.active .row .Split:nth-child(30) .SplitInner {
   font-display: swap;
   font-weight: 700;
   font-size: 1rem;
-  color: rgb(255, 255, 255);
+  color: rgb(35, 24, 21);
   text-transform: uppercase;
   width: 100%;
   text-align: center;
-  margin: 1rem 0 0;
+  margin: 1rem 0 0 0.25rem;
 }
 @media (hover: hover) {
   #Menu .menuClose:hover {
@@ -734,11 +752,34 @@ h2.Header.active .row .Split:nth-child(30) .SplitInner {
 #Menu .Section {
   width: calc(100% - 9rem);
   height: 100%;
-  padding: 0 5rem 0 4.6rem;
+  padding: 8rem 7.5rem;
 }
 #Menu .Section .Contents {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+#Menu .Section .Contents .ConpanyMenu {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 100%;
+  margin: 3.25rem 0 8.75rem;
+}
+#Menu .Section .Contents .ConpanyMenu .Logo, #Menu .Section .Contents .ConpanyMenu .cw, #Menu .Section .Contents .ConpanyMenu .BtoB {
+  display: none;
+}
+#Menu .Section .Contents .ConpanyMenu .LinkHolder {
+  width: 25rem;
+  margin: 0 0 0.5rem;
+}
+#Menu .Section .Contents .ConpanyMenu .LinkHolder ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -748,11 +789,46 @@ h2.Header.active .row .Split:nth-child(30) .SplitInner {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
-#Menu .Section .Contents .ConpanyMenu {
-  display: none;
+#Menu .Section .Contents .ConpanyMenu .LinkHolder ul li {
+  background-size: 100% 100%;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+#Menu .Section .Contents .ConpanyMenu .LinkHolder ul li a {
+  width: 100%;
+  height: 100%;
+  color: rgb(35, 24, 21);
+}
+#Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.ig {
+  background-image: url("../img/common/snsIG.png");
+  height: 2.6rem;
+  aspect-ratio: 1/1;
+}
+#Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.x {
+  background-image: url("../img/common/snsX.png");
+  height: 2.6rem;
+  aspect-ratio: 1/1;
+}
+#Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.fb {
+  background-image: url("../img/common/snsFB.png");
+  height: 2.6rem;
+  aspect-ratio: 21/40;
+}
+#Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.note {
+  background-image: url("../img/common/snsNoteWide.png");
+  height: 4rem;
+  aspect-ratio: 218/83;
 }
 #Menu .Section .Contents .MainMenu {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
   font-family: roboto, sans-serif;
   font-style: normal;
   -webkit-font-feature-settings: "palt";
@@ -763,9 +839,10 @@ h2.Header.active .row .Split:nth-child(30) .SplitInner {
   display: none;
 }
 #Menu .Section .Contents .MainMenu li {
-  font-size: 2rem;
-  line-height: 4rem;
+  font-size: 5rem;
+  line-height: 5rem;
   overflow: hidden;
+  text-transform: uppercase;
 }
 #Menu .Section .Contents .MainMenu li a {
   color: rgb(255, 255, 255);
@@ -774,48 +851,95 @@ h2.Header.active .row .Split:nth-child(30) .SplitInner {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-#Menu .Section .Contents .MainMenu li a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2rem;
-  background-color: rgb(255, 255, 255);
-  top: 0;
-  left: 0;
-  bottom: 0;
-  margin: auto;
-  -webkit-transform: translateX(-101%);
-          transform: translateX(-101%);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  z-index: -1;
-}
 #Menu .Section .Contents .MainMenu li.clickNone {
   opacity: 0.2;
 }
 #Menu .Section .Contents .MainMenu li:hover a {
+  color: #fdd000;
+}
+#Menu .Section .Contents .online {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  width: 11.5rem;
+  background-color: rgb(255, 255, 255);
+  aspect-ratio: 230/345;
+  border-radius: 0.5rem;
   color: rgb(35, 24, 21);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
-#Menu .Section .Contents .MainMenu li:hover a::after {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+#Menu .Section .Contents .online .icon {
+  background-image: url("../img/common/iconEC.png");
+  width: 4.3rem;
+  aspect-ratio: 57/50;
+  margin: 0 1rem 1rem 0;
 }
-#Menu .Section .Contents .MainMenu li.BtoB {
-  line-height: 1rem;
-  margin: 8rem 0 0;
-  overflow: unset;
-}
-#Menu .Section .Contents .MainMenu li.BtoB a span {
-  display: inline-block;
+#Menu .Section .Contents .online span {
+  text-decoration: underline;
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 2.5rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-#Menu .Section .Contents .MainMenu li.BtoB a span:nth-child(1) {
-  font-weight: 400;
-  font-size: 4rem;
-  margin: 0 0 0 -0.25rem;
+#Menu .Section .Contents .online:hover span {
+  letter-spacing: 0.1em;
 }
-#Menu .Section .Contents .MainMenu li.BtoB a span:nth-child(2) {
+#Menu .Section .Contents .BtoB {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+  line-height: 1rem;
+  overflow: unset;
+  width: 24.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  margin: 0 0 0 7rem;
+}
+#Menu .Section .Contents .BtoB span {
+  display: inline-block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: rgb(255, 255, 255);
+}
+#Menu .Section .Contents .BtoB span:nth-child(1) {
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-weight: 200;
+  font-size: 4rem;
+  margin: 0 0 3.7rem -0.75rem;
+  font-size: 11rem;
+  line-height: 7.5rem;
+  letter-spacing: -0.065em;
+}
+#Menu .Section .Contents .BtoB span:nth-child(2) {
   font-family: noto-sans-cjk-jp, sans-serif;
   font-style: normal;
   -webkit-font-feature-settings: "palt";
@@ -823,19 +947,19 @@ h2.Header.active .row .Split:nth-child(30) .SplitInner {
   font-display: swap;
   font-weight: 300;
   font-size: 1.15rem;
-  margin: 1.2rem 0 2rem;
   letter-spacing: 0.18em;
 }
-#Menu .Section .Contents .MainMenu li.BtoB a span.arrow {
+#Menu .Section .Contents .BtoB span.arrow {
   background-image: url("../img/common/arrowLW.png");
   background-size: 100% 100%;
-  width: 13rem;
+  width: 12rem;
   aspect-ratio: 267/16;
+  margin: 0 0 0 0.5rem;
 }
-#Menu .Section .Contents .MainMenu li.BtoB a::after {
+#Menu .Section .Contents .BtoB::after {
   display: none;
 }
-#Menu .Section .Contents .MainMenu li.BtoB:hover span:nth-child(1), #Menu .Section .Contents .MainMenu li.BtoB:hover span:nth-child(2) {
+#Menu .Section .Contents .BtoB:hover span:nth-child(1), #Menu .Section .Contents .BtoB:hover span:nth-child(2) {
   padding: 0 0 0 1rem;
 }
 #Menu .Section .Foot {
@@ -941,7 +1065,7 @@ nav#sideMenu .Contents .LeftBlock .LinkHolder ul li.note {
 nav#sideMenu .Contents .RightBlock {
   width: 9rem;
   height: 16.9rem;
-  background-color: rgb(35, 24, 21);
+  background-color: #fdd000;
   pointer-events: auto;
   position: absolute;
   top: 0;
@@ -982,9 +1106,26 @@ nav#sideMenu .Contents .RightBlock .menuOpen {
       flex-wrap: wrap;
 }
 nav#sideMenu .Contents .RightBlock .menuOpen .icon {
-  background-image: url("../img/common/arrowW.png");
-  width: 2.5rem;
-  aspect-ratio: 1/1;
+  width: 3.9rem;
+  aspect-ratio: 78/13;
+  position: relative;
+}
+nav#sideMenu .Contents .RightBlock .menuOpen .icon span {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(35, 24, 21);
+  position: absolute;
+  margin: 0;
+}
+nav#sideMenu .Contents .RightBlock .menuOpen .icon span:nth-child(1) {
+  top: 0;
+}
+nav#sideMenu .Contents .RightBlock .menuOpen .icon span:nth-child(2) {
+  top: 50%;
+}
+nav#sideMenu .Contents .RightBlock .menuOpen .icon span:nth-child(3) {
+  top: 100%;
 }
 nav#sideMenu .Contents .RightBlock .menuOpen span {
   font-family: roboto, sans-serif;
@@ -994,7 +1135,7 @@ nav#sideMenu .Contents .RightBlock .menuOpen span {
   font-display: swap;
   font-weight: 700;
   font-size: 1rem;
-  color: rgb(255, 255, 255);
+  color: rgb(35, 24, 21);
   text-transform: uppercase;
   width: 100%;
   text-align: center;
@@ -1340,74 +1481,44 @@ nav#sideMenu .Contents .BottomBlock {
   position: absolute;
   overflow: hidden;
 }
-#topPage section#KV .Section .Contents .movieHolder .movieBlock video {
-  height: 100%;
-}
-#topPage section#KV .Section .Contents .movieHolder .movieBlock .ttl {
-  font-family: roboto, sans-serif;
-  font-style: normal;
-  -webkit-font-feature-settings: "palt";
-          font-feature-settings: "palt";
-  font-display: swap;
-  font-weight: 300;
-  font-size: 1rem;
-  color: rgb(255, 255, 255);
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-}
-#topPage section#KV .Section .Contents .movieHolder .movieBlock::before {
-  content: "";
-  background-image: url("../img/common/cover.png");
+#topPage section#KV .Section .Contents .movieHolder .movieBlock .img {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-size: 100% auto;
-  mix-blend-mode: color-burn;
+  opacity: 0;
 }
-#topPage section#KV .Section .Contents .movieHolder .movieBlock .cover {
-  position: absolute;
-  width: 200%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-#topPage section#KV .Section .Contents .movieHolder .movieBlock .cover .white {
-  width: 50%;
-  height: 100%;
-  background-color: rgb(255, 255, 255);
-}
-#topPage section#KV .Section .Contents .movieHolder .movieBlock .cover .black {
-  width: 50%;
-  height: 100%;
-  background-color: rgb(35, 24, 21);
+#topPage section#KV .Section .Contents .movieHolder .movieBlock .img.active {
+  opacity: 1;
 }
 #topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(1) {
   width: 37.5rem;
-  aspect-ratio: 750/422;
+  aspect-ratio: 750/502;
   top: 0;
   left: 16.95rem;
 }
+#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(1) .img {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
 #topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(2) {
   width: 20.5rem;
-  aspect-ratio: 401/225;
+  aspect-ratio: 229/130;
   top: 49.5%;
   left: 27.3rem;
 }
+#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(2) .img {
+  -webkit-transition: 1s;
+  transition: 1s;
+}
 #topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(3) {
   width: 31.2rem;
-  height: 65.25%;
+  aspect-ratio: 349/620;
   bottom: 0;
   right: 0;
+}
+#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(3) .img {
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
 }
 #topPage section#KV .Section .Footer {
   bottom: 3.25rem;
@@ -1433,6 +1544,10 @@ nav#sideMenu .Contents .BottomBlock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow: hidden;
 }
 #topPage section#ConceptMovie .Section .Contents .Holder {
   position: absolute;
@@ -1442,6 +1557,17 @@ nav#sideMenu .Contents .BottomBlock {
           font-feature-settings: "palt";
   font-display: swap;
   color: rgb(255, 255, 255);
+  margin: 0 7.5rem;
+}
+#topPage section#ConceptMovie .Section .Contents .Holder .ttlEN {
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-weight: 700;
+  font-size: 3.35rem;
+  margin: 0 auto 8.75rem 0;
 }
 #topPage section#ConceptMovie .Section .Contents .Holder .Header {
   font-weight: 700;
@@ -1455,9 +1581,16 @@ nav#sideMenu .Contents .BottomBlock {
   font-size: 1.35rem;
   line-height: 2.6rem;
   letter-spacing: 0.12em;
-  width: 26rem;
-  margin: 5.55rem auto 0;
+  margin: 1.05rem auto 0 0;
   word-break: break-all;
+}
+#topPage section#ConceptMovie .Section .Contents .btn {
+  background-image: url("../img/index/BtnConcept.png");
+  width: 14rem;
+  aspect-ratio: 287/307;
+  position: absolute;
+  top: 13rem;
+  right: 8rem;
 }
 #topPage section#ConceptMovie .Section .Contents .bg {
   position: absolute;
@@ -1465,9 +1598,14 @@ nav#sideMenu .Contents .BottomBlock {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
-#topPage section#ConceptMovie .Section .Contents .bg video {
+#topPage section#ConceptMovie .Section .Contents .bg img {
+  position: absolute;
+  width: 100%;
   height: 100%;
+  z-index: -1;
 }
 #topPage section#ConceptMovie .Section .Contents .bg::before {
   content: "";
@@ -1477,6 +1615,10 @@ nav#sideMenu .Contents .BottomBlock {
   position: absolute;
   background-size: cover;
   mix-blend-mode: color-burn;
+}
+#topPage section#ConceptMovie .Section .Contents:hover .bg {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 #topPage section#MainContents .Section {
   padding: 19.5rem 0;
@@ -1517,13 +1659,16 @@ nav#sideMenu .Contents .BottomBlock {
 #topPage section#MainContents .Section .Contents .Block .Header .ttl {
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 1.75rem;
+  font-size: 2.5rem;
 }
 #topPage section#MainContents .Section .Contents .Block .Header .sub {
   font-weight: 300;
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 1rem;
   margin: 0.95rem 0 0;
+}
+#topPage section#MainContents .Section .Contents .Block .Header .sub span {
+  font-weight: 500;
 }
 #topPage section#MainContents .Section .Contents .Block .text {
   margin: 3.75rem auto 0 0;
@@ -1607,6 +1752,9 @@ nav#sideMenu .Contents .BottomBlock {
       -ms-flex-order: 1;
           order: 1;
 }
+#topPage section#MainContents .Section .Contents .Block.Block01 .Header .ttl {
+  font-size: 9rem;
+}
 #topPage section#MainContents .Section .Contents .Block.Block01 .text {
   width: 39.47%;
 }
@@ -1616,6 +1764,9 @@ nav#sideMenu .Contents .BottomBlock {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+}
+#topPage section#MainContents .Section .Contents .Block.Block02 .Header .ttl {
+  font-size: 4.9rem;
 }
 #topPage section#MainContents .Section .Contents .Block.Block02 .text {
   width: 66.47%;
@@ -1635,6 +1786,9 @@ nav#sideMenu .Contents .BottomBlock {
           transform: translateY(0);
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+#topPage section#MainContents .Section .Contents .Block.Block03 .Header .ttl {
+  font-size: 7.5rem;
 }
 #topPage section#MainContents .Section .Contents .Block.Block03 .text {
   position: absolute;
@@ -1771,6 +1925,33 @@ nav#sideMenu .Contents .BottomBlock {
   -webkit-animation: ig 0.75s linear 0.55s 1 forwards;
           animation: ig 0.75s linear 0.55s 1 forwards;
 }
+#topPage section#Instagram .Section .Contents .ig {
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: rgb(35, 24, 21);
+  padding: 6rem 0 0 1rem;
+  position: relative;
+  width: 17rem;
+  margin: 6.5rem auto 0;
+  display: block;
+}
+#topPage section#Instagram .Section .Contents .ig::before {
+  content: "";
+  background-image: url("../img/common/snsIG.png");
+  background-size: 100% 100%;
+  width: 5rem;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
 #topPage section#News .Section {
   padding: 19.5rem 0;
 }
@@ -1839,10 +2020,10 @@ nav#sideMenu .Contents .BottomBlock {
 #topPage section#News .Section .Contents .Holder .Block:last-child {
   margin: 0;
 }
-#topPage section#VisitUs .Section {
+#topPage section#ShopAccess .Section {
   padding: 19.5rem 0;
 }
-#topPage section#VisitUs .Section .Contents {
+#topPage section#ShopAccess .Section .Contents {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1850,17 +2031,19 @@ nav#sideMenu .Contents .BottomBlock {
       flex-wrap: wrap;
   gap: 8rem;
 }
-#topPage section#VisitUs .Section .Contents .Holder {
-  width: 100%;
+#topPage section#ShopAccess .Section .Contents .Holder {
+  width: 45.19%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea {
-  width: 45.19%;
+#topPage section#ShopAccess .Section .Contents .Holder .textArea {
+  width: 100%;
   font-family: roboto, sans-serif;
   font-style: normal;
   -webkit-font-feature-settings: "palt";
@@ -1868,8 +2051,9 @@ nav#sideMenu .Contents .BottomBlock {
   font-display: swap;
   font-weight: 700;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .online {
-  width: 100%;
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .online {
+  width: calc(100% - 0.5rem);
+  aspect-ratio: 929/322;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1883,14 +2067,18 @@ nav#sideMenu .Contents .BottomBlock {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0 0 3.4rem;
+  border: 1px solid rgb(35, 24, 21);
+  background-color: rgb(255, 255, 255);
+  padding: 1rem 4rem 0 6rem;
+  position: relative;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .online .Logo {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .online .Logo {
   background-image: url("../img/common/LogoWide.png");
-  width: 45.85%;
+  width: 17rem;
   aspect-ratio: 433/311;
   margin: -1.25rem 0 0 -1.25rem;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .online .arrow {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .online .icon {
   width: 50.53%;
   font-size: 2.15rem;
   text-transform: uppercase;
@@ -1900,21 +2088,49 @@ nav#sideMenu .Contents .BottomBlock {
   margin: 0 0 2.25rem;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .online .arrow::after {
-  content: "";
-  background-image: url("../img/common/arrowLB.png");
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .online .icon span {
+  display: inline-block;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .online .icon span:nth-child(1) {
+  background-image: url("../img/common/iconEC.png");
+  width: 4.4rem;
+  aspect-ratio: 57/50;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .online .icon span:nth-child(2) {
   width: 100%;
-  aspect-ratio: 477/47;
+  margin: 1.5rem auto 0;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .online::after {
+  content: "";
   position: absolute;
-  bottom: -1rem;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(35, 24, 21);
+  background-color: rgb(255, 255, 255);
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: -1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .online:hover::after {
+  top: 0;
   left: 0;
-  background-size: 100% 100%;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .online:hover .arrow {
-  padding: 0 0 0 1rem;
-}
-#topPage section#VisitUs .Section .Contents .Holder .textArea .cat {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .cat {
   width: 100%;
   aspect-ratio: 940/62;
   background-color: rgb(35, 24, 21);
@@ -1935,7 +2151,7 @@ nav#sideMenu .Contents .BottomBlock {
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1947,27 +2163,27 @@ nav#sideMenu .Contents .BottomBlock {
           align-items: flex-start;
   margin: 2.5rem 0 0;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .Logo {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .Logo {
   border: 1px solid rgb(35, 24, 21);
-  width: 40.31%;
+  width: 32.23%;
   aspect-ratio: 1/1;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock {
-  width: 50%;
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock {
+  width: 60%;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .name {
   margin: 0 0 1.6rem;
   padding: 0 0 1.6rem;
   border-bottom: 1px solid rgb(35, 24, 21);
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name span {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .name span {
   display: inline-block;
   width: 100%;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(1) {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(1) {
   font-size: 1.5rem;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(2) {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(2) {
   font-family: noto-sans-cjk-jp, sans-serif;
   font-style: normal;
   -webkit-font-feature-settings: "palt";
@@ -1977,72 +2193,253 @@ nav#sideMenu .Contents .BottomBlock {
   font-size: 2.65rem;
   margin: 0.25rem 0 0;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .address {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .address {
   font-size: 1.15rem;
   margin: 0 0 1rem;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .tel {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .tel {
   font-size: 1.15rem;
   color: rgb(35, 24, 21);
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .tel::before {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .tel::before {
   content: "Tel.";
   margin: 0 0.5rem 0 0;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .open {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .open {
   font-size: 1.15rem;
   position: relative;
   padding: 0 0 0 3.5rem;
   margin: 0.25rem 0 0;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .open::before {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .open::before {
   content: "Open.";
   margin: 0 0.5rem 0 0;
   position: absolute;
   top: 0;
   left: 0;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .open li.wd::before {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .open li.wd::before {
   content: "weekday";
   font-weight: 300;
   width: 5rem;
   display: inline-block;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .open li.hd::before {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .open li.hd::before {
   content: "holiday";
   font-weight: 300;
   width: 5rem;
   display: inline-block;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .gm {
-  font-size: 1.25rem;
-  position: relative;
-  width: 55%;
-  color: rgb(35, 24, 21);
-  margin: 8.25rem 0 0;
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .snsHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 1rem;
+  height: 1.9rem;
+  margin: 2rem 0 0;
 }
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .gm::after {
-  content: "";
-  background-image: url("../img/common/arrowLB.png");
-  width: 100%;
-  aspect-ratio: 477/47;
-  position: absolute;
-  bottom: -1rem;
-  left: 0;
-  background-size: 100% 100%;
-}
-#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .gm:hover {
-  padding: 0 0 0 0.5rem;
-}
-#topPage section#VisitUs .Section .Contents .Holder .imgArea {
-  width: 50%;
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .snsHolder li {
   height: 100%;
-  aspect-ratio: 1040/593;
 }
-#topPage section#VisitUs .Section .Contents .Holder:nth-child(1) .textArea .details .inBlock .gm {
-  margin: 4.25rem 0 0;
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .snsHolder li a {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
 }
-#topPage section#VisitUs .Section .Contents .shopList {
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .snsHolder li.ig {
+  background-image: url("../img/common/snsIG.png");
+  aspect-ratio: 1/1;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .snsHolder li.x {
+  background-image: url("../img/common/snsX.png");
+  aspect-ratio: 1/1;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .snsHolder li.fb {
+  background-image: url("../img/common/snsFB.png");
+  aspect-ratio: 21/40;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .snsHolder li.note {
+  background-image: url("../img/common/snsNote.png");
+  aspect-ratio: 1/1;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea p {
+  font-family: noto-sans-cjk-jp, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.08em;
+  margin: 2rem 0;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .reserve {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .reserve ul {
+  width: calc(100% - 14.75rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .reserve ul li {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .reserve ul li span {
+  font-weight: 700;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .reserve ul li span:nth-child(1) {
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-size: 1.8rem;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  background-color: rgb(35, 24, 21);
+  aspect-ratio: 107/42;
+  height: 2.1rem;
+  text-align: center;
+  padding: 0.075rem 0 0;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .reserve ul li span:nth-child(2) {
+  font-family: noto-sans-cjk-jp, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-size: 2rem;
+  color: rgb(35, 24, 21);
+  margin: 0 0 0 1rem;
+  letter-spacing: 0.08em;
+  padding: 0 0 0.15rem;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .reserve ul li.note {
+  width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 1rem 0 0;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .reserve a {
+  width: 14.75rem;
+  aspect-ratio: 295/72;
+  border: 1px solid rgb(35, 24, 21);
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  font-family: noto-sans-cjk-jp, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: rgb(35, 24, 21);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0 0.25rem;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .reserve a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(35, 24, 21);
+  background-color: rgb(255, 255, 255);
+  z-index: -1;
+  top: 0.25rem;
+  left: 0.25rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .textArea .reserve a:hover::after {
+  top: 0;
+  left: 0;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .imgArea {
+  width: 100%;
+  aspect-ratio: 940/593;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .gmArea {
+  width: 100%;
+  margin: 5.5rem auto 0;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .gmArea .gm {
+  width: 100%;
+  aspect-ratio: 2080/681;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  overflow: hidden;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .gmArea .gm iframe {
+  width: calc(100% + 1rem);
+  height: calc(100% + 30rem);
+  margin: -15rem -0.5rem 0 -0.5rem;
+}
+#topPage section#ShopAccess .Section .Contents .Holder .gmArea p {
+  width: 100%;
+  text-align: center;
+  font-family: noto-sans-cjk-jp, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: 2rem auto 0;
+}
+#topPage section#ShopAccess .Section .Contents .Holder.Harebare {
+  width: 100%;
+}
+#topPage section#ShopAccess .Section .Contents .Holder.Harebare .textArea {
+  width: 45.19%;
+}
+#topPage section#ShopAccess .Section .Contents .Holder.Harebare .textArea .details .Logo {
+  aspect-ratio: 1/1.1;
+}
+#topPage section#ShopAccess .Section .Contents .Holder.Harebare .imgArea {
+  width: 50%;
+}
+#topPage section#ShopAccess .Section .Contents .shopList {
   margin: 2.85rem auto 0;
   width: 100%;
   aspect-ratio: 2085/191;
@@ -2062,13 +2459,13 @@ nav#sideMenu .Contents .BottomBlock {
       align-content: center;
   color: rgb(35, 24, 21);
 }
-#topPage section#VisitUs .Section .Contents .shopList span {
+#topPage section#ShopAccess .Section .Contents .shopList span {
   display: inline-block;
   width: 100%;
   text-align: center;
   font-weight: 700;
 }
-#topPage section#VisitUs .Section .Contents .shopList span:nth-child(1) {
+#topPage section#ShopAccess .Section .Contents .shopList span:nth-child(1) {
   font-family: roboto, sans-serif;
   font-style: normal;
   -webkit-font-feature-settings: "palt";
@@ -2079,7 +2476,7 @@ nav#sideMenu .Contents .BottomBlock {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-#topPage section#VisitUs .Section .Contents .shopList span:nth-child(2) {
+#topPage section#ShopAccess .Section .Contents .shopList span:nth-child(2) {
   font-family: noto-sans-cjk-jp, sans-serif;
   font-style: normal;
   -webkit-font-feature-settings: "palt";
@@ -2089,7 +2486,7 @@ nav#sideMenu .Contents .BottomBlock {
   letter-spacing: 0.2em;
   margin: 1rem 0 0;
 }
-#topPage section#VisitUs .Section .Contents .shopList:hover span:nth-child(1) {
+#topPage section#ShopAccess .Section .Contents .shopList:hover span:nth-child(1) {
   letter-spacing: 0.1em;
 }
 
@@ -2115,6 +2512,7 @@ footer#Footer .Section .Contents {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  position: relative;
 }
 footer#Footer .Section .Contents .ConpanyMenu {
   width: 40.19%;
@@ -2129,15 +2527,19 @@ footer#Footer .Section .Contents .ConpanyMenu {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  position: relative;
 }
 footer#Footer .Section .Contents .ConpanyMenu .Logo {
   background-image: url("../img/common/Logo.png");
-  width: 16.3rem;
+  width: 20rem;
   aspect-ratio: 379/467;
 }
 footer#Footer .Section .Contents .ConpanyMenu .LinkHolder {
   width: calc(100% - 16.3rem - 14.5%);
   margin: 0 0 0.5rem;
+  position: absolute;
+  top: 8.25rem;
+  right: -1rem;
 }
 footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul {
   display: -webkit-box;
@@ -2217,6 +2619,49 @@ footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li.online a {
 footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li.online:hover a {
   letter-spacing: 0.05em;
 }
+footer#Footer .Section .Contents .ConpanyMenu .BtoB {
+  width: calc(100% - 17.3rem - 14.5%);
+  aspect-ratio: 489/194;
+  border: 1px solid rgb(35, 24, 21);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 0 0.55rem;
+  color: rgb(35, 24, 21);
+}
+footer#Footer .Section .Contents .ConpanyMenu .BtoB span {
+  display: inline-block;
+  width: 100%;
+}
+footer#Footer .Section .Contents .ConpanyMenu .BtoB span:nth-child(1) {
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-weight: 200;
+  font-size: 5rem;
+  letter-spacing: -0.075em;
+}
+footer#Footer .Section .Contents .ConpanyMenu .BtoB span:nth-child(2) {
+  font-family: noto-sans-cjk-jp, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin: -2rem 0 0;
+}
 footer#Footer .Section .Contents .ConpanyMenu .cw {
   width: 100%;
   font-size: 1.3rem;
@@ -2231,25 +2676,12 @@ footer#Footer .Section .Contents .MainMenu h2 {
 }
 footer#Footer .Section .Contents .MainMenu ul {
   font-size: 2rem;
-  line-height: 3.25rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
-  height: 21.6rem;
+  line-height: 2.45rem;
   margin: 4rem 0 0;
+  text-transform: uppercase;
 }
 footer#Footer .Section .Contents .MainMenu ul li {
-  border-bottom: 1px solid rgb(35, 24, 21);
-  width: 33.41%;
+  width: 100%;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -2259,12 +2691,6 @@ footer#Footer .Section .Contents .MainMenu ul li.clickNone {
 footer#Footer .Section .Contents .MainMenu ul li a {
   color: rgb(35, 24, 21);
   width: 100%;
-}
-footer#Footer .Section .Contents .MainMenu ul li:nth-child(1), footer#Footer .Section .Contents .MainMenu ul li:nth-child(2), footer#Footer .Section .Contents .MainMenu ul li:nth-child(3), footer#Footer .Section .Contents .MainMenu ul li:nth-child(4) {
-  margin: 0 4.51% 1.5rem 0;
-}
-footer#Footer .Section .Contents .MainMenu ul li:nth-child(5), footer#Footer .Section .Contents .MainMenu ul li:nth-child(6), footer#Footer .Section .Contents .MainMenu ul li:nth-child(7), footer#Footer .Section .Contents .MainMenu ul li:nth-child(8) {
-  margin: 0 0 1.5rem 0;
 }
 footer#Footer .Section .Contents .MainMenu ul li.BtoB {
   margin: 0 0 0 7.86%;
@@ -2327,6 +2753,58 @@ footer#Footer .Section .Contents .MainMenu ul li:hover.BtoB {
 }
 footer#Footer .Section .Contents .MainMenu ul li:hover.BtoB a span:nth-child(1) {
   letter-spacing: 0.05em;
+}
+footer#Footer .Section .Contents .online {
+  position: absolute;
+  bottom: 8rem;
+  right: 0;
+  width: 13.5rem;
+  background-color: rgb(35, 24, 21);
+  aspect-ratio: 275/412;
+  border-radius: 0.5rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+footer#Footer .Section .Contents .online .icon {
+  background-image: url("../img/common/iconEC.png");
+  width: 4.3rem;
+  aspect-ratio: 57/50;
+  margin: 0 1rem 1rem 0;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+footer#Footer .Section .Contents .online span {
+  text-decoration: underline;
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  -webkit-font-feature-settings: "palt";
+          font-feature-settings: "palt";
+  font-display: swap;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+footer#Footer .Section .Contents .online:hover span {
+  letter-spacing: 0.1em;
+}
+footer#Footer .Section .Contents .BtoB {
+  display: none;
 }
 footer#Footer .Section .Foot {
   width: 100%;
@@ -2403,28 +2881,421 @@ footer#Footer .Section .Foot p span {
     display: none;
   }
   body #Menu {
-    width: 31rem;
+    width: 100%;
   }
   body #Menu .Section {
-    width: calc(100% - 12rem);
-    padding: 0 0 0 1.6rem;
+    background-color: #EFEFEF;
+    font-family: roboto, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 700;
+    width: 100%;
+    padding: 0;
   }
-  body #Menu .Section .Contents .cw {
+  body #Menu .Section .Contents {
+    width: 85.86%;
+    height: auto;
+    margin: 0 auto;
+    padding: 7rem 0 3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body #Menu .Section .Contents .ConpanyMenu {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 100%;
+    display: unset;
+    text-align: center;
+    margin: 0;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .Logo {
+    display: inline-block;
+    background-image: url("../img/common/Logo.png");
+    width: 16.3rem;
+    aspect-ratio: 379/467;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder {
+    width: 26rem;
+    margin: 3.25rem auto 0;
+    position: unset;
+    top: auto;
+    right: auto;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li {
+    background-size: 100% 100%;
+    -webkit-filter: unset;
+            filter: unset;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li a {
+    width: 100%;
+    height: 100%;
+    color: rgb(35, 24, 21);
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.ig {
+    background-image: url("../img/common/snsIG.png");
+    height: 2.6rem;
+    aspect-ratio: 1/1;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.x {
+    background-image: url("../img/common/snsX.png");
+    height: 2.6rem;
+    aspect-ratio: 1/1;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.fb {
+    background-image: url("../img/common/snsFB.png");
+    height: 2.6rem;
+    aspect-ratio: 21/40;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.note {
+    background-image: url("../img/common/snsNoteWide.png");
+    height: 4rem;
+    aspect-ratio: 218/83;
+    margin: 0 -1rem 0 -1rem;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.online {
+    width: 100%;
+    aspect-ratio: 489/126;
+    border: 1px solid rgb(35, 24, 21);
+    font-size: 2.15rem;
+    margin: 1.6rem 0 0;
+    letter-spacing: 0.08em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-transform: uppercase;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.online a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 0 0.25rem;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.online:hover a {
+    letter-spacing: 0.05em;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .BtoB {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 26rem;
+    margin: 2rem auto 0;
+    aspect-ratio: 489/194;
+    border: 1px solid rgb(35, 24, 21);
+    text-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .BtoB span {
+    color: rgb(35, 24, 21);
+    display: inline-block;
+    width: 100%;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .BtoB span:nth-child(1) {
+    font-size: 5rem;
+    line-height: 5rem;
+    margin: -1rem 0 0;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .BtoB span:nth-child(2) {
+    font-size: 1.3rem;
+    letter-spacing: 0;
+    margin: 1rem 0 0;
+  }
+  body #Menu .Section .Contents .ConpanyMenu .cw {
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 3.75rem 0 0;
+  }
+  body #Menu .Section .Contents .MainMenu {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 100%;
+    margin: 3.25rem 0 0;
+  }
+  body #Menu .Section .Contents .MainMenu h2 {
+    font-size: 4rem;
     display: none;
   }
+  body #Menu .Section .Contents .MainMenu ul {
+    line-height: 3.25rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+    margin: 4rem 0 0;
+    height: 10rem;
+    font-size: 2.4rem;
+    position: relative;
+    width: 100%;
+  }
+  body #Menu .Section .Contents .MainMenu ul li {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    margin: 0 !important;
+    width: 33.333%;
+    font-size: 2.4rem;
+    line-height: 3.3rem;
+    text-align: center;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.clickNone {
+    opacity: 0.2;
+  }
+  body #Menu .Section .Contents .MainMenu ul li a {
+    color: rgb(35, 24, 21);
+    width: 100%;
+  }
+  body #Menu .Section .Contents .MainMenu ul li:nth-child(1), body #Menu .Section .Contents .MainMenu ul li:nth-child(2), body #Menu .Section .Contents .MainMenu ul li:nth-child(3), body #Menu .Section .Contents .MainMenu ul li:nth-child(4) {
+    margin: 0 4.51% 1.5rem 0;
+  }
+  body #Menu .Section .Contents .MainMenu ul li:nth-child(5), body #Menu .Section .Contents .MainMenu ul li:nth-child(6), body #Menu .Section .Contents .MainMenu ul li:nth-child(7), body #Menu .Section .Contents .MainMenu ul li:nth-child(8) {
+    margin: 0 0 1.5rem 0;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB {
+    aspect-ratio: 243/329;
+    background-color: rgb(35, 24, 21);
+    width: 55.56%;
+    height: 9.75rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto !important;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB a {
+    color: rgb(255, 255, 255);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    height: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB a span {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB a span:nth-child(1) {
+    font-size: 3.15rem;
+    font-weight: 400;
+    line-height: 2rem;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB a span:nth-child(2) {
+    font-size: 1.6rem;
+    font-family: noto-sans-cjk-jp, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 300;
+    letter-spacing: 0.225em;
+    margin: 1.2rem 0 0;
+    line-height: 2rem;
+  }
+  body #Menu .Section .Contents .MainMenu ul li.BtoB a span.arrow {
+    display: none;
+  }
+  body #Menu .Section .Contents .MainMenu ul li:hover {
+    padding: 0 0 0 1rem;
+  }
+}
+@media only screen and (max-width: 835px) and (hover: hover) {
+  body #Menu .Section .Contents .MainMenu ul li:hover {
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 835px) {
+  body #Menu .Section .Contents .MainMenu ul li:hover.BtoB {
+    padding: 0;
+  }
+  body #Menu .Section .Contents .MainMenu ul li:hover.BtoB a span:nth-child(1) {
+    letter-spacing: 0.05em;
+  }
+  body #Menu .Section .Contents .cw {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 3.75rem 0 0;
+    text-align: center;
+  }
+  body #Menu .Section .Contents .online {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    width: 26rem;
+    aspect-ratio: 412/185;
+    margin: 2rem auto 0;
+    position: unset;
+    background-color: rgb(35, 24, 21);
+    color: rgb(255, 255, 255);
+  }
+  body #Menu .Section .Contents .online .icon {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
+  body #Menu .Section .Contents .online span {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  body #Menu .Section .Contents .BtoB {
+    display: none;
+  }
+  body #Menu .Section .Foot {
+    width: 100%;
+    background-color: rgb(35, 24, 21);
+    aspect-ratio: 1000/103;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body #Menu .Section .Foot p {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: noto-sans-cjk-jp, sans-serif;
+    font-style: normal;
+    -webkit-font-feature-settings: "palt";
+            font-feature-settings: "palt";
+    font-display: swap;
+    font-weight: 400;
+    font-size: 1.15rem;
+    letter-spacing: 0.12em;
+  }
+  body #Menu .Section .Foot p span {
+    font-weight: 700;
+  }
+  body #Menu .Section .Contents {
+    padding: 7rem 0 9rem;
+  }
+  body #Menu .Section .Foot {
+    position: absolute;
+    bottom: 0;
+  }
   body nav#sideMenu .Contents .LeftBlock {
-    width: 5.5rem;
-    height: 8.2rem;
-    top: 2.5rem;
+    width: 6.5rem;
+    height: 15rem;
+    top: 0rem;
     left: 2.5rem;
     bottom: auto;
   }
+  body nav#sideMenu .Contents .LeftBlock .LinkHolder .online {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(35, 24, 21);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    position: relative;
+  }
   body nav#sideMenu .Contents .LeftBlock .LinkHolder .online .icon {
     width: 3.8rem;
+    margin: 0 0.5rem 0.75rem 0;
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
   }
   body nav#sideMenu .Contents .LeftBlock .LinkHolder .online span {
     font-size: 1.4rem;
     line-height: 1.8rem;
+    text-decoration: unset;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+  body nav#sideMenu .Contents .LeftBlock .LinkHolder .online::after {
+    content: "";
+    width: 100%;
+    height: calc(100% + 0.7rem);
+    position: absolute;
+    z-index: -1;
+    background-image: url("../img/common/menuOnlineBG.png");
+    background-size: 100% 100%;
+    top: 0;
+    left: 0.7rem;
   }
   body nav#sideMenu .Contents .LeftBlock .LinkHolder ul {
     display: none;
@@ -2518,17 +3389,10 @@ footer#Footer .Section .Foot p span {
     height: 2.7rem;
     aspect-ratio: 56/55;
   }
-  body nav#sideMenu .Contents .BottomBlock li.VisitUs::before {
-    background-image: url("../img/common/iconVisitUs.png");
+  body nav#sideMenu .Contents .BottomBlock li.ShopAccess::before {
+    background-image: url("../img/common/iconShopAccess.png");
     height: 2.65rem;
     aspect-ratio: 68/55;
-  }
-  body nav#sideMenu.KV .Contents .LeftBlock .LinkHolder .online .icon {
-    -webkit-filter: brightness(0) invert(1);
-    filter: brightness(0) invert(1);
-  }
-  body nav#sideMenu.KV .Contents .LeftBlock .LinkHolder .online span {
-    color: rgb(255, 255, 255);
   }
   body nav#sideMenu.KV .Contents .RightBlock .menuOpen .icon {
     -webkit-filter: brightness(0) invert(1);
@@ -2627,17 +3491,21 @@ footer#Footer .Section .Foot p span {
     width: 100%;
     height: 100%;
   }
-  body#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(1) {
+  body#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(3) {
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: -1;
   }
-  body#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(1) .ttl {
+  body#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(3) img {
+    width: auto;
+    height: 100%;
+  }
+  body#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(3) .ttl {
     display: none;
   }
-  body#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(2), body#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(3) {
+  body#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(1), body#topPage section#KV .Section .Contents .movieHolder .movieBlock:nth-child(2) {
     display: none;
   }
   body#topPage section#ConceptMovie .Section {
@@ -2650,12 +3518,43 @@ footer#Footer .Section .Foot p span {
     height: auto;
     aspect-ratio: 1/1;
     position: relative;
+    overflow: unset;
   }
   body#topPage section#ConceptMovie .Section .Contents .sec {
     top: -14rem;
+    color: rgb(35, 24, 21);
+  }
+  body#topPage section#ConceptMovie .Section .Contents .Holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .Holder .ttlEN {
+    text-align: center;
   }
   body#topPage section#ConceptMovie .Section .Contents .Holder .Header {
+    text-align: center;
     font-size: 2rem;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .btn {
+    width: 10rem;
+    top: auto;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .bg img {
+    width: auto;
+    height: 100%;
+    bottom: 0;
+    right: -22%;
   }
   body#topPage section#MainContents .Section {
     padding: 22.5rem 0 6.5rem;
@@ -2681,7 +3580,7 @@ footer#Footer .Section .Foot p span {
     text-align: center;
   }
   body#topPage section#MainContents .Section .Contents .Block .Header .ttl {
-    font-size: 3.5rem;
+    font-size: 3.5rem !important;
   }
   body#topPage section#MainContents .Section .Contents .Block .Header .sub {
     font-size: 1rem;
@@ -2697,7 +3596,6 @@ footer#Footer .Section .Foot p span {
             align-items: center;
   }
   body#topPage section#MainContents .Section .Contents .Block.Block03 h3 {
-    font-size: 3.5rem;
     line-height: 2.5rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2737,6 +3635,26 @@ footer#Footer .Section .Foot p span {
   body#topPage section#Instagram .Section .Contents .Holder .Block:nth-child(n+10) {
     display: none;
   }
+  body#topPage section#Instagram .Section .Contents .ig {
+    padding: 0 0 9rem 1rem;
+    font-size: 5.4rem;
+    width: 27rem;
+  }
+  body#topPage section#Instagram .Section .Contents .ig::before {
+    top: auto;
+    bottom: 2rem;
+    width: 4.4rem;
+  }
+  body#topPage section#Instagram .Section .Contents .ig::after {
+    content: "Touch!";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    font-size: 1.5rem;
+    text-align: center;
+  }
   body#topPage section#News .Section {
     padding: 22.5rem 0 6.5rem;
   }
@@ -2754,22 +3672,42 @@ footer#Footer .Section .Foot p span {
     line-height: 2rem;
     margin: -0.5rem 0 0;
   }
-  body#topPage section#VisitUs .Section {
+  body#topPage section#News .Section .Footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: unset;
+    margin: 5rem auto 0;
+  }
+  body#topPage section#News .Section .Footer li {
+    width: 7.75rem;
+  }
+  body#topPage section#News .Section .Footer li a {
+    font-size: 1.4rem;
+  }
+  body#topPage section#News .Section .Footer li a::after {
+    width: 3.5rem;
+  }
+  body#topPage section#News .Section .Footer li:nth-child(2) {
+    display: none;
+  }
+  body#topPage section#ShopAccess .Section {
     padding: 22.5rem 0;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder {
+  body#topPage section#ShopAccess .Section .Contents {
+    gap: 5rem 5.62%;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    width: 47.19%;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-    width: 100%;
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea {
+    width: 100% !important;
     margin: 3rem 0 0;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .online {
-    width: 47.4%;
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .online {
+    width: 100%;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-pack: center;
@@ -2777,515 +3715,81 @@ footer#Footer .Section .Foot p span {
             justify-content: center;
     margin: 3rem auto 6rem;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .online .Logo {
-    background-image: url("../img/common/Logo.png");
-    width: 61.18%;
-    aspect-ratio: 379/464;
-    margin: 0 0 0 -1.25rem;
-  }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .online .arrow {
-    width: 100%;
-    font-size: 2.9rem;
-    margin: 3rem 0 2.25rem;
-    padding: 0 0 0 5.75rem;
-  }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .cat {
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .cat {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     aspect-ratio: 880/62;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .Logo {
-    width: 38.18%;
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .Logo {
+    width: 28%;
+    position: absolute;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock {
-    width: 53.86%;
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock {
+    width: 100%;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name {
-    padding: 0 0 2rem;
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .name {
+    padding: 0 0 2rem 33.18%;
     margin: 0 0 2rem;
+    min-height: 13rem;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(1) {
-    font-size: 1.875rem;
-  }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(2) {
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(2) {
     font-size: 3.3125rem;
     margin: 0.75rem 0 0;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .address {
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .address {
     font-size: 1.4375rem;
     margin: 0 0 1.5rem;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .tel {
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .tel {
     font-size: 1.6rem;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .open {
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .open {
     font-size: 1.6rem;
     margin: 0.5rem 0 0;
     padding: 0 0 0 4.5rem;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .open li::before {
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .open li::before {
     width: 6.5rem !important;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .gm {
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .gm {
     font-size: 1.5625rem;
     margin: 4.25rem 0 0;
   }
-  body#topPage section#VisitUs .Section .Contents .Holder .imgArea {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-    width: 100%;
+  body#topPage section#ShopAccess .Section .Contents .Holder .imgArea {
+    width: 100% !important;
     height: auto !important;
     aspect-ratio: 880/545 !important;
   }
-  body#topPage section#VisitUs .Section .Contents .shopList {
+  body#topPage section#ShopAccess .Section .Contents .Holder.Harebare .textArea {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder.Harebare .textArea .details .Logo {
+    width: 32.23%;
+    position: unset;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder.Harebare .textArea .details .inBlock {
+    width: 60%;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder.Harebare .textArea .details .inBlock .name {
+    padding: 0 0 2rem;
+    min-height: auto;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder.Harebare .imgArea {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    margin: 5rem auto 0;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder.Harebare .gmArea {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  body#topPage section#ShopAccess .Section .Contents .shopList {
     aspect-ratio: 880/141;
-  }
-  body footer#Footer .Section .Contents {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    padding: 7rem 0 5rem;
-  }
-  body footer#Footer .Section .Contents .ConpanyMenu {
-    width: 100%;
-  }
-  body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder {
-    width: calc(100% - 16.3rem - 31.5%);
-  }
-  body footer#Footer .Section .Contents .MainMenu {
-    width: 100%;
-    margin: 1rem auto 0;
-  }
-  body footer#Footer .Section .Contents .MainMenu .Header {
-    display: none;
-  }
-  body footer#Footer .Section .Contents .cw {
-    width: 100%;
-    font-size: 1.3rem;
-    margin: 0.75rem 0 0;
-    text-align: center;
-  }
-  body footer#Footer .Section .Foot {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 200%;
-    font-size: 2vw;
-  }
-  .pc {
-    display: none;
-  }
-  .tablet {
-    display: none;
-  }
-  .sp {
-    display: block !important;
-  }
-  body #Menu {
-    height: 100%;
-    width: 100%;
-    background-color: #EFEFEF;
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-  body #Menu .menuClose {
-    position: absolute;
-    background-color: unset;
-    width: 4rem;
-    height: 6.75rem;
-    top: 2.5rem;
-    right: 2.5rem;
-  }
-  body #Menu .menuClose .icon {
-    width: 100%;
-    -webkit-filter: brightness(0);
-    filter: brightness(0);
-  }
-  body #Menu .menuClose span {
-    font-size: 1.4rem;
-    color: rgb(35, 24, 21);
-  }
-  body #Menu .Section {
-    background-color: #EFEFEF;
-    font-family: roboto, sans-serif;
-    font-style: normal;
-    -webkit-font-feature-settings: "palt";
-            font-feature-settings: "palt";
-    font-display: swap;
-    font-weight: 700;
-    width: 100%;
-    padding: 0;
-  }
-  body #Menu .Section .Contents {
-    width: 85.86%;
-    height: auto;
-    margin: 0 auto;
-    padding: 7rem 0 3rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  body #Menu .Section .Contents .ConpanyMenu {
-    width: 100%;
-    display: unset;
-    text-align: center;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .Logo {
-    background-image: url("../img/common/Logo.png");
-    width: 16.3rem;
-    aspect-ratio: 379/467;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .LinkHolder {
-    width: 55.56%;
-    margin: 3.25rem auto 0;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li {
-    background-size: 100% 100%;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li a {
-    width: 100%;
-    height: 100%;
-    color: rgb(35, 24, 21);
-  }
-  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.ig {
-    background-image: url("../img/common/snsIG.png");
-    height: 2.6rem;
-    aspect-ratio: 1/1;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.x {
-    background-image: url("../img/common/snsX.png");
-    height: 2.6rem;
-    aspect-ratio: 1/1;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.fb {
-    background-image: url("../img/common/snsFB.png");
-    height: 2.6rem;
-    aspect-ratio: 21/40;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.note {
-    background-image: url("../img/common/snsNoteWide.png");
-    height: 4rem;
-    aspect-ratio: 218/83;
-    margin: 0 -1rem 0 -1rem;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.online {
-    width: 100%;
-    aspect-ratio: 489/126;
-    border: 1px solid rgb(35, 24, 21);
-    font-size: 2.15rem;
-    margin: 1.6rem 0 0;
-    letter-spacing: 0.08em;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    text-transform: uppercase;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.online a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 0 0 0.25rem;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.online:hover a {
-    letter-spacing: 0.05em;
-  }
-  body #Menu .Section .Contents .ConpanyMenu .cw {
-    width: 100%;
-    font-size: 1.3rem;
-    margin: 3.75rem 0 0;
-  }
-  body #Menu .Section .Contents .MainMenu {
-    width: 100%;
-    margin: -0.75rem 0 0;
-  }
-  body #Menu .Section .Contents .MainMenu h2 {
-    font-size: 4rem;
-  }
-  body #Menu .Section .Contents .MainMenu ul {
-    line-height: 3.25rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-column-count: 2;
-       -moz-column-count: 2;
-            column-count: 2;
-    margin: 4rem 0 0;
-    padding: 0 0 13.75rem;
-    gap: 5.46%;
-    height: 34rem;
-    position: relative;
-  }
-  body #Menu .Section .Contents .MainMenu ul li {
-    border-bottom: 1px solid rgb(35, 24, 21);
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    margin: 0 !important;
-    width: 47.27%;
-    font-size: 2.4rem;
-  }
-  body #Menu .Section .Contents .MainMenu ul li.clickNone {
-    opacity: 0.2;
-  }
-  body #Menu .Section .Contents .MainMenu ul li a {
-    color: rgb(35, 24, 21);
-    width: 100%;
-  }
-  body #Menu .Section .Contents .MainMenu ul li:nth-child(1), body #Menu .Section .Contents .MainMenu ul li:nth-child(2), body #Menu .Section .Contents .MainMenu ul li:nth-child(3), body #Menu .Section .Contents .MainMenu ul li:nth-child(4) {
-    margin: 0 4.51% 1.5rem 0;
-  }
-  body #Menu .Section .Contents .MainMenu ul li:nth-child(5), body #Menu .Section .Contents .MainMenu ul li:nth-child(6), body #Menu .Section .Contents .MainMenu ul li:nth-child(7), body #Menu .Section .Contents .MainMenu ul li:nth-child(8) {
-    margin: 0 0 1.5rem 0;
-  }
-  body #Menu .Section .Contents .MainMenu ul li.BtoB {
-    aspect-ratio: 243/329;
-    background-color: rgb(35, 24, 21);
-    width: 55.56%;
-    height: 9.75rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto !important;
-  }
-  body #Menu .Section .Contents .MainMenu ul li.BtoB a {
-    color: rgb(255, 255, 255);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    height: 100%;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  body #Menu .Section .Contents .MainMenu ul li.BtoB a span {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-  }
-  body #Menu .Section .Contents .MainMenu ul li.BtoB a span:nth-child(1) {
-    font-size: 3.15rem;
-    font-weight: 400;
-    line-height: 2rem;
-  }
-  body #Menu .Section .Contents .MainMenu ul li.BtoB a span:nth-child(2) {
-    font-size: 1.6rem;
-    font-family: noto-sans-cjk-jp, sans-serif;
-    font-style: normal;
-    -webkit-font-feature-settings: "palt";
-            font-feature-settings: "palt";
-    font-display: swap;
-    font-weight: 300;
-    letter-spacing: 0.225em;
-    margin: 1.2rem 0 0;
-    line-height: 2rem;
-  }
-  body #Menu .Section .Contents .MainMenu ul li.BtoB a span.arrow {
-    display: none;
-  }
-  body #Menu .Section .Contents .MainMenu ul li:hover {
-    padding: 0 0 0 1rem;
-  }
-}
-@media only screen and (max-width: 480px) and (hover: hover) {
-  body #Menu .Section .Contents .MainMenu ul li:hover {
-    cursor: pointer;
-  }
-}
-@media only screen and (max-width: 480px) {
-  body #Menu .Section .Contents .MainMenu ul li:hover.BtoB {
-    padding: 0;
-  }
-  body #Menu .Section .Contents .MainMenu ul li:hover.BtoB a span:nth-child(1) {
-    letter-spacing: 0.05em;
-  }
-  body #Menu .Section .Contents .cw {
-    width: 100%;
-    font-size: 1.3rem;
-    margin: 3.75rem 0 0;
-    text-align: center;
-  }
-  body #Menu .Section .Foot {
-    width: 100%;
-    background-color: rgb(35, 24, 21);
-    aspect-ratio: 1000/103;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  body #Menu .Section .Foot p {
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-family: noto-sans-cjk-jp, sans-serif;
-    font-style: normal;
-    -webkit-font-feature-settings: "palt";
-            font-feature-settings: "palt";
-    font-display: swap;
-    font-weight: 400;
-    font-size: 1.15rem;
-    letter-spacing: 0.12em;
-  }
-  body #Menu .Section .Foot p span {
-    font-weight: 700;
-  }
-  body #Menu .Section {
-    min-height: 100%;
-    height: auto;
-    overflow-y: scroll;
-  }
-  body #Menu .Section .Contents {
-    padding: 7rem 0;
-  }
-  body #Menu .Section .Foot {
-    position: absolute;
-    bottom: 0;
-  }
-  body#topPage section .sec {
-    top: 6.5rem;
-  }
-  body#topPage section .sec .num {
-    font-size: 12rem;
-    width: 9.25rem;
-  }
-  body#topPage section .sec .num .change {
-    width: 4.5rem;
-  }
-  body#topPage section .sec .name {
-    margin: 1rem 0 0;
-  }
-  body#topPage section#KV .Section .Contents .Logo {
-    width: 58.94%;
-  }
-  body#topPage section#ConceptMovie .Section .Contents .sec {
-    top: -16rem;
-  }
-  body#topPage section#ConceptMovie .Section .Contents .Holder .Header {
-    width: 27rem;
-  }
-  body#topPage section#ConceptMovie .Section .Contents .Holder .Header .row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  body#topPage section#ConceptMovie .Section .Contents .Holder p {
-    margin: 2rem auto 0;
-  }
-  body#topPage section#Instagram .Section .Contents .Holder .Block {
-    width: calc((100% - 1rem) / 2);
-  }
-  body#topPage section#Instagram .Section .Contents .Holder .Block:nth-child(n+7) {
-    display: none;
-  }
-  body#topPage section#News .Section .Contents .Holder .Block {
-    margin: 0 0 2.5rem;
-  }
-  body#topPage section#News .Section .Contents .Holder .Block span.date {
-    font-size: 1.6rem;
-    width: 12rem;
-    margin: -0.25rem 0 0;
-  }
-  body#topPage section#News .Section .Contents .Holder .Block span.ttl {
-    font-size: 1.8rem;
-  }
-  body#topPage section#VisitUs .Section {
-    padding: 22.5rem 0 10rem;
-  }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .online .arrow {
-    font-size: 1.85rem;
-    padding: 0 0 0 3.65rem;
-  }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(1) {
-    font-size: 1.5rem;
-  }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(2) {
-    font-size: 2.65rem;
-  }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .address {
-    font-size: 1.15rem;
-    letter-spacing: 0.1em;
-  }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .tel {
-    font-size: 1.6rem;
-  }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .open {
-    font-size: 1.6rem;
-  }
-  body#topPage section#VisitUs .Section .Contents .Holder .textArea .details .inBlock .gm {
-    font-size: 1.25rem;
-    margin: 3.25rem 0 0;
-  }
-  body#topPage section#VisitUs .Section .Contents .shopList {
-    aspect-ratio: 880/191;
-    margin: 0 auto;
   }
   body footer#Footer .Section {
     background-color: #EFEFEF;
@@ -3316,18 +3820,26 @@ footer#Footer .Section .Foot p span {
         flex-wrap: wrap;
   }
   body footer#Footer .Section .Contents .ConpanyMenu {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
     width: 100%;
     display: unset;
     text-align: center;
+    margin: 0;
   }
   body footer#Footer .Section .Contents .ConpanyMenu .Logo {
+    display: inline-block;
     background-image: url("../img/common/Logo.png");
     width: 16.3rem;
     aspect-ratio: 379/467;
   }
   body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder {
-    width: 55.56%;
+    width: 26rem;
     margin: 3.25rem auto 0;
+    position: unset;
+    top: auto;
+    right: auto;
   }
   body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul {
     display: -webkit-box;
@@ -3347,6 +3859,8 @@ footer#Footer .Section .Foot p span {
   }
   body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li {
     background-size: 100% 100%;
+    -webkit-filter: unset;
+            filter: unset;
   }
   body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li a {
     width: 100%;
@@ -3409,17 +3923,57 @@ footer#Footer .Section .Foot p span {
   body footer#Footer .Section .Contents .ConpanyMenu .LinkHolder ul li.online:hover a {
     letter-spacing: 0.05em;
   }
+  body footer#Footer .Section .Contents .ConpanyMenu .BtoB {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 26rem;
+    margin: 2rem auto 0;
+    aspect-ratio: 489/194;
+    border: 1px solid rgb(35, 24, 21);
+    text-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .BtoB span {
+    color: rgb(35, 24, 21);
+    display: inline-block;
+    width: 100%;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .BtoB span:nth-child(1) {
+    font-size: 5rem;
+    line-height: 5rem;
+    margin: -1rem 0 0;
+  }
+  body footer#Footer .Section .Contents .ConpanyMenu .BtoB span:nth-child(2) {
+    font-size: 1.3rem;
+    letter-spacing: 0;
+    margin: 1rem 0 0;
+  }
   body footer#Footer .Section .Contents .ConpanyMenu .cw {
     width: 100%;
     font-size: 1.3rem;
     margin: 3.75rem 0 0;
   }
   body footer#Footer .Section .Contents .MainMenu {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
     width: 100%;
-    margin: -0.75rem 0 0;
+    margin: 3.25rem 0 0;
   }
   body footer#Footer .Section .Contents .MainMenu h2 {
     font-size: 4rem;
+    display: none;
   }
   body footer#Footer .Section .Contents .MainMenu ul {
     line-height: 3.25rem;
@@ -3432,22 +3986,23 @@ footer#Footer .Section .Foot p span {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-column-count: 2;
-       -moz-column-count: 2;
-            column-count: 2;
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
     margin: 4rem 0 0;
-    padding: 0 0 13.75rem;
-    gap: 5.46%;
-    height: 34rem;
+    height: 10rem;
+    font-size: 2.4rem;
     position: relative;
+    width: 100%;
   }
   body footer#Footer .Section .Contents .MainMenu ul li {
-    border-bottom: 1px solid rgb(35, 24, 21);
     -webkit-transition: 0.5s;
     transition: 0.5s;
     margin: 0 !important;
-    width: 47.27%;
+    width: 33.333%;
     font-size: 2.4rem;
+    line-height: 3.3rem;
+    text-align: center;
   }
   body footer#Footer .Section .Contents .MainMenu ul li.clickNone {
     opacity: 0.2;
@@ -3521,12 +4076,12 @@ footer#Footer .Section .Foot p span {
     padding: 0 0 0 1rem;
   }
 }
-@media only screen and (max-width: 480px) and (hover: hover) {
+@media only screen and (max-width: 835px) and (hover: hover) {
   body footer#Footer .Section .Contents .MainMenu ul li:hover {
     cursor: pointer;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 835px) {
   body footer#Footer .Section .Contents .MainMenu ul li:hover.BtoB {
     padding: 0;
   }
@@ -3534,10 +4089,35 @@ footer#Footer .Section .Foot p span {
     letter-spacing: 0.05em;
   }
   body footer#Footer .Section .Contents .cw {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
     width: 100%;
     font-size: 1.3rem;
     margin: 3.75rem 0 0;
     text-align: center;
+  }
+  body footer#Footer .Section .Contents .online {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    width: 26rem;
+    aspect-ratio: 412/185;
+    margin: 2rem auto 0;
+    position: unset;
+    background-color: rgb(35, 24, 21);
+    color: rgb(255, 255, 255);
+  }
+  body footer#Footer .Section .Contents .online .icon {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
+  body footer#Footer .Section .Contents .online span {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  body footer#Footer .Section .Contents .BtoB {
+    display: none;
   }
   body footer#Footer .Section .Foot {
     width: 100%;
@@ -3567,5 +4147,185 @@ footer#Footer .Section .Foot p span {
   }
   body footer#Footer .Section .Foot p span {
     font-weight: 700;
+  }
+}
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 200%;
+    font-size: 2vw;
+  }
+  .pc {
+    display: none;
+  }
+  .tablet {
+    display: none;
+  }
+  .sp {
+    display: block !important;
+  }
+  body #Menu {
+    height: 100%;
+    width: 100%;
+    background-color: #EFEFEF;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  body #Menu .menuClose span {
+    font-size: 1.4rem;
+  }
+  body #Menu .Section .Contents {
+    width: 100%;
+  }
+  body #Menu .Section .Contents .MainMenu {
+    margin: 0;
+  }
+  body #Menu .Section .Contents .MainMenu ul {
+    height: auto;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body #Menu .Section .Contents .MainMenu ul li {
+    width: 100%;
+  }
+  body #Menu .Section {
+    min-height: 100%;
+    height: auto;
+    overflow-y: scroll;
+  }
+  body #Menu .Section .Contents {
+    padding: 7rem 0;
+  }
+  body #Menu .Section .Foot {
+    position: absolute;
+    bottom: 0;
+  }
+  body#topPage section .sec {
+    top: 6.5rem;
+  }
+  body#topPage section .sec .num {
+    font-size: 12rem;
+    width: 9.25rem;
+  }
+  body#topPage section .sec .num .change {
+    width: 4.5rem;
+  }
+  body#topPage section .sec .name {
+    margin: 1rem 0 0;
+  }
+  body#topPage section#KV .Section .Contents .Logo {
+    width: 58.94%;
+  }
+  body#topPage section#ConceptMovie .Section .Contents {
+    aspect-ratio: 1/1.75;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .sec {
+    top: -16rem;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .Holder .Header {
+    width: 27rem;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .Holder .Header .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .Holder p {
+    margin: 2rem auto 0;
+  }
+  body#topPage section#Instagram .Section .Contents .Holder .Block {
+    width: calc((100% - 1rem) / 2);
+  }
+  body#topPage section#Instagram .Section .Contents .Holder .Block:nth-child(n+7) {
+    display: none;
+  }
+  body#topPage section#News .Section .Contents .Holder .Block {
+    margin: 0 0 2.5rem;
+  }
+  body#topPage section#News .Section .Contents .Holder .Block span.date {
+    font-size: 1.6rem;
+    width: 10rem;
+    margin: -0.25rem 0 0;
+  }
+  body#topPage section#News .Section .Contents .Holder .Block span.ttl {
+    font-size: 1.8rem;
+    width: calc(100% - 10rem - 1rem);
+    margin: -0.5rem 0 0 1rem;
+  }
+  body#topPage section#ShopAccess .Section {
+    padding: 22.5rem 0 10rem;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder {
+    width: 100%;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .online .arrow {
+    font-size: 1.85rem;
+    padding: 0 0 0 3.65rem;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .Logo {
+    position: unset;
+    width: 33%;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock {
+    width: 60%;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .name {
+    min-height: auto;
+    padding: 0 0 2rem 0;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(1) {
+    font-size: 1.5rem;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .name span:nth-child(2) {
+    font-size: 2.65rem;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .address {
+    font-size: 1.15rem;
+    letter-spacing: 0.1em;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .tel {
+    font-size: 1.6rem;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .open {
+    font-size: 1.6rem;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder .textArea .details .inBlock .gm {
+    font-size: 1.25rem;
+    margin: 3.25rem 0 0;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder .gmArea .gm {
+    aspect-ratio: 4/2;
+  }
+  body#topPage section#ShopAccess .Section .Contents .Holder.Harebare .textArea .details .Logo {
+    aspect-ratio: 1/1.35;
+  }
+  body#topPage section#ShopAccess .Section .Contents .shopList {
+    aspect-ratio: 880/191;
+    margin: 0 auto;
+  }
+  body footer#Footer .Section .Contents {
+    width: 100%;
+  }
+  body footer#Footer .Section .Contents .MainMenu {
+    margin: 0;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul {
+    height: auto;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body footer#Footer .Section .Contents .MainMenu ul li {
+    width: 100%;
   }
 }

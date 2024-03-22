@@ -1,53 +1,61 @@
 .Section
 
-  .Contents
+	.Contents
 
-    .ConpanyMenu 
-      a.Logo(href=`${path}?top`)
-      .LinkHolder 
-        ul 
-          li.ig
-            a.targetBlank(href='')
-          li.x
-            a.targetBlank(href='')
-          li.fb
-            a.targetBlank(href='')
-          li.note
-            a.targetBlank(href='')
-          li.online
-            a.targetBlank(href='') online shop
-      .cw.pc ©2024. Brewing Peace, Blooming Smiles.
-
-
-    .MainMenu
-      h2.Header.spanAnim
-        span.row Brewing Peace, Blooming Smiles.
-      ul
-        li
-          a(href='') OUR BEER
-        li
-          a(href='') OUR CONCEPT
-        li
-          a(href='') BREWERY
-        li.clickNone
-          a(href='') ORIGINAL GOODS
-        li
-          a(href='') INSTAGRAM
-        li
-          a(href='') NEWS
-        li
-          a(href='') VISIT US
-        li
-          a(href='') CONTACT
-        li.BtoB
-          a(href='')
-            span B to B 
-            span 業務店様はこちら
-            span.arrow 
+		.ConpanyMenu 
+			a.Logo(href=`${path}?top`)
+			.LinkHolder 
+				ul 
+					li.ig
+						a.targetBlank(href='https://www.instagram.com/hnb_beer/')
+					li.x
+						a.targetBlank(href='https://twitter.com/hnb_beer')
+					li.fb
+						a.targetBlank(href='https://www.facebook.com/hiroshimaNB/')
+					li.note
+						a.targetBlank(href='https://note.com/hiroshima_hnb/')
+			a.BtoB.targetBlank(href='https://hiroshima.beer/pages/contact')
+				span B to B 
+				span 業務店様はこちら
+			.cw.pc ©2024. Brewing Peace, Blooming Smiles.
 
 
-    .cw.sp ©2024. Brewing Peace, Blooming Smiles.
+		.MainMenu
+			h2.Header.spanAnim
+				span.row Brewing Peace, Blooming Smiles.
+			ul
+				li.clickNone
+					a(href='') concept
+				li
+					a.targetBlank(href='https://hiroshima.beer/collections/all_') our beer
+				li.clickNone
+					a(href='') BREWERY
+				li.clickNone
+					a(href='') restaurant
+				li
+					a.targetBlank(href='https://hiroshima.beer/collections/goods') ORIGINAL GOODS
+				li
+					a.lwp.News NEWS
+				li
+					a.lwp.ShopAccess shop&access
+				li
+					a.targetBlank(href='https://en-gage.net/kanaderu/') recruit
+				li
+					a.targetBlank(href='https://hiroshima.beer/pages/contact') CONTACT
+
+		a.online.targetBlank(href='https://hiroshima.beer/')
+			.icon 
+			span online shop
+
+		a.BtoB.targetBlank(href='https://hiroshima.beer/pages/contact')
+			span B to B 
+			span 業務店様はこちら
+			span.arrow 
 
 
-  .Foot 
-    p <span>株式会社リレイ</span>　 広島県 広島市 中区 新天地 2-12
+		.cw.sp ©2024. Brewing Peace, Blooming Smiles.
+
+
+	.Foot 
+		//- p <span>株式会社リレイ</span>　 広島県 広島市 中区 新天地 2-12
+		p <span>株式会社カナデル</span>　 広島市中区大手町1丁目5－10

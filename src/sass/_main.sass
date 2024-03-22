@@ -83,6 +83,7 @@ h2.Header
 			display: flex
 			justify-content: space-between
 			align-items: flex-start
+			position: relative
 
 			.ConpanyMenu 
 				width: 40.19%
@@ -90,13 +91,17 @@ h2.Header
 				flex-wrap: wrap
 				justify-content: space-between
 				align-items: flex-end
+				position: relative
 				.Logo 
 					background-image: url('#{$path}common/Logo.png')
-					width: 16.3rem
+					width: 20rem
 					aspect-ratio: 379 / 467
 				.LinkHolder 
 					width: calc(100% - 16.3rem - 14.5%)
 					margin: 0 0 .5rem
+					position: absolute
+					top: 8.25rem
+					right: -1rem
 					ul 
 						@include flexC
 						justify-content: space-between
@@ -138,6 +143,28 @@ h2.Header
 								&:hover
 									a
 										letter-spacing: .05em
+				.BtoB
+					width: calc(100% - 17.3rem - 14.5%)
+					aspect-ratio: 489 / 194
+					border: 1px solid $black
+					text-align: center
+					@include flexC
+					flex-wrap: wrap
+					margin: 0 0 .55rem
+					color: $black
+					span
+						display: inline-block
+						width: 100%
+						&:nth-child(1)
+							@include fontEN
+							@include weightT
+							font-size: 5rem
+							letter-spacing: -.075em
+						&:nth-child(2)
+							@include fontJP
+							@include weightL
+							font-size: .8rem
+							margin: -2rem 0 0
 
 				.cw
 					width: 100%
@@ -151,35 +178,36 @@ h2.Header
 					font-size: 4rem
 				ul
 					font-size: 2rem
-					line-height: 3.25rem
+					line-height: 2.45rem
 					// display: grid
 					// grid-auto-flow: column
 					// grid-template-rows: repeat(4, auto)
-					display: flex
-					flex-wrap: wrap
-					flex-direction: column
-					column-count: 2
-					height: 21.6rem
+					// display: flex
+					// flex-wrap: wrap
+					// flex-direction: column
+					// column-count: 2
+					// height: 21.6rem
 					margin: 4rem 0 0
+					@include textUpper
 					li
-						border-bottom: 1px solid $black
-						width: 33.41%
+						// border-bottom: 1px solid $black
+						width: 100%
 						transition: .5s
 						&.clickNone
 							opacity: .2
 						a
 							color: $black
 							width: 100%
-						&:nth-child(1),
-						&:nth-child(2),
-						&:nth-child(3),
-						&:nth-child(4)
-							margin: 0 4.51% 1.5rem 0
-						&:nth-child(5),
-						&:nth-child(6),
-						&:nth-child(7),
-						&:nth-child(8)
-							margin: 0 0 1.5rem 0
+						// &:nth-child(1),
+						// &:nth-child(2),
+						// &:nth-child(3),
+						// &:nth-child(4)
+						// 	margin: 0 4.51% 1.5rem 0
+						// &:nth-child(5),
+						// &:nth-child(6),
+						// &:nth-child(7),
+						// &:nth-child(8)
+						// 	margin: 0 0 1.5rem 0
 						&.BtoB
 							margin: 0 0 0 7.86%
 							height: 17.8rem
@@ -214,6 +242,40 @@ h2.Header
 								padding: 0
 								a span:nth-child(1)
 									letter-spacing: .05em
+
+			.online
+				position: absolute
+				bottom: 8rem
+				right: 0
+				width: 13.5rem
+				background-color: $black
+				aspect-ratio: 275 / 412
+				border-radius: .5rem
+				color: $white
+				text-align: center
+				@include flexC
+				flex-wrap: wrap
+				align-content: center
+				.icon
+					background-image: url('#{$path}common/iconEC.png')
+					width: 4.3rem
+					aspect-ratio: 57 / 50
+					margin: 0 1rem 1rem 0
+					filter: brightness(0) invert(1)
+				span
+					text-decoration: underline
+					@include fontEN
+					@include weightB
+					@include textUpper
+					font-size: 2.5rem
+					line-height: 3rem
+					transition: .5s
+				&:hover
+					span
+						letter-spacing: .1em
+
+			.BtoB
+				display: none
 
 		.Foot 
 			width: 100%
@@ -337,112 +399,194 @@ h2.Header
 	z-index: 6
 	pointer-events: none
 	height: 100%
-	width: 35rem
+	width: 95.5rem
 	background-color: $black
 	top: 0
 	right: 0
-	transform: translateX(35rem)
+	transform: translateX(95.5rem)
 	transition: 1s
 	display: flex
 	.menuClose
-		width: 9rem
-		height: 100%
-		background-color: $black
+		position: absolute
+		top: 0
+		right: 0
+		width: 8rem
+		aspect-ratio: 160 / 172
+		background-color: $yellow
 		pointer-events: auto
 		@include flexC
 		align-content: center
 		flex-wrap: wrap
 		.icon
-			background-image: url('#{$path}common/arrowW.png')
-			width: 2.5rem
+			// background-image: url('#{$path}common/arrowW.png')
+			width: 1.6rem
 			aspect-ratio: 1 / 1
-			transform: rotate(180deg)
+			position: relative
+			// transform: rotate(180deg)
+			span
+				position: absolute
+				width: 2.2rem
+				height: 1px
+				background-color: $black
+				margin: 0
+				top: 50%
+				left: -15%
+				&:nth-child(1)
+					transform: rotate(45deg)
+				&:nth-child(2)
+					transform: rotate(-45deg)
 		span
 			@include fontEN
 			@include weightB
 			font-size: 1rem
-			color: $white
+			color: $black
 			@include textUpper
 			width: 100%
 			text-align: center
-			margin: 1rem 0 0
+			margin: 1rem 0 0 .25rem
 		&:hover
 			@include hover
 
 	.Section
 		width: calc(100% - 9rem)
 		height: 100%
-		padding: 0 5rem 0 4.6rem
+		padding: 8rem 7.5rem
 		.Contents
 			width: 100%
 			height: 100%
-			@include flexC
+			display: flex
+			flex-wrap: wrap
+			align-content: flex-start
 			.ConpanyMenu
-				display: none
+				// display: none
+				order: 2
+				width: 100%
+				margin: 3.25rem 0 8.75rem
+				.Logo, .cw, .BtoB
+					display: none
+				.LinkHolder 
+					width: 25rem
+					margin: 0 0 .5rem
+					ul 
+						@include flexC
+						justify-content: space-between
+						flex-wrap: wrap
+						li
+							background-size: 100% 100%
+							filter: brightness(0) invert(1)
+							a
+								width: 100%
+								height: 100%
+								color: $black
+							&.ig
+								background-image: url('#{$path}common/snsIG.png')
+								height: 2.6rem
+								aspect-ratio: 1 / 1
+							&.x
+								background-image: url('#{$path}common/snsX.png')
+								height: 2.6rem
+								aspect-ratio: 1 / 1
+							&.fb
+								background-image: url('#{$path}common/snsFB.png')
+								height: 2.6rem
+								aspect-ratio: 21 / 40
+							&.note
+								background-image: url('#{$path}common/snsNoteWide.png')
+								height: 4rem
+								aspect-ratio: 218 / 83
 			.MainMenu
+				order: 1
 				@include fontEN
 				h2
 					display: none
 				li
-					font-size: 2rem
-					line-height: 4rem
+					font-size: 5rem
+					line-height: 5rem
 					overflow: hidden
+					@include textUpper
 					a
 						color: $white
 						@include weightB
 						position: relative
 						transition: .5s
-						&::after
-							content: ''
-							position: absolute
-							width: 100%
-							height: 2rem
-							background-color: $white
-							top: 0
-							left: 0
-							bottom: 0
-							margin: auto
-							transform: translateX(-101%)
-							transition: .5s
-							z-index: -1
 					&.clickNone
 						opacity: .2
-						
 					&:hover
 						a
-							color: $black
-							&::after
-								transform: translateX(0)
-					&.BtoB
-						line-height: 1rem
-						margin: 8rem 0 0
-						overflow: unset
-						a
-							span
-								display: inline-block
-								transition: .5s
-								&:nth-child(1)
-									@include weightR
-									font-size: 4rem
-									margin: 0 0 0 -.25rem
-								&:nth-child(2)
-									@include fontJP
-									@include weightL
-									font-size: 1.15rem
-									margin: 1.2rem 0 2rem
-									letter-spacing: .18em
-								&.arrow
-									background-image: url('#{$path}common/arrowLW.png')
-									background-size: 100% 100%
-									width: 13rem
-									aspect-ratio: 267 / 16
-							&::after
-								display: none
-						&:hover
-							span
-								&:nth-child(1),
-								&:nth-child(2)
-									padding: 0 0 0 1rem
+							color: $yellow
+
+			.online
+				order: 3
+				width: 11.5rem
+				background-color: $white
+				aspect-ratio: 230 / 345
+				border-radius: .5rem
+				color: $black
+				text-align: center
+				@include flexC
+				flex-wrap: wrap
+				align-content: center
+				.icon
+					background-image: url('#{$path}common/iconEC.png')
+					width: 4.3rem
+					aspect-ratio: 57 / 50
+					margin: 0 1rem 1rem 0
+				span
+					text-decoration: underline
+					@include fontEN
+					@include weightB
+					@include textUpper
+					font-size: 2rem
+					line-height: 2.5rem
+					transition: .5s
+				&:hover
+					span
+						letter-spacing: .1em
+
+			.BtoB
+				order: 4
+				line-height: 1rem
+				// margin: 8rem 0 0
+				overflow: unset
+				width: 24.4rem
+				display: flex
+				flex-wrap: wrap
+				align-content: flex-end
+				margin: 0 0 0 7rem
+
+				span
+					display: inline-block
+					transition: .5s
+					color: $white
+					&:nth-child(1)
+						@include fontEN
+						@include weightT
+						font-size: 4rem
+						margin: 0 0 3.7rem -0.75rem
+						font-size: 11rem
+						line-height: 7.5rem
+						letter-spacing: -.065em
+					&:nth-child(2)
+						@include fontJP
+						@include weightL
+						font-size: 1.15rem
+						// margin: 1.2rem 0 2rem
+						letter-spacing: .18em
+					&.arrow
+						background-image: url('#{$path}common/arrowLW.png')
+						background-size: 100% 100%
+						width: 12rem
+						aspect-ratio: 267 / 16
+						margin: 0 0 0 .5rem
+				&::after
+					display: none
+				&:hover
+					span
+						&:nth-child(1),
+						&:nth-child(2)
+							padding: 0 0 0 1rem
+
+
 		.Foot
 			display: none
 							
@@ -526,7 +670,7 @@ nav#sideMenu
 		.RightBlock 
 			width: 9rem
 			height: 16.9rem
-			background-color: $black
+			background-color: $yellow
 			pointer-events: auto
 			position: absolute
 			top: 0
@@ -543,14 +687,31 @@ nav#sideMenu
 				align-content: center
 				flex-wrap: wrap
 				.icon
-					background-image: url('#{$path}common/arrowW.png')
-					width: 2.5rem
-					aspect-ratio: 1 / 1
+					// background-image: url('#{$path}common/arrowW.png')
+					// width: 2.5rem
+					// aspect-ratio: 1 / 1
+					width: 3.9rem
+					aspect-ratio: 78 / 13
+					position: relative
+					span
+						display: inline-block
+						width: 100%
+						height: 1px
+						background-color: $black
+						position: absolute
+						margin: 0
+						&:nth-child(1)
+							top: 0
+						&:nth-child(2)
+							top: 50%
+						&:nth-child(3)
+							top: 100%
+							
 				span
 					@include fontEN
 					@include weightB
 					font-size: 1rem
-					color: $white
+					color: $black
 					@include textUpper
 					width: 100%
 					text-align: center
@@ -810,55 +971,68 @@ nav#sideMenu
 					.movieBlock
 						position: absolute
 						overflow: hidden
-						video
-							height: 100%
-						.ttl
-							@include fontEN
-							@include weightL
-							font-size: 1rem
-							color: $white
-							position: absolute
-							bottom: 1rem
-							left: 1rem
-						&::before
-							content: ''
-							background-image: url('#{$path}common/cover.png')
+						// video
+						// 	height: 100%
+						// .ttl
+						// 	@include fontEN
+						// 	@include weightL
+						// 	font-size: 1rem
+						// 	color: $white
+						// 	position: absolute
+						// 	bottom: 1rem
+						// 	left: 1rem
+						// &::before
+						// 	content: ''
+						// 	background-image: url('#{$path}common/cover.png')
+						// 	width: 100%
+						// 	height: 100%
+						// 	position: absolute
+						// 	background-size: 100% auto
+						// 	mix-blend-mode: color-burn
+						// .cover
+						// 	position: absolute
+						// 	width: 200%
+						// 	height: 100%
+						// 	top: 0
+						// 	left: 0
+						// 	@include flexC
+						// 	.white
+						// 		width: 50%
+						// 		height: 100%
+						// 		background-color: $white
+						// 	.black
+						// 		width: 50%
+						// 		height: 100%
+						// 		background-color: $black
+						.img
 							width: 100%
 							height: 100%
 							position: absolute
-							background-size: 100% auto
-							mix-blend-mode: color-burn
-						.cover
-							position: absolute
-							width: 200%
-							height: 100%
-							top: 0
-							left: 0
-							@include flexC
-							.white
-								width: 50%
-								height: 100%
-								background-color: $white
-							.black
-								width: 50%
-								height: 100%
-								background-color: $black
+							opacity: 0
+							&.active
+								opacity: 1
 						&:nth-child(1)
 							width: 37.5rem
-							aspect-ratio: 750 / 422
+							aspect-ratio: 750 / 502
 							top: 0
 							left: 16.95rem
+							.img
+								transition: .5s
 						&:nth-child(2)
 							width: 20.5rem
-							aspect-ratio: 401 / 225
+							aspect-ratio: 229 / 130
 							top: 49.5%
 							left: 27.3rem
+							.img
+								transition: 1s
 						&:nth-child(3)
 							width: 31.2rem
-							height: 65.25%
-							// aspect-ratio: 624 / 1110
+							// height: 65.25%
+							aspect-ratio: 349 / 620
 							bottom: 0
 							right: 0
+							.img
+								transition: 1.5s
 
 			.Footer
 				bottom: 3.25rem
@@ -880,10 +1054,18 @@ nav#sideMenu
 				left: 0
 				margin: auto
 				@include flexC
+				justify-content: flex-start
+				overflow: hidden
 				.Holder
 					position: absolute
 					@include fontJP
 					color: $white
+					margin: 0 7.5rem
+					.ttlEN
+						@include fontEN
+						@include weightB
+						font-size: 3.35rem
+						margin: 0 auto 8.75rem 0
 					.Header 
 						@include weightB
 						font-size: 1.75rem
@@ -895,9 +1077,17 @@ nav#sideMenu
 						font-size: 1.35rem
 						line-height: 2.6rem
 						letter-spacing: .12em
-						width: 26rem
-						margin: 5.55rem auto 0
+						// width: 50rem
+						margin: 1.05rem auto 0 0
 						word-break: break-all
+
+				.btn
+					background-image: url('#{$path}index/BtnConcept.png')
+					width: 14rem
+					aspect-ratio: 287 / 307
+					position: absolute
+					top: 13rem
+					right: 8rem
 						
 				.bg 
 					position: absolute
@@ -905,8 +1095,14 @@ nav#sideMenu
 					width: 100%
 					height: 100%
 					overflow: hidden
-					video
+					transition: .5s
+					// video
+					// 	height: 100%
+					img
+						position: absolute
+						width: 100%
 						height: 100%
+						z-index: -1
 					&::before
 						content: ''
 						background-image: url('#{$path}common/cover.png')
@@ -915,6 +1111,10 @@ nav#sideMenu
 						position: absolute
 						background-size: cover
 						mix-blend-mode: color-burn
+
+				&:hover
+					.bg
+						transform: scale(1.1)
 
 
 
@@ -949,12 +1149,14 @@ nav#sideMenu
 						.ttl
 							@include weightB
 							@include textUpper
-							font-size: 1.75rem
+							font-size: 2.5rem
 						.sub
 							@include weightL
 							@include textUpper
-							font-size: .7rem
+							font-size: 1rem
 							margin: .95rem 0 0
+							span
+								@include weightM
 					.text 
 						margin: 3.75rem auto 0 0
 						transform: translateY(5rem)
@@ -1014,12 +1216,16 @@ nav#sideMenu
 						width: 100%
 						aspect-ratio: 2080 / 969
 						order: 1
+						.Header .ttl
+							font-size: 9rem
 						.text
 							width: 39.47%
 					&.Block02
 						width: calc(100% - 61.92% - .5rem)
 						aspect-ratio: 780 / 1570
 						order: 2
+						.Header .ttl
+							font-size: 4.9rem
 						.text
 							width: 66.47%
 					&.Block03
@@ -1030,6 +1236,8 @@ nav#sideMenu
 						.Header
 							transform: translateY(0)
 							transition: .5s
+							.ttl
+								font-size: 7.5rem
 						.text
 							position: absolute
 							left: 2.5rem
@@ -1125,6 +1333,29 @@ nav#sideMenu
 							&:nth-child(14),
 							&:nth-child(15)
 								animation: ig .75s linear .05s + .5s 1 forwards
+				.ig
+					@include fontEN
+					@include weightB
+					font-size: 3.2rem
+					color: $black
+					padding: 6rem 0 0 1rem
+					position: relative
+					width: 17rem
+					margin: 6.5rem auto 0
+					display: block
+					&::before
+						content: ''
+						background-image: url('#{$path}common/snsIG.png')
+						background-size: 100% 100%
+						width: 5rem
+						aspect-ratio: 1 / 1
+						position: absolute
+						top: 0
+						right: 0
+						left: 0
+						margin: auto
+						
+
 
 
 
@@ -1177,7 +1408,7 @@ nav#sideMenu
 
 
 
-	section#VisitUs
+	section#ShopAccess
 
 		.Section
 			padding: 19.5rem 0
@@ -1187,24 +1418,31 @@ nav#sideMenu
 				flex-wrap: wrap
 				gap: 8rem			
 				.Holder 
-					width: 100%
+					width: 45.19%
 					display: flex
 					justify-content: space-between
+					flex-wrap: wrap
 					.textArea 
-						width: 45.19%
+						width: 100%
 						@include fontEN
 						@include weightB
+
 						.online
-							width: 100%
+							width: calc(100% - .5rem)
+							aspect-ratio: 929 / 322
 							@include flexC
 							justify-content: space-between
 							margin: 0 0 3.4rem
+							border: 1px solid $black
+							background-color: $white
+							padding: 1rem 4rem 0 6rem
+							position: relative
 							.Logo 
 								background-image: url('#{$path}common/LogoWide.png')
-								width: 45.85%
+								width: 17rem
 								aspect-ratio: 433 / 311
 								margin: -1.25rem 0 0 -1.25rem
-							.arrow
+							.icon
 								width: 50.53%
 								font-size: 2.15rem
 								@include textUpper
@@ -1213,18 +1451,34 @@ nav#sideMenu
 								position: relative
 								margin: 0 0 2.25rem
 								transition: .5s
-								&::after
-									content: ''
-									background-image: url('#{$path}common/arrowLB.png')
-									width: 100%
-									aspect-ratio: 477 / 47
-									position: absolute
-									bottom: -1rem
-									left: 0
-									background-size: 100% 100%
+								@include flexC
+								flex-wrap: wrap
+								text-align: center
+								span
+									display: inline-block
+									&:nth-child(1)
+										background-image: url('#{$path}common/iconEC.png')
+										width: 4.4rem
+										aspect-ratio: 57 / 50
+									&:nth-child(2)
+										width: 100%
+										margin: 1.5rem auto 0
+							&::after
+								content: ''
+								position: absolute
+								width: 100%
+								height: 100%
+								border: 1px solid $black
+								background-color: $white
+								top: .5rem
+								left: .5rem
+								z-index: -1
+								transition: .5s
 							&:hover
-								.arrow
-									padding: 0 0 0 1rem
+								&::after
+									top: 0
+									left: 0
+
 						.cat
 							width: 100%
 							aspect-ratio: 940 / 62
@@ -1242,10 +1496,10 @@ nav#sideMenu
 							margin: 2.5rem 0 0
 							.Logo 
 								border: 1px solid $black
-								width: 40.31%
+								width: 32.23%
 								aspect-ratio: 1 / 1
 							.inBlock 
-								width: 50%
+								width: 60%
 								.name
 									margin: 0 0 1.6rem
 									padding: 0 0 1.6rem
@@ -1293,32 +1547,134 @@ nav#sideMenu
 												@include weightL
 												width: 5rem
 												display: inline-block
-								.gm
-									font-size: 1.25rem
-									position: relative
-									width: 55%
-									color: $black
-									margin: 8.25rem 0 0
-									&::after
-										content: ''
-										background-image: url('#{$path}common/arrowLB.png')
+								.snsHolder
+									@include flexC
+									justify-content: flex-start
+									gap: 1rem
+									height: 1.9rem
+									margin: 2rem 0 0
+									li
+										height: 100%
+										a
+											width: 100%
+											height: 100%
+											display: inline-block
+										&.ig
+											background-image: url('#{$path}common/snsIG.png')
+											aspect-ratio: 1 / 1
+										&.x
+											background-image: url('#{$path}common/snsX.png')
+											aspect-ratio: 1 / 1
+										&.fb
+											background-image: url('#{$path}common/snsFB.png')
+											aspect-ratio: 21 / 40
+										&.note
+											background-image: url('#{$path}common/snsNote.png')
+											aspect-ratio: 1 / 1
+
+						p
+							@include fontJP
+							@include weightM
+							font-size: 1.3rem
+							line-height: 2.5rem
+							letter-spacing: .08em
+							margin: 2rem 0
+
+						.reserve
+							@include flexC
+							ul
+								width: calc(100% - 14.75rem)
+								@include flexC
+								flex-wrap: wrap
+								li 
+									width: 50%
+									display: flex
+									align-items: center
+									span
+										@include weightB
+										&:nth-child(1)
+											@include fontEN
+											font-size: 1.8rem
+											color: $white
+											display: inline-block
+											background-color: $black
+											aspect-ratio: 107 / 42
+											height: 2.1rem
+											text-align: center
+											padding: .075rem 0 0
+										&:nth-child(2)
+											@include fontJP
+											font-size: 2rem
+											color: $black
+											margin: 0 0 0 1rem
+											letter-spacing: .08em
+											padding: 0 0 .15rem
+									&.note
 										width: 100%
-										aspect-ratio: 477 / 47
-										position: absolute
-										bottom: -1rem
+										@include weightR
+										font-size: 1rem
+										margin: 1rem 0 0
+							a
+								width: 14.75rem
+								aspect-ratio: 295 / 72
+								border: 1px solid $black
+								background-color: $white
+								position: relative
+								@include fontJP
+								@include weightM
+								font-size: 1.6rem
+								color: $black
+								@include flexC
+								padding: 0 0 .25rem
+								&::after
+									content: ''
+									position: absolute
+									width: 100%
+									height: 100%
+									border: 1px solid $black
+									background-color: $white
+									z-index: -1
+									top: .25rem
+									left: .25rem
+									transition: .5s
+								&:hover
+									&::after
+										top: 0
 										left: 0
-										background-size: 100% 100%
-									&:hover
-										padding: 0 0 0 .5rem
+
 
 					.imgArea
-						width: 50%
-						height: 100%
-						aspect-ratio: 1040 / 593
+						width: 100%
+						aspect-ratio: 940 / 593
 
-					&:nth-child(1)
-						.textArea .details .inBlock .gm
-							margin: 4.25rem 0 0
+					.gmArea
+						width: 100%
+						margin: 5.5rem auto 0
+						.gm
+							width: 100%
+							aspect-ratio: 2080 / 681
+							filter: grayscale(100%)
+							overflow: hidden
+							iframe
+								width: calc(100% + 1rem)
+								height: calc(100% + 30rem)
+								margin: -15rem -.5rem 0 -.5rem
+						p
+							width: 100%
+							text-align: center
+							@include fontJP
+							@include weightM
+							font-size: 1.2rem
+							margin: 2rem auto 0
+
+					&.Harebare
+						width: 100%
+						.textArea
+							width: 45.19%
+							.details .Logo
+								aspect-ratio: 1 / 1.1
+						.imgArea
+							width: 50%
 
 				.shopList
 					margin: 2.85rem auto 0
