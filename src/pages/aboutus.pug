@@ -1,0 +1,215 @@
+-
+	var title = 'ABOUT US'
+	var discription = '広島の象徴である平和公園の東側、元安橋から本通りに入ってすぐのところに、2020年8月に、マイクロブルワリー（クラフトビールの醸造所）を自社のオリジナルビールと炭火焼きが楽しめるパブ＆炭火居酒屋をOPEN！'
+	//- var keyword = ''
+	var url = 'https://hnb.beer/aboutus/'
+
+	var path = '../'
+	var img = '../assets/img/'
+
+	var body = 'aboutusPage'
+
+
+
+
+
+
+doctype html
+html(lang='ja')
+
+
+
+
+	include ../partials/_head
+
+
+
+				
+		include ../partials/_meta
+
+
+
+
+	body#aboutusPage.LowPage.LoadingNow
+
+
+
+
+
+
+		include ../partials/_header
+
+
+
+
+
+		#wrapper
+
+
+
+
+
+			main#main
+
+
+
+
+
+				section#KV
+					.Section
+						.Header.spanAnim.titleAnim
+							h1.row ABOUT US
+						.Contents 
+							img.fadeIn(src=`${img}aboutus/KV.jpg`)
+
+
+
+
+				section#Concept 
+					.Section.widthM
+						.Contents.Contents__00001
+							.Header.spanAnim.titleAnim
+								.row Brewing Peace, 
+								.row Blooming Smiles.
+							.Block
+								p.JP.fadeIn
+									| 今日もこのまちで、
+									br
+									| 誰かと誰かが乾杯している。
+									br
+									| ビールを呑んでいる。
+									br
+									| ちいさな幸せがある。
+								p.EN.fadeIn
+									| Even today in this town,
+									br
+									| someone is toasting with beer,
+									br
+									| drinking beer and finding small happiness.
+						.Contents.Contents__00002
+							.Header.spanAnim.textAnim
+								.row そう、
+								.row ビールは平和だからこそ、
+								.row おいしい。
+								.EN.fadeIn Yes, beer is good because there is peace.
+								img.slideRight(src=`${img}aboutus/conceptBG.png`)
+							.Block
+								p.JP.fadeIn
+									| 広島 本通り。<br>広島平和公園のすぐそばにブルワリーを構える<br>わたしたちはそう思います。
+									br
+									br
+									| 当たり前がゆらぎ、様々な変化が起こるいまだから。<br>この『Hiroshima』の地から、<br>まちに根付いたクラフトビールを作りたい。
+									br
+									br
+									| 花が咲くように、輪になるように、<br>いろいろな人が心からリラックスし、<br>自然と笑顔が咲き誇る場所、<br>ビールでありたいと考えています。
+								p.EN.fadeIn
+									| Hondori, Hiroshima.<br>We, who have a brewery right next to Peace Park,<br>believe this.
+									br
+									br
+									| In times of uncertainty and constant change, <br>especially here in Hiroshima, we want to create<br>craft beer that is deeply rooted in the community.
+									br
+									br
+									| Like flowers in bloom, like circles forming,<br>we want our beer to be a place where people from<br>all walks of life can truly relax, <br>with smiles naturally blossoming.
+
+
+
+				section#Vision 
+					.Section.widthM
+						.Header
+							.sub ABOUT US  001
+							h2.spanAnim.titleAnim: .row OUR VISIOIN
+							img(src=`${img}common/Logo_kanaderu.png`)
+						.Contents 
+							.Block
+								p.JP.fadeIn
+									| 広島 本通り。<br>広島平和公園のすぐそばにブルワリーを構える<br>わたしたちはそう思います。
+									br
+									br
+									| 当たり前がゆらぎ、様々な変化が起こるいまだから。<br>この『Hiroshima』の地から、<br>まちに根付いたクラフトビールを作りたい。
+									br
+									br
+									| 花が咲くように、輪になるように、<br>いろいろな人が心からリラックスし、<br>自然と笑顔が咲き誇る場所、<br>ビールでありたいと考えています。
+								p.EN.fadeIn
+									| Hondori, Hiroshima.<br>We, who have a brewery right next to Peace Park,<br>believe this.
+									br
+									br
+									| In times of uncertainty and constant change, <br>especially here in Hiroshima, we want to create<br>craft beer that is deeply rooted in the community.
+									br
+									br
+									| Like flowers in bloom, like circles forming,<br>we want our beer to be a place where people from<br>all walks of life can truly relax, <br>with smiles naturally blossoming.
+								
+
+
+
+				section#Intro 
+					.Section
+						.Contents
+							img.fadeIn01(src=`${img}aboutus/Intro00001.jpg`)
+							img.fadeIn02(src=`${img}aboutus/Intro00002.jpg`)
+							img.fadeIn03(src=`${img}aboutus/Intro00003.jpg`)
+
+
+
+
+				include ../partials/_sec-Link
+
+
+
+
+				section#Company 
+					.Section.widthM
+						.Header
+							h2.spanAnim.titleAnim: .row COMPANY
+						.Contents 
+							table 
+								tr 
+									th company 
+									td 株式会社カナデル
+								tr 
+									th ceo
+									td 代表取締役 福本成美
+								tr 
+									th address
+									td 〒730-0051　広島市中区大手町1丁目5-10
+										a.gm.targetBlank(href="") Google Map ▶︎▶︎
+								tr 
+									th TEL
+									td 082 236 9313
+								tr 
+									th BUSINESS
+									td ブルワリー事業 / 飲食事業 / 企画事業  等
+
+
+
+
+				section#Contact 
+					.Section.widthM
+						.Header
+							h2.spanAnim.titleAnim: .row CONTACT
+						.Contents 
+							p ご質問・ご相談など、お気軽にお問合せくださいませ。
+							.Block.Block__00001
+								h4 Craftbeer & 炭火『はればれ』のお席などのご予約・お問い合わせ
+								.Inner
+									span tel.
+									a(href="tel:082-236-9313") 082-236-9313
+									.note 
+										p お問い合わせ時間
+										p 12:00-21:00
+							.Block.Block__00002
+								h4 業務店の方のお問い合わせ
+								.Inner
+									a.targetBlank(href="https://hiroshima.beer/pages/contact") 業務店さまのお問合せ
+
+
+
+
+
+
+
+				include ../partials/_footer
+
+
+			
+
+		include ../partials/_foot

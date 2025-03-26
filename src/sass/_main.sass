@@ -15,6 +15,12 @@
 	100%
 		transform: translateY(0)
 
+@keyframes TextAnim
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
 
 
 
@@ -51,6 +57,90 @@ h2.Header
 						.SplitInner
 							animation: TitleAnim .75s ease-out .02s * $i 1 forwards
 
+.titleAnim
+	.row
+		.Split
+			display: inline-block
+			padding: 0 0 .5rem
+			overflow: hidden
+			.SplitInner
+				display: inline-block
+				transform: translateY(101%)
+				&.space
+					width: 2rem
+	&.active
+		.row
+			&:nth-child(1)
+				.Split
+					@for $i from 1 through 30
+						&:nth-child(#{$i})
+							.SplitInner
+								animation: TitleAnim .5s ease-out 0s + .08s * $i 1 forwards
+			&:nth-child(2)
+				.Split
+					@for $i from 1 through 30
+						&:nth-child(#{$i})
+							.SplitInner
+								animation: TitleAnim .5s ease-out .25s + .08s * $i 1 forwards
+			&:nth-child(3)
+				.Split
+					@for $i from 1 through 30
+						&:nth-child(#{$i})
+							.SplitInner
+								animation: TitleAnim .5s ease-out .5s + .08s * $i 1 forwards
+			&:nth-child(4)
+				.Split
+					@for $i from 1 through 30
+						&:nth-child(#{$i})
+							.SplitInner
+								animation: TitleAnim .5s ease-out .75s + .08s * $i 1 forwards
+			&:nth-child(5)
+				.Split
+					@for $i from 1 through 30
+						&:nth-child(#{$i})
+							.SplitInner
+								animation: TitleAnim .5s ease-out 1s + .08s * $i 1 forwards
+
+.textAnim
+	.row
+		.Split
+			display: inline-block
+			.SplitInner
+				opacity: 0
+				&.space
+					width: 2rem
+	&.active
+		.row
+			&:nth-child(1)
+				.Split
+					@for $i from 1 through 30
+						&:nth-child(#{$i})
+							.SplitInner
+								animation: TextAnim .5s ease-out 0s + .06s * $i 1 forwards
+			&:nth-child(2)
+				.Split
+					@for $i from 1 through 30
+						&:nth-child(#{$i})
+							.SplitInner
+								animation: TextAnim .5s ease-out .25s + .06s * $i 1 forwards
+			&:nth-child(3)
+				.Split
+					@for $i from 1 through 30
+						&:nth-child(#{$i})
+							.SplitInner
+								animation: TextAnim .5s ease-out .5s + .06s * $i 1 forwards
+			&:nth-child(4)
+				.Split
+					@for $i from 1 through 30
+						&:nth-child(#{$i})
+							.SplitInner
+								animation: TextAnim .5s ease-out .75s + .06s * $i 1 forwards
+			&:nth-child(5)
+				.Split
+					@for $i from 1 through 30
+						&:nth-child(#{$i})
+							.SplitInner
+								animation: TextAnim .5s ease-out 1s + .06s * $i 1 forwards
 
 
 
@@ -667,6 +757,40 @@ nav#sideMenu
 							width: 1.9rem
 							aspect-ratio: 1 / 1
 
+			.menuBtnHolder
+				width: 14.5rem
+				margin: 5.5rem 0 0 -4rem
+				ul
+					@include flexC
+					flex-wrap: wrap
+					gap: .2rem
+					li
+						aspect-ratio: 292 / 81
+						width: 100%
+						background-color: $black
+						a
+							width: 100%
+							height: 100%
+							@include fontEN
+							@include weightB
+							color: $white
+							@include textUpper
+							font-size: 1.25rem
+							padding: 0 0 0 2.5rem
+							display: flex
+							align-items: center
+							&::after
+								content: '▶︎'
+								font-size: 1rem
+								margin: 0 0 0 1rem
+								opacity: 0
+								transition: .25s
+							&:hover
+								@include hover
+								&::after
+									opacity: 1
+
+
 		.RightBlock 
 			width: 9rem
 			height: 16.9rem
@@ -724,6 +848,8 @@ nav#sideMenu
 			pointer-events: none
 			transform: translateY(8rem)
 			transition: 0.75s
+
+
 
 
 
@@ -983,7 +1109,7 @@ nav#sideMenu
 						// 	left: 1rem
 						// &::before
 						// 	content: ''
-						// 	background-image: url('#{$path}common/cover.png')
+						// 	background-image: url('#{$path}index/cover.png')
 						// 	width: 100%
 						// 	height: 100%
 						// 	position: absolute
@@ -1098,14 +1224,15 @@ nav#sideMenu
 					transition: .5s
 					// video
 					// 	height: 100%
-					img
-						position: absolute
-						width: 100%
-						height: 100%
-						z-index: -1
+					background-image: url('#{$path}index/ConceptMovie.jpg')
+					// img
+					// 	position: absolute
+					// 	width: 100%
+					// 	height: 100%
+					// 	z-index: -1
 					&::before
 						content: ''
-						background-image: url('#{$path}common/cover.png')
+						background-image: url('#{$path}index/cover.png')
 						width: 100%
 						height: 100%
 						position: absolute
@@ -1270,6 +1397,40 @@ nav#sideMenu
 						justify-content: space-between
 						flex-wrap: wrap
 						gap: .5rem
+				.ECbanner
+					order: 3
+					width: 100%
+					aspect-ratio: 2080 / 307
+					background-color: $black
+					margin: 5.5rem auto 0
+					border-radius: 1rem
+					border: 1px solid $black
+					transition: .5s
+					.inner
+						height: 100%
+						@include flexC
+						gap: 2.5rem
+						.icon
+							background-image: url('#{$path}common/iconEC.png')
+							width: 5.2rem
+							aspect-ratio: 57 / 50
+							filter: brightness(0) invert(1)
+							transition: .5s
+						p
+							color: $white
+							@include fontEN
+							@include weightB
+							font-size: 2.5rem
+							text-decoration: underline
+							transition: .5s
+					&:hover
+						@include hover
+						background-color: $white
+						.inner
+							.icon
+								filter: unset
+							p
+								color: $black
 
 
 
@@ -1355,8 +1516,6 @@ nav#sideMenu
 						left: 0
 						margin: auto
 						
-
-
 
 
 	section#News
@@ -1703,10 +1862,1135 @@ nav#sideMenu
 					&:hover
 						span:nth-child(1)
 							letter-spacing: .1em
-						
 
 
 
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  LowPage
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+.LowPage
+
+
+
+	nav#sideMenu .Contents .LeftBlock
+		transform: translate(-14.6rem)
+
+
+	section#Link 
+		.Section
+			margin: 14rem auto 0
+			.Contents 
+				display: flex
+				flex-wrap: wrap
+				gap: 5rem
+				.Block
+					border: 2.5px solid $black
+					@include fontEN
+					@include weightB
+					@include textUpper
+					color: $black
+					padding: 5.5rem 6.9rem
+					width: 100%
+					background-clip: $white
+					transition: .5s
+					position: relative
+					h3
+						font-size: 8.2rem
+						transform: translateX(-.4rem)
+					p
+						font-size: 1.45rem
+						margin: 1.5rem 0 0
+					.arrow
+						background-image: url('#{$path}aboutus/arrow.png')
+						background-size: 100% 100%
+						width: 20rem
+						height: 6rem
+						position: absolute
+						top: 0
+						right: 6.9rem
+						bottom: 0
+						margin: auto
+					&:hover
+						background-color: $black
+						color: $white
+						.arrow
+							filter: brightness(0) invert(1)
+				.backBtn
+					@include fontEN
+					@include weightB
+					font-size: 2.4rem
+					position: relative
+					color: $black
+					margin: 6rem auto 0
+					text-align: center
+					&::after
+						content: ""
+						height: 3px
+						width: 100%
+						position: absolute
+						bottom: -.5rem
+						right: 0
+						background-color: $black
+
+
+
+	#Footer
+		margin: 25rem 0 0
+
+
+
+	#LinkHolder 
+		width: 100%
+		margin: 7.8rem auto 2.1rem
+		@include flexC
+		flex-wrap: wrap
+		gap: 3rem
+		a
+			width: 33.5rem
+			background-color: $black
+			aspect-ratio: 673 / 207
+			border-radius: 1rem
+			color: $white
+			text-align: center
+			@include flexC
+			flex-wrap: wrap
+			align-content: center
+			border: 1px solid $black
+			transition: .25s
+			&.online
+				.icon
+					background-image: url('#{$path}common/iconEC.png')
+					width: 4.3rem
+					aspect-ratio: 57 / 50
+					margin: 0 2rem 0 0
+					filter: brightness(0) invert(1)
+					transition: .25s
+				span
+					text-decoration: underline
+					@include fontEN
+					@include weightB
+					@include textUpper
+					font-size: 2.5rem
+					line-height: 3rem
+			&.BtoB
+				span
+					@include weightM
+					font-size: 2rem
+			&:hover
+				@include hover
+				background-color: $white
+				color: $black
+				.icon
+					filter: unset
+
+	.snsHolder 
+		margin: 0 auto
+		p
+			@include weightB
+			font-size: 2rem
+		ul 
+			@include flexC
+			gap: 3rem
+			margin: 3.4rem auto 0
+			li
+				background-size: 100% 100%
+				a
+					width: 100%
+					height: 100%
+					color: $black
+				&.ig
+					background-image: url('#{$path}common/snsIG.png')
+					height: 2.35rem
+					aspect-ratio: 1 / 1
+				&.x
+					background-image: url('#{$path}common/snsX.png')
+					height: 2.35rem
+					aspect-ratio: 1 / 1
+				&.fb
+					background-image: url('#{$path}common/snsFB.png')
+					height: 2.35rem
+					aspect-ratio: 21 / 40
+				&.note
+					background-image: url('#{$path}common/snsNote.png')
+					height: 2.35rem
+					aspect-ratio: 1 / 1
+
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  LowTemplate
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+.LowTemplate
+
+	@mixin borderSet
+		border-top: 2.5px solid $black
+		border-right: 2.5px solid $black
+		border-left: 2.5px solid $black
+		padding: 2.5rem
+
+
+
+	section#KV
+		.Section
+			margin: 30.5rem auto 0
+
+			.Header
+				@include borderSet
+				@include fontEN
+				position: relative
+				h1.pageTitle
+					@include fontBebas
+					@include textUpper
+					font-size: 19rem
+					margin: -2.25rem 0 0 -0.5rem
+					.Split .SplitInner
+						background-image: url('#{$path}common/cover.png')
+						background-size: 1rem 1rem
+						background-repeat: repeat
+						-webkit-background-clip: text
+						color: transparent
+				p
+					@include fontEN
+					@include weightB
+					font-size: 1.5rem
+					margin: -3.75rem 0 0
+				.icon
+					position: absolute
+					top: 2.5rem
+					right: 2.5rem
+			.Contents 
+				@include borderSet
+				img
+
+
+
+	section#About
+		.Section
+			display: flex
+			flex-wrap: wrap
+		
+			.Contents
+				@include borderSet
+				position: relative
+
+
+
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  aboutusPage
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+#aboutusPage
+
+
+
+	#Header .Contents .sec .num
+		transform: translateX(1rem)
+
+
+
+	section#KV
+		.Section
+			.Header
+				margin: 29.15rem auto 6.85rem
+				h1
+					@include fontEN
+					@include weightB
+					font-size: 11.5rem
+					text-align: center
+					.row
+						.Split
+							.SplitInner.space
+								display: inline-block
+								width: 1rem
+			.Contents 
+				@include flexC
+				img
+					width: calc(100% - 1rem)
+
+
+	
+	section#Concept 
+		.Section
+			@include weightB
+			margin: 11.75rem auto 25rem
+			.Contents 
+				.Block 
+					display: flex
+					flex-wrap: wrap
+					p
+						width: 50%
+						&.JP 
+							font-size: 1.8rem
+							line-height: 3.15rem
+						&.EN
+							@include fontEN
+							font-size: 2.23rem
+							line-height: 3.75rem
+
+				&__00001
+					margin: 0 0 14.5rem
+					.Header
+						margin: 0 0 13.5rem -.8rem
+						.row
+							@include fontEN
+							font-size: 13.8rem
+							margin: 0 0 -1.5rem
+							.Split
+								padding: 0 0 1.5rem
+					
+				&__00002
+					.Header
+						position: relative
+						margin: 0 0 13.5rem
+						.row
+							font-size: 6rem
+							line-height: 8.4rem
+						.EN
+							@include fontEN
+							font-size: 2.55rem
+							margin: 5rem 0 0
+						img
+							position: absolute
+							width: 26.49vw
+							aspect-ratio: 1527 / 1951
+							top: -9.5rem
+							right: 0
+					.Block 
+						p
+							&.EN
+								font-size: 1.65rem
+								line-height: 3.15rem
+
+
+	
+
+	section#Vision 
+		.Section
+			@include weightB
+			margin: 0 auto 8.35rem
+			.Header
+				@include fontEN
+				position: relative
+				border-bottom: 2px solid $black
+				padding: 0 0 2.95rem
+				margin: 0 0 9.5rem
+				.sub
+					background-image: url('#{$path}common/cover.png')
+					background-size: .5rem .5rem
+					background-repeat: repeat
+					font-size: 2rem
+					color: $white
+					display: inline-block
+					padding: .5rem 2rem
+				h2
+					font-size: 7.5rem
+					margin: 2.35rem 0 0
+					.row
+				img
+					width: 19.5rem
+					position: absolute
+					bottom: 5rem
+					right: 0
+			.Contents 
+				.Block
+					display: flex
+					flex-wrap: wrap
+					p
+						width: 50%
+						&.JP 
+							font-size: 1.8rem
+							line-height: 3.15rem
+						&.EN
+							@include fontEN
+							font-size: 1.65rem
+							line-height: 3.15rem
+					
+
+	
+	section#Intro 
+		.Section
+			.Contents
+				@include flexC
+				img
+					width: 33.333%
+
+	
+
+	section#Link 
+		.Section
+			margin: 14rem auto 0
+			.Contents 
+				display: flex
+				flex-wrap: wrap
+				gap: 5rem
+				.Block
+					border: 2.5px solid $black
+					@include fontEN
+					@include weightB
+					@include textUpper
+					color: $black
+					padding: 5.5rem 6.9rem
+					width: 100%
+					background-clip: $white
+					transition: .5s
+					position: relative
+					h3
+						font-size: 8.2rem
+						transform: translateX(-.4rem)
+					p
+						font-size: 1.45rem
+						margin: 1.5rem 0 0
+					.arrow
+						background-image: url('#{$path}aboutus/arrow.png')
+						background-size: 100% 100%
+						width: 20rem
+						height: 6rem
+						position: absolute
+						top: 0
+						right: 6.9rem
+						bottom: 0
+						margin: auto
+					&:hover
+						background-color: $black
+						color: $white
+						.arrow
+							filter: brightness(0) invert(1)
+
+
+
+	
+	section#Company 
+		.Section
+			margin: 19.5rem auto 0
+			padding: 0 0 19.5rem
+			border-bottom: 2px solid $black
+			display: flex
+			align-items: flex-start
+			justify-content: space-between
+			flex-wrap: wrap
+			.Header
+				h2
+					@include writing
+					@include fontEN
+					@include weightB
+					font-size: 15rem
+					margin: -.6rem 0 0 -1.5rem
+					letter-spacing: -.05em
+					.row
+			.Contents 
+				width: 75%
+				table 
+					width: 100%
+					tr 
+						display: flex
+						flex-wrap: wrap
+						th
+							width: 100%
+							background-color: #e6e6e6
+							color: #9fa0a0
+							@include fontEN
+							@include textUpper
+							@include weightT
+							font-size: 1.75rem
+							padding: .5rem 1rem
+							text-align: left
+						td 
+							width: 100%
+							@include weightR
+							font-size: 2rem
+							margin: 2.6rem 0 5.05rem
+							position: relative
+							a.gm
+								@include fontEN
+								@include weightB
+								background-color: $black
+								color: $white
+								border: 1px solid $black
+								border-radius: 10rem
+								font-size: 1.3rem
+								width: 13rem
+								aspect-ratio: 267 / 48
+								@include flexC
+								position: absolute
+								top: -.2rem
+								right: 0
+								transition: .25s
+								&:hover
+									background-color: $white
+									color: $black
+
+	
+
+	section#Contact 
+		.Section
+			margin: 19.5rem auto 0
+			.Header
+				h2
+					@include fontEN
+					@include weightB
+					font-size: 15rem
+					.row
+			.Contents 
+				margin: 11.5rem auto 0
+				display: flex
+				flex-wrap: wrap
+				justify-content: space-between
+				p
+					width: 100%
+					font-size: 1.8rem
+					@include weightB
+					margin: 0 0 5rem
+				.Block 
+					width: 47.58%
+					h4
+						width: 100%
+						height: 4.4rem
+						background-color: $black
+						color: $white
+						@include weightM
+						font-size: 1.25rem
+						@include flexC
+						padding: 0 2.5rem
+						justify-content: flex-start
+					.Inner
+						margin: 2.4rem 0 0
+						a
+							@include weightB
+							color: $black
+					&__00001
+						.Inner
+							display: flex
+							align-items: flex-end
+							@include fontEN
+							span
+								@include weightL
+								font-size: 2.6rem
+								transform: translateY(-.3rem)
+							a
+								font-size: 4.85rem
+							.note 
+								transform: translateY(-.4rem)
+								margin: 0 0 0 2rem
+								p
+									width: auto
+									margin: 0
+									&:nth-child(1)
+										@include weightR
+										font-size: 1.1rem
+										margin: 0 0 .5rem
+									&:nth-child(2)
+										@include weightL
+										font-size: 2.1rem
+					&__00002
+						.Inner
+							a
+								font-size: 3.1rem
+								margin: 1rem 0 0
+								&::after
+									content: ''
+									background-image: url('#{$path}common/iconTB.png')
+									background-size: 100% 100%
+									width: 2rem
+									aspect-ratio: 1 / 1
+									margin: 0 0 0 1.5rem
+									display: inline-block
+
+
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  breweryPage
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+#breweryPage
+
+
+
+	section#KV
+		.Section
+			.Header
+				.icon
+					background-image: url('#{$path}brewery/KVicon.png')
+					width: 11rem
+					aspect-ratio: 443 / 507
+
+
+
+	section#About
+		.Section
+		
+			.Contents
+				@include weightB
+				width: 100%
+				.Header
+					padding: 2.5rem
+					.JP
+						font-size: 4.9rem
+						line-height: 6.2rem
+						.row
+					.EN
+						@include fontEN
+						font-size: 2.1rem
+						line-height: 2.9rem
+						margin: 0.85rem 0 0
+				.imgHolder
+					img
+						position: absolute
+				.Holder
+					padding: 2.5rem
+					p
+						font-size: 1.5rem
+						line-height: 3.1rem
+						&.JP
+						&.EN
+							@include fontEN
+							margin: 3.15rem 0 0
+
+				&__00001
+					.Header
+						.JP
+							font-size: 3.55rem
+							line-height: 5rem
+							.row
+								&:nth-child(3)
+									@include fontEN
+									font-size: 3.6rem
+						h3 
+							font-size: 8rem
+							margin: 5.25rem 0 0
+					.imgHolder
+						img
+							top: -15rem
+							right: -4rem
+							width: 32.49%
+							aspect-ratio: 1399 / 1454
+
+				&__00002
+					padding: 0
+					.imgHolder
+						@include flexC
+						margin: 0 auto
+						img
+							position: unset
+							width: 31.294957%
+							&:nth-child(2)
+								width: calc(100% - 31.294957% * 2)
+		
+				&__00003
+					.Holder
+						margin: .95rem 0 0
+					.imgHolder
+						img
+							width: calc(50% - 2.5rem)
+							top: 2.5rem
+							right: 2.5rem
+			
+				&__00004
+					.Header
+						@include writing
+						transform: translateX(7rem)
+						.JP
+							.row
+								&:nth-child(1)
+									.Split
+										&:nth-child(3)
+											transform: translateX(1.2rem)
+						.EN
+							margin: 0 .85rem 0 0
+					.Holder
+						width: 43%
+						margin: 9.25rem 3rem 6.3rem auto
+					.imgHolder
+						img
+							&:nth-child(1)
+								width: calc(60.07% - 2.5rem)
+								top: 2.5rem
+								right: 2.5rem
+							&:nth-child(2)
+								width: calc(47.63% - 2.5rem)
+								bottom: 2.5rem
+								left: 2.5rem
+			
+				&__00005
+					.Header
+						text-align: center
+					.Holder
+						.EN
+							margin: calc(3.15rem * 2) 0
+					.imgHolder
+						img
+							width: 47.58%
+							top: 21rem
+							right: 2.5rem
+
+				&__00006,
+				&__00007
+					width: 50%
+					.imgHolder
+						img
+							position: unset
+
+				&__00006
+					border: unset
+					border-top: 2.5px solid $black
+					border-left: 2.5px solid $black
+					border-bottom: 2.5px solid $black
+
+				&__00007
+					border: unset
+					border: 2.5px solid $black
+
+
+
+
+
+	section#Beer
+		margin: 14rem 0 0
+		.Section 
+			padding: 7.5rem 0 15rem
+			&::after
+				content: ""
+				background-image: url('#{$path}common/cover.png')
+				background-size: .7rem .7rem
+				background-repeat: repeat
+				// opacity: .3
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				z-index: -1
+			.Header
+				h2
+					font-size: 9.1rem
+					color: $white
+					@include fontBebas
+					@include weightR
+					@include flexC
+					.Split
+						&:nth-child(14)
+							width: 6.5rem
+							margin: 0 1.5rem
+							aspect-ratio: 272 / 282
+							background-image: url('#{$path}common/iconAnd.png')
+
+			.Contents 
+				position: relative
+				margin: 11.5rem auto 0
+				.point
+					@include fontEN
+					@include weightB
+					@include writing
+					font-size: 1.5rem
+					position: absolute
+					top: 0
+					left: -2.5rem
+				.Holder 
+					width: 87.511%
+					background-color: $white
+					padding: 9.5rem 7.5rem
+					h3
+						@include weightB
+						font-size: 3.6rem
+						line-height: 5.5rem
+						margin: 0 0 8.35rem
+					.textArea
+						p
+							&.JP
+								@include weightM
+								font-size: 1.65rem
+								line-height: 3.25rem
+								margin: 0 0 2.5rem
+							&.EN
+								@include fontEN
+								@include weightB
+								font-size: 1.5rem
+								line-height: 2.6rem
+				.imgHolder
+					img
+						position: absolute
+						width: 50%
+						aspect-ratio: 2151 / 2032
+						top: -5rem
+						right: 0
+				.contactBtn
+					position: absolute
+					right: -1rem
+					bottom: -10rem
+					background-image: url('#{$path}brewery/contactBtn.png')
+					width: 29.15rem
+					aspect-ratio: 1 / 1
+					&:hover
+						transform: scale(1.05)
+
+
+
+
+
+	section#Brand
+		margin: 14rem 0 0
+		.Section 
+			.Header 
+				display: flex
+				flex-wrap: wrap
+				justify-content: space-between
+				align-items: flex-start
+				.Logo 
+					background-image: url('#{$path}common/Logo.png')
+					width: 24.74%
+					aspect-ratio: 379 / 467
+				.textArea 
+					width: 65.27%
+					h2
+						.EN
+							@include fontEN
+							@include weightM
+							font-size: 3.5rem
+						.JP
+							@include weightL
+							font-size: 1.55rem
+							margin: 1rem 0 0
+					.LinkHolder 
+						width: 100%
+						margin: 4rem auto 5rem
+						@include flexC
+						flex-wrap: wrap
+						gap: 3rem
+						a
+							width: calc((100% - 3rem) / 2)
+							background-color: $black
+							aspect-ratio: 673 / 207
+							border-radius: 1rem
+							color: $white
+							text-align: center
+							@include flexC
+							flex-wrap: wrap
+							align-content: center
+							border: 1px solid $black
+							transition: .25s
+							&.online
+								.icon
+									background-image: url('#{$path}common/iconEC.png')
+									width: 4.3rem
+									aspect-ratio: 57 / 50
+									margin: 0 2rem 0 0
+									filter: brightness(0) invert(1)
+									transition: .25s
+								span
+									text-decoration: underline
+									@include fontEN
+									@include weightB
+									@include textUpper
+									font-size: 2.5rem
+									line-height: 3rem
+							&.BtoB
+								span
+									@include weightM
+									font-size: 2rem
+									line-height: 2.5rem
+									.arrow
+										font-size: 1.5rem
+							&:hover
+								@include hover
+								background-color: $white
+								color: $black
+								.icon
+									filter: unset
+					.snsHolder
+						@include flexC
+						flex-wrap: wrap 
+						justify-content: space-between
+						.Block 
+							border-bottom: 1px solid $black
+							@include flexC
+							justify-content: space-between
+							padding: 0 0 2rem
+							p 
+								@include weightB
+								font-size: 1.45rem
+								line-height: 2.1rem
+							ul 
+								@include flexC
+								gap: 2rem
+								li
+									background-size: 100% 100%
+									a
+										width: 100%
+										height: 100%
+										color: $black
+									&.ig
+										background-image: url('#{$path}common/snsIG.png')
+										height: 3.5rem
+										aspect-ratio: 1 / 1
+									&.x
+										background-image: url('#{$path}common/snsX.png')
+										height: 3.5rem
+										aspect-ratio: 1 / 1
+									&.fb
+										background-image: url('#{$path}common/snsFB.png')
+										height: 3.5rem
+										aspect-ratio: 21 / 40
+									&.note
+										background-image: url('#{$path}common/snsNote.png')
+										height: 3.5rem
+										aspect-ratio: 1 / 1
+									&.line
+										background-image: url('#{$path}common/snsLINE.png')
+										height: 3.5rem
+										aspect-ratio: 1 / 1
+							&__00001
+								width: 50.88%
+							&__00002
+								width: 41.13%
+			.Contents 
+				margin: 12rem auto 0
+				@include flexC
+				flex-wrap: wrap
+				align-items: flex-start
+				justify-content: space-between
+				p 
+					width: 36.62%
+					@include weightB
+					font-size: 1.55rem
+					line-height: 3.45rem
+				.imgHolder
+					width: 50%
+					img
+				.brandSlider
+					width: 100%
+					margin: 9.5rem auto 0
+					.swiper-wrapper
+						.swiper-slide
+							aspect-ratio: 1145 / 912
+					.swiper-controller
+						.swiper-button-prev,
+						.swiper-button-next
+							// position: relative
+							display: inline-block
+							width: 8rem
+							height: 7rem
+							top: 0
+							bottom: 0
+							margin: auto
+							&::before
+								content: ''
+								width: 5rem
+								height: 5rem
+								border-top: solid 1px $black
+								border-right: solid 1px $black
+								position: absolute
+								// left: 5rem
+								top: .8rem
+							&::after
+								display: none
+						.swiper-button-prev
+							left: 0
+							&::before
+								transform: translateX(1.5rem) rotate(-135deg)
+						.swiper-button-next
+							right: 0
+							&::before
+								transform: rotate(45deg)
+				#LinkHolder
+					.BtoB
+						display: none
+
+
+
+
+
+	section#Brewer
+		margin: 14rem 0 0
+		.Section 
+			padding: 8rem 0
+			&::before
+				content: ""
+				border: 8.5px solid $black
+				background-color: $white08
+				position: absolute
+				width: calc(100% - 8.5px * 2)
+				height: calc(100% - 8.5px * 2)
+				top: 0
+				left: 0
+				z-index: -1
+			&::after
+				content: ""
+				background-image: url('#{$path}common/cover.png')
+				background-size: .7rem .7rem
+				background-repeat: repeat
+				opacity: .3
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 2rem
+				left: 2rem
+				z-index: -2
+			.point
+				position: absolute
+				top: 2rem
+				right: -5.5rem
+				@include fontEN
+				@include weightB
+				@include writing
+				font-size: 2.2rem
+			.note
+				position: absolute
+				right: calc((100% - 80.77%) / 2)
+				top: -3rem
+				@include weightB
+				@include writing
+				font-size: 1.8rem
+				border: 2.5px solid $black
+				background-color: $white
+				padding: 4.5rem 1rem
+				span
+					transform: translateX(.5rem)
+					display: inline-block
+			.Header
+				width: 65.36%
+				margin: 0 auto 0 calc((100% - 80.77%) / 2)
+				border-bottom: 4px solid $black
+				h2
+					@include fontBebas
+					font-size: 14rem
+				.Name 
+					margin: -2.3rem 0 4.3rem
+					.JP
+						@include weightB
+						font-size: 2.2rem
+						margin: 0 0 2rem
+					.EN
+						@include fontEN
+						@include weightM
+						font-size: 1.8rem
+			.Contents 
+				width: 65.36%
+				margin: 4.25rem auto 7.5rem calc((100% - 80.77%) / 2)
+				p
+					@include weightM
+					font-size: 1.65rem
+					line-height: 3.3rem
+			.imgHolder
+				width: 80.77%
+				margin: 0 auto
+			#LinkHolder 
+				a
+					span
+						// text-decoration: underline
+						@include fontEN
+						@include weightB
+						@include textUpper
+						font-size: 2.5rem
+						line-height: 3rem
+					&:hover
+						@include hover
+						background-color: $white
+						color: $black
+		
+
+
+
+	section#Link
+		.Section .Contents .Block
+			&.brewery
+				display: none
+
+
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  ourbeerPage
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+#ourbeerPage
+
+
+
+	section#KV
+		.Section
+			.Header
+				.icon
+					background-image: url('#{$path}ourbeer/KVicon.png')
+					width: 6.9rem
+					aspect-ratio: 277 / 389
+
+
+
+	section#About
+		.Section
+			h2
+				position: absolute
+				@include fontBebas
+				@include writing
+				font-size: 3.5rem
+				@include flexC
+				justify-content: flex-start
+				padding: 2rem 0
+				color: $white
+				background-image: url('#{$path}common/cover.png')
+				background-size: .5rem .5rem
+				background-repeat: repeat
+				width: 6.5rem
+				height: 48.25rem
+		
+			.Contents		
+				@include weightB
+				.Holder
+					padding: 2.5rem
+					p
+						font-size: 1.5rem
+						line-height: 3.1rem
+						&.JP
+						&.EN
+							@include fontEN
+							margin: 6rem 0 0
+
+				&__00001,
+				&__00002
+					width: 50%
+					.imgHolder
+						img
+							position: unset
+
+				&__00001
+					padding: 12.5rem 2.5rem 12.5rem 12.99%
+					border: unset
+					border-top: 2.5px solid $black
+					border-left: 2.5px solid $black
+					border-bottom: 2.5px solid $black
+
+				&__00002
+					padding: 0
+					border: unset
+					border: 2.5px solid $black
+		
+
+
+
+	section#Link
+		.Section .Contents .Block
+			&.ourbeer
+				display: none
+					
 
 
 

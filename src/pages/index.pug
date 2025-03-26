@@ -14,455 +14,463 @@
 
 
 
+doctype html
+html(lang='ja')
 
 
 
 
-include ../partials/_head
+	include ../partials/_head
+
+
+
+				
+		include ../partials/_meta
+
+
+
+
+	body#topPage.LoadingNow
+
+
+
+
+
+
+		include ../partials/_header
+
+
+
+
+
+		#wrapper
+
+
+
+
+
+			main#main
+
+
+
+
+				section#KV
+		
+					.Section.deviceHeight
+
+						.Contents 
+
+							.Logo
+
+							h1.ttlHolder
+								span.alpH 
+								span.alpI
+								span.alpR
+								span.alpO
+								span.alpS
+								span.alpH 
+								span.alpI
+								span.alpM
+								span.alpA
+
+							.txtHolder
+								.txtBlock CRAFT<br>BEER &<br>ORIGINAL<br>GOODS
+								.txtBlock RESTAURANT<br>SHOP<br>WEB SHOP<br>FACTORY
+								.txtBlock MADE IN<br>HIROSHIMA<br>JAPAN
+
+							.movieHolder
+								.movieBlock
+									.img.active(style=`background-image: url('${img}index/KV00001-1.jpg')`)
+									.img(style=`background-image: url('${img}index/KV00001-2.jpg')`)
+									.img(style=`background-image: url('${img}index/KV00001-3.jpg')`)
+									//- video(src=`${img}index/sampleMovie.mp4` muted loop playsinline autoplay poster=`${img}index/sampleMovie.jpg`)
+									//- .ttl PROMOTION MOVIE
+									.cover 
+										.white 
+										.black
+								.movieBlock
+									.img.active(style=`background-image: url('${img}index/KV00002-1.jpg')`)
+									.img(style=`background-image: url('${img}index/KV00002-2.jpg')`)
+									.img(style=`background-image: url('${img}index/KV00002-3.jpg')`)
+									//- video(src=`${img}index/sampleMovie.mp4` muted loop playsinline autoplay poster=`${img}index/sampleMovie.jpg`)
+									//- .ttl PROMOTION MOVIE
+									.cover 
+										.white 
+										.black
+								.movieBlock
+									.img.active(style=`background-image: url('${img}index/KV00003-1.jpg')`)
+									.img(style=`background-image: url('${img}index/KV00003-2.jpg')`)
+									.img(style=`background-image: url('${img}index/KV00003-3.jpg')`)
+									//- video(src=`${img}index/sampleMovie.mp4` muted loop playsinline autoplay poster=`${img}index/sampleMovie.jpg`)
+									//- .ttl PROMOTION MOVIE
+									.cover 
+										.white 
+										.black
+
+						ul.Footer 
+							li
+								span.secLink.ConceptMovie SCROLL
+
+
+
+
+				section#ConceptMovie
+		
+					.Section.deviceHeight
+
+						.Linear
+
+						a.Contents.widthM#OurConcept(href=`${path}aboutus/`)
+							.sec.sp
+								.num.flex
+									span 0
+									.change
+										span 0
+										span 1
+								.name
+									.change
+										span MESSAGE
+							.Holder
+								.ttlEN Brewing Peace, Blooming Smiles.
+								h2.Header.spanAnim
+									span.row ビールは平和だからこそ、おいしい
+								p.slideUp
+									| HIROSHIMA NEIGHBORLY BREWING（ヒロシマネイバリーブリューイング）は、
+									br
+									| 広島の象徴でもある平和公園の東側、
+									br
+									| 本通りに入ってすぐにあるブルワリー。
+									br
+									| この地にあるからこそ「まちに根付いたものを作りたい」と、
+									br
+									| 広島県産の素材も使い、何度でも飲みたくなるビールを目指しています。
+									br
+									| また、醸造設備を眺めながら楽しめる、
+									br
+									| 併設のブリューパブ＆居酒屋「Craftbeer と炭火はればれ」もあり、
+									br
+									| 『まさにビール工場の中で飲める！楽しめる！』場所です。
+							//- .btn
+							.bg 
+								//- video(src=`${img}index/sampleMovie.mp4` muted loop playsinline autoplay poster=`${img}index/sampleMovie.jpg`)
+								//- img(src=`${img}index/ConceptMovie.jpg`)
+
+						ul.Footer 
+							li
+								span.secLink.MainContents SCROLL
+
+
+
+
+				section#MainContents
+		
+					.Section
+
+						.Linear
+
+						.Contents.widthM
+							.sec.sp
+								.num.flex
+									span 0
+									.change
+										span 1
+										span 2
+								.name
+									.change
+										span main cotents
+							a.Block.Block01.slideUp.targetBlank#OurBeer(href=`${path}ourbeer/`) 
+								.Header
+									.ttl OUR BEER 
+									.sub MAIN CONTENTS  |  <span>001</span>
+								.text 
+									p この地にあるからこそ「まちに根付いたものを作りたい」と、広島県産の素材も使い、何度でも飲みたくなるビールを目指しています。
+									.more View More 
+								.bg(style=`background-image: url('${img}index/main00001.jpg');`)
+							.Holder
+								a.Block.Block02.slideUp.targetBlank(href=`${path}restaurant/`)
+									.Header
+										.ttl RESTAURANT
+										.sub MAIN CONTENTS  |  <span>002</span>
+									.text 
+										p ブリューパブ＆居酒屋「Craftbeer と炭火はればれ」。HNBオリジナルビールから焼き鳥や炭火料理、パブメニュー、ヴィーガンメニューなどまで幅広くご用意しております。
+										.more View More 
+									.bg(style=`background-image: url('${img}index/main00002.jpg');`)
+								.inBlock
+									a.Block.Block03.slideUp.targetBlank(href=`${path}brewery/`)
+										.Header
+											//- h3
+											//- 	span our 
+											//- 	span concept
+											.ttl BREWERY
+											.sub MAIN CONTENTS  |  <span>003</span>
+										.text 
+											p 広島・本通り、平和公園のすぐ側、広島市内で一番大きな設備を構える醸造所。醸造設備を眺めながら楽しめる、ブリューパブ＆居酒屋も併設し、『まさにビール工場の中で飲める！楽しめる！』場所。
+											.more View More 
+										.bg(style=`background-image: url('${img}index/main00003.jpg');`)
+									a.Block.Block04.slideUp.targetBlank(href='https://hiroshima.beer/collections/goods')
+										.Header
+											.ttl ORIGINAL GOODS
+											.sub MAIN CONTENTS  |  <span>004</span>
+										.text 
+											p Tシャツやスウェット、グラスなど、HIROSHIMA NEIGHBORLY BREWINGオリジナルグッズのご紹介。
+											.more View More 
+										.bg(style=`background-image: url('${img}index/main00004.jpg');`)
+									a.Block.Block05.slideUp.targetBlank(href='https://en-gage.net/kanaderu/')
+										.Header
+											.ttl RECRUITING
+											.sub MAIN CONTENTS  |  <span>005</span>
+										.text 
+											p クラフトビールや食を通して、笑顔を一緒につくっていける仲間を募集しております。
+											.more View More 
+										.bg(style=`background-image: url('${img}index/main00005.jpg');`)
+
+							a.ECbanner.targetBlank(href="https://hiroshima.beer/")
+								.inner 
+									.icon 
+									p ONLINE SHOP
+
+
+						ul.Footer 
+							li
+								span.secLink.Instagram SCROLL
+
+
+
+
+				section#Instagram
+		
+					.Section
+
+						.Linear
+
+						.Contents.widthM
+							.sec.sp
+								.num.flex
+									span 0
+									.change
+										span 2
+										span 3
+								.name
+									.change
+										span instagram
+							h2.Header.spanAnim
+								span.row Our Instagram Feed! 
+							.Holder 
+								a.Block.targetBlank(href='https://www.instagram.com/p/C3otQ0BvLpK/')
+									.img(style=`background-image: url('${img}index/ig/00001.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C3EwA4fvbO3/')
+									.img(style=`background-image: url('${img}index/ig/00002.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C2zdHrZv0Se/')
+									.img(style=`background-image: url('${img}index/ig/00003.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C2yxO-OPTRZ/')
+									.img(style=`background-image: url('${img}index/ig/00004.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C2lx-sxPxk_/')
+									.img(style=`background-image: url('${img}index/ig/00005.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C2b61JmPNeh/')
+									.img(style=`background-image: url('${img}index/ig/00006.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C2Owx9zP9eS/')
+									.img(style=`background-image: url('${img}index/ig/00007.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C13as5_vbH2/')
+									.img(style=`background-image: url('${img}index/ig/00008.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C1qnvSDv5R-/')
+									.img(style=`background-image: url('${img}index/ig/00009.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C1YrJAYvnDf/')
+									.img(style=`background-image: url('${img}index/ig/00010.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C1RL8YeLx5c/')
+									.img(style=`background-image: url('${img}index/ig/00011.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C0ieJ6NPScE/')
+									.img(style=`background-image: url('${img}index/ig/00012.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C0auZOgPaSg/')
+									.img(style=`background-image: url('${img}index/ig/00013.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C0LJcKYP2P1/')
+									.img(style=`background-image: url('${img}index/ig/00014.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/C0A6tCRP2K3/')
+									.img(style=`background-image: url('${img}index/ig/00015.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/Cz5SbW4vAiu/')
+									.img(style=`background-image: url('${img}index/ig/00016.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/Czpr_2DvOcU/')
+									.img(style=`background-image: url('${img}index/ig/00017.jpeg')`)
+								a.Block.targetBlank(href='https://www.instagram.com/p/CzkxUGoPKP9/')
+									.img(style=`background-image: url('${img}index/ig/00018.jpeg')`)
+							a.ig.targetBlank(href='https://www.instagram.com/hnb_beer/') Follow US!
+
+						ul.Footer 
+							//- li
+							//- 	a.andMore.targetBlank(href='https://www.instagram.com/hnb_beer/') Follow US
+							li
+								span.secLink.News SCROLL
+
+
+
+
+				section#News
+		
+					.Section
+
+						.Linear
+
+						.Contents.widthM
+							.sec.sp
+								.num.flex
+									span 0
+									.change
+										span 3
+										span 4
+								.name
+									.change
+										span news & now
+							h2.Header.spanAnim
+								span.row NEWS & NOW
+							.Holder 
+								a.Block.slideUp.targetBlank.clickNone(href='')
+									span.date 2024.03.23
+									span.ttl WEBサイトリニューアル（第一弾）しました！全ページリニューアルまでお待ちください。
+								//- a.Block.slideUp.targetBlank(href='https://note.com/hiroshima_hnb/n/nb89253448a3c')
+								//- 	span.date 2022.12.08
+								//- 	span.ttl OUTDOORで飲むBEERは最高！【NARUのGreeting from HNB vol.18】
+								//- a.Block.slideUp.targetBlank(href='https://note.com/hiroshima_hnb/n/ne908565f38c1')
+								//- 	span.date 2022.09.18
+								//- 	span.ttl 住まいづくりのプロ・今村 進吾さん【＃HNB飲んでます vol.20】
+								//- a.Block.slideUp.targetBlank(href='https://note.com/hiroshima_hnb/n/n29f8db297bce')
+								//- 	span.date 2022.09.07
+								//- 	span.ttl 「HIROSHIMA BARREL RELAY PROJECT」スタート！【NARUのGreeting from HNB vol.17】
+								//- a.Block.slideUp.targetBlank(href='https://note.com/hiroshima_hnb/n/nd45ea1081699')
+								//- 	span.date 2022.07.28
+								//- 	span.ttl ホテル統括マネージャー・下坂 絵美さん【＃HNB飲んでます vol.19】
+								//- a.Block.slideUp.targetBlank(href='https://note.com/hiroshima_hnb/n/nf343733dbd64')
+								//- 	span.date 2022.07.07
+								//- 	span.ttl ヘアスタイリスト・平岡 めぐみさん【＃HNB飲んでます vol.18】
+
+						ul.Footer 
+							li
+								a.andMore.targetBlank(href='https://note.com/hiroshima_hnb/') And More
+							li
+								span.secLink.ShopAccess SCROLL
+
+
+
+
+				section#ShopAccess
+		
+					.Section
+
+						.Linear
+
+						.Contents.widthM
+							.sec.sp
+								.num.flex
+									span 0
+									.change
+										span 4
+										span 5
+								.name
+									.change
+										span shop&access
+						
+							.Holder.Harebare.slideUp
+								.textArea 
+									a.online.targetBlank(href='https://hiroshima.beer/')
+										.Logo 
+										.icon
+											span
+											span online shop 
+									.cat Beer & Restaurant 
+									.details 
+										.Logo(style=`background-image: url('${img}common/shopLogoHB.png'); background-size: 80%;`)
+										.inBlock 
+											h3.name
+												span CRAFT BEERと炭火
+												span はればれ
+											.address 広島県広島市中区大手町1-5-10
+											a.tel(href='tel:082-236-9313') 082-236-9313
+											ul.open 
+												li 12:00-22:00
+											ul.snsHolder 
+												li.ig
+													a.targetBlank(href='https://www.instagram.com/harebare_hiroshima/?hl=ja')
+												li.x
+													a.targetBlank(href='https://twitter.com/harebare_beer')
+												li.fb
+													a.targetBlank(href='https://www.facebook.com/harebarehiroshima/')
+												//- li.note
+												//- 	a.targetBlank(href='')
+									p HNBオリジナルビールをはじめ、レモンサワーやハイボール、カクテル、ワインにカフェメニューに、焼き鳥や炭火料理やパブメニュー、スィーツ、ヴィーガンメニューまで幅広く取り揃える炭火焼きのお店です。
+									.reserve 
+										ul 
+											li
+												span 1F
+												span 約30席
+											li
+												span 1.5F
+												span 約40席
+											li.note ※各種宴会・パーティもお待ちしております
+										a.targetBlank(href='https://tabelog.com/hiroshima/A3401/A340111/34027287/') ご予約はこちら
+								.imgArea(style=`background-image: url('${img}index/shopHB.jpg')`)
+								.gmArea
+									.gm
+										iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3292.282360056424!2d132.4530611122766!3d34.394168399484556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355aa3bcfd7a15fd%3A0xe49dd0c2a2d5c992!2zQ1JBRlQgQkVFUuOBqOeCreeBqyDjga_jgozjgbDjgow!5e0!3m2!1sja!2sjp!4v1710992947190!5m2!1sja!2sjp" width="600" height="450" style="border:0;" aria-hidden="false" tabindex="0" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade")
+									p バス・電停「紙屋町」「本通り」徒歩３分 ／ 広島バスセンター 徒歩３分
+						
+							.Holder.slideUp
+								.textArea 
+									.cat PUB & KITCHEN
+									.details 
+										.Logo(style=`background-image: url('${img}common/shopLogoGG.png'); background-size: 90%;`)
+										.inBlock 
+											h3.name
+												span WORLD BEER PUB & KITCHEN
+												span GOLDEN GARDEN
+											.address 広島県広島市中区三川町3-3 志津ビル 1F
+											a.tel(href='tel:082-247-6768') 082-247-6768
+											ul.snsHolder 
+												li.ig
+													a.targetBlank(href='https://www.instagram.com/goldengarden_beer/?hl=ja')
+												li.x
+													a.targetBlank(href='https://twitter.com/GOLDENGARDEN_07')
+												li.fb
+													a.targetBlank(href='https://www.facebook.com/goldengarden/?locale=ja_JP')
+									p 随時種類が変わる樽生ビール８種類と100種類以上のボトルビールのWORLD BEERを中心に、イタリアン出身のシェフの日替わり惣菜などが食べられるPUB & KITCHEN。
+								.imgArea(style=`background-image: url('${img}index/shopGG.jpg')`)
+						
+							.Holder.slideUp
+								.textArea 
+									.cat Beer & Cafè
+									.details 
+										.Logo(style=`background-image: url('${img}common/shopLogoRB.png')`)
+										.inBlock 
+											h3.name
+												span Japan Craft Beer Cafè
+												span RAKU BEER
+											.address 広島県広島市中区三川町3-3 志津ビル 1F
+											a.tel(href='tel:082-247-6768') 082-247-6768
+											ul.snsHolder 
+												li.ig
+													a.targetBlank(href='https://www.instagram.com/rakubeer/?hl=ja')
+												li.x
+													a.targetBlank(href='https://twitter.com/rakubeer')
+												li.fb
+													a.targetBlank(href='https://www.facebook.com/rakubeer/?locale=ja_JP')
+									p 日本のクラフトビール専門店として全国から届く、常時変わる樽生15TAPと食事が楽しめるダイニングカフェ。<br class="pc">週末は、昼から楽しんでいただけるお店です。
+								.imgArea(style=`background-image: url('${img}index/shopRB.jpg')`)
+
+							a.shopList.targetBlank(href='https://hiroshima.beer/pages/retail-store')
+								span other shop list 
+								span 取扱店舗一覧
+
+
+
+						ul.Footer 
+							li
+								span.secLink.Foot SCROLL
+
+
+
+
+
+
+				include ../partials/_footer
 
 
 			
-	include ../partials/_meta
 
-
-
-
-
-body#topPage.LoadingNow
-
-
-
-
-
-
-	include ../partials/_header
-
-
-
-
-
-	#wrapper
-
-
-
-
-
-		main#main
-
-
-
-
-			section#KV
-	
-				.Section.deviceHeight
-
-					.Contents 
-
-						.Logo
-
-						h1.ttlHolder
-							span.alpH 
-							span.alpI
-							span.alpR
-							span.alpO
-							span.alpS
-							span.alpH 
-							span.alpI
-							span.alpM
-							span.alpA
-
-						.txtHolder
-							.txtBlock CRAFT<br>BEER &<br>ORIGINAL<br>GOODS
-							.txtBlock RESTAURANT<br>SHOP<br>WEB SHOP<br>FACTORY
-							.txtBlock MADE IN<br>HIROSHIMA<br>JAPAN
-
-						.movieHolder
-							.movieBlock
-								.img.active(style=`background-image: url('${img}index/KV00001-1.jpg')`)
-								.img(style=`background-image: url('${img}index/KV00001-2.jpg')`)
-								.img(style=`background-image: url('${img}index/KV00001-3.jpg')`)
-								//- video(src=`${img}index/sampleMovie.mp4` muted loop playsinline autoplay poster=`${img}index/sampleMovie.jpg`)
-								//- .ttl PROMOTION MOVIE
-								.cover 
-									.white 
-									.black
-							.movieBlock
-								.img.active(style=`background-image: url('${img}index/KV00002-1.jpg')`)
-								.img(style=`background-image: url('${img}index/KV00002-2.jpg')`)
-								.img(style=`background-image: url('${img}index/KV00002-3.jpg')`)
-								//- video(src=`${img}index/sampleMovie.mp4` muted loop playsinline autoplay poster=`${img}index/sampleMovie.jpg`)
-								//- .ttl PROMOTION MOVIE
-								.cover 
-									.white 
-									.black
-							.movieBlock
-								.img.active(style=`background-image: url('${img}index/KV00003-1.jpg')`)
-								.img(style=`background-image: url('${img}index/KV00003-2.jpg')`)
-								.img(style=`background-image: url('${img}index/KV00003-3.jpg')`)
-								//- video(src=`${img}index/sampleMovie.mp4` muted loop playsinline autoplay poster=`${img}index/sampleMovie.jpg`)
-								//- .ttl PROMOTION MOVIE
-								.cover 
-									.white 
-									.black
-
-					ul.Footer 
-						li
-							span.secLink.ConceptMovie SCROLL
-
-
-
-
-			section#ConceptMovie
-	
-				.Section.deviceHeight
-
-					.Linear
-
-					a.Contents.widthM.clickNone#OurConcept(href='')
-						.sec.sp
-							.num.flex
-								span 0
-								.change
-									span 0
-									span 1
-							.name
-								.change
-									span MESSAGE
-						.Holder
-							.ttlEN Brewing Peace, Blooming Smiles.
-							h2.Header.spanAnim
-								span.row ビールは平和だからこそ、おいしい
-							p.slideUp
-								| HIROSHIMA NEIGHBORLY BREWING（ヒロシマネイバリーブリューイング）は、
-								br
-								| 広島の象徴でもある平和公園の東側、
-								br
-								| 本通りに入ってすぐにあるブルワリー。
-								br
-								| この地にあるからこそ「まちに根付いたものを作りたい」と、
-								br
-								| 広島県産の素材も使い、何度でも飲みたくなるビールを目指しています。
-								br
-								| また、醸造設備を眺めながら楽しめる、
-								br
-								| 併設のブリューパブ＆居酒屋「Craftbeer と炭火はればれ」もあり、
-								br
-								| 『まさにビール工場の中で飲める！楽しめる！』場所です。
-						//- .btn
-						.bg 
-							//- video(src=`${img}index/sampleMovie.mp4` muted loop playsinline autoplay poster=`${img}index/sampleMovie.jpg`)
-							img(src=`${img}index/ConceptMovie.jpg`)
-
-					ul.Footer 
-						li
-							span.secLink.MainContents SCROLL
-
-
-
-
-			section#MainContents
-	
-				.Section
-
-					.Linear
-
-					.Contents.widthM
-						.sec.sp
-							.num.flex
-								span 0
-								.change
-									span 1
-									span 2
-							.name
-								.change
-									span main cotents
-						a.Block.Block01.slideUp.targetBlank#OurBeer(href='https://hiroshima.beer/collections/all_') 
-							.Header
-								.ttl OUR BEER 
-								.sub MAIN CONTENTS  |  <span>001</span>
-							.text 
-								p この地にあるからこそ「まちに根付いたものを作りたい」と、広島県産の素材も使い、何度でも飲みたくなるビールを目指しています。
-								.more View More 
-							.bg(style=`background-image: url('${img}index/main00001.jpg');`)
-						.Holder
-							a.Block.Block02.slideUp.targetBlank.clickNone(href='')
-								.Header
-									.ttl RESTAURANT
-									.sub MAIN CONTENTS  |  <span>002</span>
-								.text 
-									p ブリューパブ＆居酒屋「Craftbeer と炭火はればれ」。HNBオリジナルビールから焼き鳥や炭火料理、パブメニュー、ヴィーガンメニューなどまで幅広くご用意しております。
-									.more View More 
-								.bg(style=`background-image: url('${img}index/main00002.jpg');`)
-							.inBlock
-								a.Block.Block03.slideUp.targetBlank.clickNone(href='')
-									.Header
-										//- h3
-										//- 	span our 
-										//- 	span concept
-										.ttl BREWERY
-										.sub MAIN CONTENTS  |  <span>003</span>
-									.text 
-										p 広島・本通り、平和公園のすぐ側、広島市内で一番大きな設備を構える醸造所。醸造設備を眺めながら楽しめる、ブリューパブ＆居酒屋も併設し、『まさにビール工場の中で飲める！楽しめる！』場所。
-										.more View More 
-									.bg(style=`background-image: url('${img}index/main00003.jpg');`)
-								a.Block.Block04.slideUp.targetBlank(href='https://hiroshima.beer/collections/goods')
-									.Header
-										.ttl ORIGINAL GOODS
-										.sub MAIN CONTENTS  |  <span>004</span>
-									.text 
-										p Tシャツやスウェット、グラスなど、HIROSHIMA NEIGHBORLY BREWINGオリジナルグッズのご紹介。
-										.more View More 
-									.bg(style=`background-image: url('${img}index/main00004.jpg');`)
-								a.Block.Block05.slideUp.targetBlank(href='https://en-gage.net/kanaderu/')
-									.Header
-										.ttl RECRUITING
-										.sub MAIN CONTENTS  |  <span>005</span>
-									.text 
-										p クラフトビールや食を通して、笑顔を一緒につくっていける仲間を募集しております。
-										.more View More 
-									.bg(style=`background-image: url('${img}index/main00005.jpg');`)
-
-					ul.Footer 
-						li
-							span.secLink.Instagram SCROLL
-
-
-
-
-			section#Instagram
-	
-				.Section
-
-					.Linear
-
-					.Contents.widthM
-						.sec.sp
-							.num.flex
-								span 0
-								.change
-									span 2
-									span 3
-							.name
-								.change
-									span instagram
-						h2.Header.spanAnim
-							span.row Our Instagram Feed! 
-						.Holder 
-							a.Block.targetBlank(href='https://www.instagram.com/p/C3otQ0BvLpK/')
-								.img(style=`background-image: url('${img}index/ig/00001.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C3EwA4fvbO3/')
-								.img(style=`background-image: url('${img}index/ig/00002.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C2zdHrZv0Se/')
-								.img(style=`background-image: url('${img}index/ig/00003.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C2yxO-OPTRZ/')
-								.img(style=`background-image: url('${img}index/ig/00004.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C2lx-sxPxk_/')
-								.img(style=`background-image: url('${img}index/ig/00005.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C2b61JmPNeh/')
-								.img(style=`background-image: url('${img}index/ig/00006.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C2Owx9zP9eS/')
-								.img(style=`background-image: url('${img}index/ig/00007.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C13as5_vbH2/')
-								.img(style=`background-image: url('${img}index/ig/00008.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C1qnvSDv5R-/')
-								.img(style=`background-image: url('${img}index/ig/00009.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C1YrJAYvnDf/')
-								.img(style=`background-image: url('${img}index/ig/00010.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C1RL8YeLx5c/')
-								.img(style=`background-image: url('${img}index/ig/00011.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C0ieJ6NPScE/')
-								.img(style=`background-image: url('${img}index/ig/00012.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C0auZOgPaSg/')
-								.img(style=`background-image: url('${img}index/ig/00013.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C0LJcKYP2P1/')
-								.img(style=`background-image: url('${img}index/ig/00014.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/C0A6tCRP2K3/')
-								.img(style=`background-image: url('${img}index/ig/00015.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/Cz5SbW4vAiu/')
-								.img(style=`background-image: url('${img}index/ig/00016.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/Czpr_2DvOcU/')
-								.img(style=`background-image: url('${img}index/ig/00017.jpeg')`)
-							a.Block.targetBlank(href='https://www.instagram.com/p/CzkxUGoPKP9/')
-								.img(style=`background-image: url('${img}index/ig/00018.jpeg')`)
-						a.ig.targetBlank(href='https://www.instagram.com/hnb_beer/') Follow US!
-
-					ul.Footer 
-						//- li
-						//- 	a.andMore.targetBlank(href='https://www.instagram.com/hnb_beer/') Follow US
-						li
-							span.secLink.News SCROLL
-
-
-
-
-			section#News
-	
-				.Section
-
-					.Linear
-
-					.Contents.widthM
-						.sec.sp
-							.num.flex
-								span 0
-								.change
-									span 3
-									span 4
-							.name
-								.change
-									span news & now
-						h2.Header.spanAnim
-							span.row NEWS & NOW
-						.Holder 
-							a.Block.slideUp.targetBlank.clickNone(href='')
-								span.date 2024.03.23
-								span.ttl WEBサイトリニューアル（第一弾）しました！全ページリニューアルまでお待ちください。
-							//- a.Block.slideUp.targetBlank(href='https://note.com/hiroshima_hnb/n/nb89253448a3c')
-							//- 	span.date 2022.12.08
-							//- 	span.ttl OUTDOORで飲むBEERは最高！【NARUのGreeting from HNB vol.18】
-							//- a.Block.slideUp.targetBlank(href='https://note.com/hiroshima_hnb/n/ne908565f38c1')
-							//- 	span.date 2022.09.18
-							//- 	span.ttl 住まいづくりのプロ・今村 進吾さん【＃HNB飲んでます vol.20】
-							//- a.Block.slideUp.targetBlank(href='https://note.com/hiroshima_hnb/n/n29f8db297bce')
-							//- 	span.date 2022.09.07
-							//- 	span.ttl 「HIROSHIMA BARREL RELAY PROJECT」スタート！【NARUのGreeting from HNB vol.17】
-							//- a.Block.slideUp.targetBlank(href='https://note.com/hiroshima_hnb/n/nd45ea1081699')
-							//- 	span.date 2022.07.28
-							//- 	span.ttl ホテル統括マネージャー・下坂 絵美さん【＃HNB飲んでます vol.19】
-							//- a.Block.slideUp.targetBlank(href='https://note.com/hiroshima_hnb/n/nf343733dbd64')
-							//- 	span.date 2022.07.07
-							//- 	span.ttl ヘアスタイリスト・平岡 めぐみさん【＃HNB飲んでます vol.18】
-
-					ul.Footer 
-						li
-							a.andMore.targetBlank(href='https://note.com/hiroshima_hnb/') And More
-						li
-							span.secLink.ShopAccess SCROLL
-
-
-
-
-			section#ShopAccess
-	
-				.Section
-
-					.Linear
-
-					.Contents.widthM
-						.sec.sp
-							.num.flex
-								span 0
-								.change
-									span 4
-									span 5
-							.name
-								.change
-									span shop&access
-					
-						.Holder.Harebare.slideUp
-							.textArea 
-								a.online.targetBlank(href='https://hiroshima.beer/')
-									.Logo 
-									.icon
-										span
-										span online shop 
-								.cat Beer & Restaurant 
-								.details 
-									.Logo(style=`background-image: url('${img}index/shopLogoHB.png'); background-size: 80%;`)
-									.inBlock 
-										h3.name
-											span CRAFT BEERと炭火
-											span はればれ
-										.address 広島県広島市中区大手町1-5-10
-										a.tel(href='tel:082-236-9313') 082-236-9313
-										ul.open 
-											li 12:00-22:00
-										ul.snsHolder 
-											li.ig
-												a.targetBlank(href='https://www.instagram.com/harebare_hiroshima/?hl=ja')
-											li.x
-												a.targetBlank(href='https://twitter.com/harebare_beer')
-											li.fb
-												a.targetBlank(href='https://www.facebook.com/harebarehiroshima/')
-											//- li.note
-											//- 	a.targetBlank(href='')
-								p HNBオリジナルビールをはじめ、レモンサワーやハイボール、カクテル、ワインにカフェメニューに、焼き鳥や炭火料理やパブメニュー、スィーツ、ヴィーガンメニューまで幅広く取り揃える炭火焼きのお店です。
-								.reserve 
-									ul 
-										li
-											span 1F
-											span 約30席
-										li
-											span 1.5F
-											span 約40席
-										li.note ※各種宴会・パーティもお待ちしております
-									a.targetBlank(href='https://tabelog.com/hiroshima/A3401/A340111/34027287/') ご予約はこちら
-							.imgArea(style=`background-image: url('${img}index/shopHB.jpg')`)
-							.gmArea
-								.gm
-									iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3292.282360056424!2d132.4530611122766!3d34.394168399484556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355aa3bcfd7a15fd%3A0xe49dd0c2a2d5c992!2zQ1JBRlQgQkVFUuOBqOeCreeBqyDjga_jgozjgbDjgow!5e0!3m2!1sja!2sjp!4v1710992947190!5m2!1sja!2sjp" width="600" height="450" style="border:0;" aria-hidden="false" tabindex="0" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade")
-								p バス・電停「紙屋町」「本通り」徒歩３分 ／ 広島バスセンター 徒歩３分
-					
-						.Holder.slideUp
-							.textArea 
-								.cat PUB & KITCHEN
-								.details 
-									.Logo(style=`background-image: url('${img}index/shopLogoGG.png'); background-size: 90%;`)
-									.inBlock 
-										h3.name
-											span WORLD BEER PUB & KITCHEN
-											span GOLDEN GARDEN
-										.address 広島県広島市中区三川町3-3 志津ビル 1F
-										a.tel(href='tel:082-247-6768') 082-247-6768
-										ul.snsHolder 
-											li.ig
-												a.targetBlank(href='https://www.instagram.com/goldengarden_beer/?hl=ja')
-											li.x
-												a.targetBlank(href='https://twitter.com/GOLDENGARDEN_07')
-											li.fb
-												a.targetBlank(href='https://www.facebook.com/goldengarden/?locale=ja_JP')
-								p 随時種類が変わる樽生ビール８種類と100種類以上のボトルビールのWORLD BEERを中心に、イタリアン出身のシェフの日替わり惣菜などが食べられるPUB & KITCHEN。
-							.imgArea(style=`background-image: url('${img}index/shopGG.jpg')`)
-					
-						.Holder.slideUp
-							.textArea 
-								.cat Beer & Cafè
-								.details 
-									.Logo(style=`background-image: url('${img}index/shopLogoRB.png')`)
-									.inBlock 
-										h3.name
-											span Japan Craft Beer Cafè
-											span RAKU BEER
-										.address 広島県広島市中区三川町3-3 志津ビル 1F
-										a.tel(href='tel:082-247-6768') 082-247-6768
-										ul.snsHolder 
-											li.ig
-												a.targetBlank(href='https://www.instagram.com/rakubeer/?hl=ja')
-											li.x
-												a.targetBlank(href='https://twitter.com/rakubeer')
-											li.fb
-												a.targetBlank(href='https://www.facebook.com/rakubeer/?locale=ja_JP')
-								p 日本のクラフトビール専門店として全国から届く、常時変わる樽生15TAPと食事が楽しめるダイニングカフェ。<br class="pc">週末は、昼から楽しんでいただけるお店です。
-							.imgArea(style=`background-image: url('${img}index/shopRB.jpg')`)
-
-						a.shopList.targetBlank(href='https://hiroshima.beer/pages/retail-store')
-							span other shop list 
-							span 取扱店舗一覧
-
-
-
-					ul.Footer 
-						li
-							span.secLink.Foot SCROLL
-
-
-
-
-
-
-			include ../partials/_footer
-
-
-		
-
-include ../partials/_foot
+		include ../partials/_foot

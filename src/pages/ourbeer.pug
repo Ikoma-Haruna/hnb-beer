@@ -1,0 +1,110 @@
+-
+	var title = 'OUE BEER'
+	var discription = '広島の象徴である平和公園の東側、元安橋から本通りに入ってすぐのところに、2020年8月に、マイクロブルワリー（クラフトビールの醸造所）を自社のオリジナルビールと炭火焼きが楽しめるパブ＆炭火居酒屋をOPEN！'
+	//- var keyword = ''
+	var url = 'https://hnb.beer/ourbeer/'
+
+	var path = '../'
+	var img = '../assets/img/'
+
+	var body = 'ourbeerPage'
+
+
+
+
+
+
+doctype html
+html(lang='ja')
+
+
+
+
+	include ../partials/_head
+
+
+
+				
+		include ../partials/_meta
+
+
+
+
+	body#ourbeerPage.LowPage.LowTemplate.LoadingNow
+
+
+
+
+
+
+		include ../partials/_header
+
+
+
+
+
+		#wrapper
+
+
+
+
+
+			main#main
+
+
+
+
+
+				section#KV
+					.Section.widthM
+						.Header.spanAnim.titleAnim
+							h1.pageTitle.row our beer.
+							p.fadeIn Loving the local area and a wide variety of beers.
+							.icon
+						.Contents 
+							img.fadeIn(src=`${img}ourbeer/KV.jpg`)
+
+
+
+				section#About
+					.Section.widthM
+
+						h2 OUE BEER.
+					
+						.Contents.Contents__00001
+							.Holder
+								p.JP.fadeIn
+									| この地にあるからこそ<br>「まちに根付いたものを作りたい」と、<br>できるだけ広島県産の素材を使い、<br>何度でも飲んでみたいと思っていただける<br>ビール造りを目指しています。
+									br
+									br
+									| 定番5種類をはじめ、毎月限定商品を、<br>樽・ボトル・缶でリリースしています。
+								p.EN.fadeIn
+									| Because we are here,<br>we are driven by the desire to<br>"create something rooted in the community."<br>That's why we use as many<br>local Hiroshima ingredients<br>as possible to craft beers that people<br>will want to enjoy time and again.<br>In addition to our five core beers,
+									br
+									br
+									| we release limited-edition brews<br>each month in kegs, bottles, and cans.
+
+						.Contents.Contents__00002
+							.imgHolder
+								img.fadeIn01(src=`${img}ourbeer/about00001.jpg`)
+								img.fadeIn02(src=`${img}ourbeer/about00002.jpg`)
+
+						include ../partials/_con-Link
+
+
+
+
+
+				include ../partials/_sec-Link
+
+
+
+
+
+
+				include ../partials/_footer
+
+
+			
+
+		include ../partials/_foot

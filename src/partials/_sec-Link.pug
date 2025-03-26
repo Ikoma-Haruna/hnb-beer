@@ -1,0 +1,33 @@
+section#Link 
+	.Section.widthM
+		.Contents 
+			a.Block.ourbeer.slideUp(href=`${path}ourbeer/`)
+				h3 our beer 
+				p Loving the local area and a wide variety of beers.
+				.arrow
+			a.Block.restaurant.slideUp(href=`${path}restaurant/`)
+				h3 restaurant
+				p Craftbeer and sumibi harebare.
+				.arrow
+			a.Block.brewery.slideUp(href=`${path}brewery/`)
+				h3 BREWERY
+				p Hiroshima Neighborly Brewing.
+				.arrow
+
+
+			if body == 'aboutusPage'
+			else
+
+				a.backBtn(href=`${path}aboutus/`) GO BACK “ABOUT US”
+
+				include ../partials/_con-Link
+
+				.snsHolder 
+					p お店の情報など随時配信中!
+					ul 
+						li.ig: a.targetBlank(href='https://www.instagram.com/hnb_beer/')
+						li.x: a.targetBlank(href='https://twitter.com/hnb_beer')
+						li.fb: a.targetBlank(href='https://www.facebook.com/hiroshimaNB/')
+						li.note: a.targetBlank(href='https://note.com/hiroshima_hnb/')
+
+

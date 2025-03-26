@@ -337,6 +337,54 @@ $(window).on('load', function() {
 
 
 
+
+
+
+	//-_-_-_-_-  breweryPage
+	if ( window.document.body.id === 'breweryPage' ) {
+
+
+
+		$(function(){
+
+			const swiper = new Swiper('.brandSlider', {
+				slidesPerView: 3,
+				spaceBetween: 1,
+				grabCursor: true,
+				// pagination: {
+				// 	el: '.swiper-pagination',
+				// 	clickable: true,
+				// },
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				speed: 1000,
+				autoplay: {
+					delay: 4000,
+					disableOnInteraction: false,
+				},
+				loop: true,
+				loopAdditionalSlides: 1,
+			});
+
+			
+
+		});
+
+
+
+
+
+	}
+
+
+
+
+
+
+
+
 	//-_-_-_-_-  luxy
 	if (windowWidth <= windowTB) {
 		// TB
@@ -367,7 +415,7 @@ $(window).on('load', function() {
 		distance: '0px',
 		origin: 'bottom',
 		interval: 400,
-		duration: 1000,
+		duration: 2500,
 		mobile: true,
 		viewFactor: 0.1,
 		scale: 1
@@ -377,7 +425,7 @@ $(window).on('load', function() {
 		distance: '100px',
 		origin: 'bottom',
 		interval: 100,
-		duration: 1000,
+		duration: 2500,
 		mobile: true,
 		scale: 1
 	};
@@ -386,7 +434,7 @@ $(window).on('load', function() {
 		distance: '50px',
 		origin: 'top',
 		interval: 100,
-		duration: 1000,
+		duration: 2500,
 		mobile: true,
 		scale: 1
 	};
@@ -395,7 +443,7 @@ $(window).on('load', function() {
 		distance: '50px',
 		origin: 'left',
 		interval: 100,
-		duration: 1000,
+		duration: 2500,
 		mobile: true,
 		scale: 1
 	};
@@ -404,7 +452,7 @@ $(window).on('load', function() {
 		distance: '50px',
 		origin: 'right',
 		interval: 100,
-		duration: 1000,
+		duration: 2500,
 		mobile: true,
 		scale: 1
 	};

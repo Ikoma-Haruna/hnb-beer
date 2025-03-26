@@ -34,6 +34,9 @@ html(lang='ja')
 					var windowWidth = $(window).width();
 					var windowTB = 835;
 
+					var urlParam = location.search.substring(1);
+					//- console.log(urlParam);
+
 					$('html,body').animate({ scrollTop: 0 }, '1');
 					$('#Header').addClass('KV');
 					
@@ -52,6 +55,9 @@ html(lang='ja')
 					}
 					function Loading03(){
 						$('nav#sideMenu .Contents .LeftBlock, nav#sideMenu .Contents .RightBlock, nav#sideMenu .Contents .BottomBlock').css('transform', 'translate(0, 0)');
+						if(urlParam) {
+							$('#Menu .Section .Contents .MainMenu li a.' + urlParam).trigger('click');
+						}
 					}
 
 					if (windowWidth <= windowTB) {
@@ -90,6 +96,29 @@ html(lang='ja')
 					}
 					
 				});
+
+		else
+			script.
+				$(function(){
+					$('html,body').animate({ scrollTop: 0 }, '1');
+					//- $('#Header').addClass('KV');
+					
+					function Loading01(){
+						$('body').removeClass('LoadingNow');
+					}
+					function Loading02(){
+						$('nav#sideMenu .Contents .LeftBlock, nav#sideMenu .Contents .RightBlock, nav#sideMenu .Contents .BottomBlock').css('transform', 'translate(0, 0)');
+						//- $('#Header').removeClass('KV');
+					}
+
+					Loading01();
+					setTimeout(function(){
+						Loading02();
+					},800);
+					
+				});
+
+
 
 		<!-- favicon -->
 		link(rel="apple-touch-icon" href=`${img}favicon/favicon.png`)

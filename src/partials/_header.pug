@@ -1,26 +1,68 @@
-header#Header.KV
+header#Header
 
 
 	#mainHeader
 		.Contents.flexC 
 			.copy Because beer is peaceful, delicious
-			a.Logo(href=`${path}?top`)
-			.sec 
-				.num.flex
-					span 0
-					.change
-						span 1
-						span 2
-						span 3
-						span 4
-						span 5
-				.name
-					.change
-						span MESSAGE
-						span main cotents
-						span instagram
-						span news & now
-						span shop & access
+			a.Logo(href=`${path}`)
+			
+			if body == 'topPage'
+				.sec 
+					.num.flex
+						span 0
+						.change
+							span 1
+							span 2
+							span 3
+							span 4
+							span 5
+					.name
+						.change
+							span MESSAGE
+							span main cotents
+							span instagram
+							span news & now
+							span shop & access
+			
+			if body == 'aboutusPage'
+				.sec 
+					.num.flex
+						span 0
+						.change
+							span 1
+					.name
+						.change
+							span about us.
+			
+			if body == 'breweryPage'
+				.sec 
+					.num.flex
+						span 0
+						.change
+							span 3
+					.name
+						.change
+							span brewery.
+			
+			if body == 'ourbeerPage'
+				.sec 
+					.num.flex
+						span 0
+						.change
+							span 2
+					.name
+						.change
+							span our beer.
+			
+			if body == 'restaurantPage'
+				.sec 
+					.num.flex
+						span 0
+						.change
+							span 4
+					.name
+						.change
+							span restaurant.
 
 
 menu#Menu.deviceHeight 
@@ -44,14 +86,20 @@ nav#sideMenu.KV
 					.icon 
 					span online<br>shop 
 				ul 
-					li.ig
-						a.targetBlank(href='https://www.instagram.com/hnb_beer/')
-					li.x
-						a.targetBlank(href='https://twitter.com/hnb_beer')
-					li.fb
-						a.targetBlank(href='https://www.facebook.com/hiroshimaNB/')
-					li.note
-						a.targetBlank(href='https://note.com/hiroshima_hnb/')
+					li.ig: a.targetBlank(href='https://www.instagram.com/hnb_beer/')
+					li.x: a.targetBlank(href='https://twitter.com/hnb_beer')
+					li.fb: a.targetBlank(href='https://www.facebook.com/hiroshimaNB/')
+					li.note: a.targetBlank(href='https://note.com/hiroshima_hnb/')
+			if body == 'topPage'
+			else
+				.menuBtnHolder
+					ul 
+						li: a(href=`${path}aboutus/`) about us
+						li: a(href=`${path}ourbeer/`) our beer
+						li: a(href=`${path}brewery/`) BREWERY
+						li: a(href=`${path}restaurant/`) restaurant
+						li: a.targetBlank(href='https://hiroshima.beer/pages/contact') CONTACT
+
 		.RightBlock 
 			.menuOpen 
 				.icon
