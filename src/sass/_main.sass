@@ -52,7 +52,7 @@ h2.Header
 	&.active
 		.row
 			.Split
-				@for $i from 1 through 30
+				@for $i from 1 through 50
 					&:nth-child(#{$i})
 						.SplitInner
 							animation: TitleAnim .75s ease-out .02s * $i 1 forwards
@@ -72,31 +72,31 @@ h2.Header
 		.row
 			&:nth-child(1)
 				.Split
-					@for $i from 1 through 30
+					@for $i from 1 through 50
 						&:nth-child(#{$i})
 							.SplitInner
 								animation: TitleAnim .5s ease-out 0s + .08s * $i 1 forwards
 			&:nth-child(2)
 				.Split
-					@for $i from 1 through 30
+					@for $i from 1 through 50
 						&:nth-child(#{$i})
 							.SplitInner
 								animation: TitleAnim .5s ease-out .25s + .08s * $i 1 forwards
 			&:nth-child(3)
 				.Split
-					@for $i from 1 through 30
+					@for $i from 1 through 50
 						&:nth-child(#{$i})
 							.SplitInner
 								animation: TitleAnim .5s ease-out .5s + .08s * $i 1 forwards
 			&:nth-child(4)
 				.Split
-					@for $i from 1 through 30
+					@for $i from 1 through 50
 						&:nth-child(#{$i})
 							.SplitInner
 								animation: TitleAnim .5s ease-out .75s + .08s * $i 1 forwards
 			&:nth-child(5)
 				.Split
-					@for $i from 1 through 30
+					@for $i from 1 through 50
 						&:nth-child(#{$i})
 							.SplitInner
 								animation: TitleAnim .5s ease-out 1s + .08s * $i 1 forwards
@@ -113,31 +113,31 @@ h2.Header
 		.row
 			&:nth-child(1)
 				.Split
-					@for $i from 1 through 30
+					@for $i from 1 through 50
 						&:nth-child(#{$i})
 							.SplitInner
 								animation: TextAnim .5s ease-out 0s + .06s * $i 1 forwards
 			&:nth-child(2)
 				.Split
-					@for $i from 1 through 30
+					@for $i from 1 through 50
 						&:nth-child(#{$i})
 							.SplitInner
 								animation: TextAnim .5s ease-out .25s + .06s * $i 1 forwards
 			&:nth-child(3)
 				.Split
-					@for $i from 1 through 30
+					@for $i from 1 through 50
 						&:nth-child(#{$i})
 							.SplitInner
 								animation: TextAnim .5s ease-out .5s + .06s * $i 1 forwards
 			&:nth-child(4)
 				.Split
-					@for $i from 1 through 30
+					@for $i from 1 through 50
 						&:nth-child(#{$i})
 							.SplitInner
 								animation: TextAnim .5s ease-out .75s + .06s * $i 1 forwards
 			&:nth-child(5)
 				.Split
-					@for $i from 1 through 30
+					@for $i from 1 through 50
 						&:nth-child(#{$i})
 							.SplitInner
 								animation: TextAnim .5s ease-out 1s + .06s * $i 1 forwards
@@ -757,40 +757,6 @@ nav#sideMenu
 							width: 1.9rem
 							aspect-ratio: 1 / 1
 
-			.menuBtnHolder
-				width: 14.5rem
-				margin: 5.5rem 0 0 -4rem
-				ul
-					@include flexC
-					flex-wrap: wrap
-					gap: .2rem
-					li
-						aspect-ratio: 292 / 81
-						width: 100%
-						background-color: $black
-						a
-							width: 100%
-							height: 100%
-							@include fontEN
-							@include weightB
-							color: $white
-							@include textUpper
-							font-size: 1.25rem
-							padding: 0 0 0 2.5rem
-							display: flex
-							align-items: center
-							&::after
-								content: '▶︎'
-								font-size: 1rem
-								margin: 0 0 0 1rem
-								opacity: 0
-								transition: .25s
-							&:hover
-								@include hover
-								&::after
-									opacity: 1
-
-
 		.RightBlock 
 			width: 9rem
 			height: 16.9rem
@@ -849,7 +815,54 @@ nav#sideMenu
 			transform: translateY(8rem)
 			transition: 0.75s
 
+		.menuBtnBlock
+			width: 14.5rem
+			// margin: 5.5rem 0 0 -4rem
+			position: absolute
+			bottom: 3rem
+			left: 0
+			pointer-events: auto
+			ul
+				@include flexC
+				flex-wrap: wrap
+				gap: .2rem
+				li
+					aspect-ratio: 292 / 81
+					width: 100%
+					background-color: $black
+					a
+						width: 100%
+						height: 100%
+						@include fontEN
+						@include weightB
+						color: $white
+						@include textUpper
+						font-size: 1.25rem
+						padding: 0 0 0 2.5rem
+						display: flex
+						align-items: center
+						&::after
+							content: '▶︎'
+							font-size: 1rem
+							margin: 0 0 0 1rem
+							opacity: 0
+							transition: .25s
+						&:hover
+							@include hover
+							&::after
+								opacity: 1
 
+		.reserveBlock
+			width: 7.45rem
+			background-image: url('#{$path}common/btnReserve.png')
+			aspect-ratio: 300 / 337
+			position: absolute
+			bottom: calc(50% + -20rem)
+			right: 2rem
+			pointer-events: auto
+			transition: .25s
+			&:hover
+				transform: scale(1.05)
 
 
 
@@ -2101,6 +2114,86 @@ nav#sideMenu
 
 
 
+
+
+	#popup 
+		pointer-events: none
+		opacity: 0
+		transition: .5s
+		z-index: 10
+		@include weightB
+		padding: 10rem
+		position: fixed
+		top: 10rem
+		right: 0
+		left: 0
+		margin: auto
+		border: 2.5px solid $black
+		background-color: $white
+		z-index: 10
+		.Section
+			.icon
+				position: absolute
+				top: 3rem
+				left: 3rem
+				width: 13rem
+				aspect-ratio: 1 / 1
+				display: inline-block
+			.Btn
+				position: absolute
+				top: 3rem
+				right: 3rem
+				background-image: url('#{$path}aboutus/popupBtn.png')
+				width: 6.3rem
+				aspect-ratio: 1 / 1
+				display: inline-block
+				transition: .25s
+				&:hover
+					@include hover
+					transform: scale(1.1)
+			.Header 
+				text-align: center
+				border-bottom: 1.5px solid $black
+				padding: 0 7rem 4.5rem
+				margin: 0 0 5rem
+				h3 
+					font-size: 3.15rem
+					margin: 0 0 2.5rem
+				.sub 
+					@include fontEN
+					font-size: 1.8rem
+			.Contents 
+				@include flexC
+				align-items: flex-start
+				.textArea 
+					width: 50%
+					p
+						font-size: 1.35rem
+						line-height: 2.9rem
+						&.JP 
+							margin: 0 0 4.5rem
+						&.EN 
+							@include fontEN
+				img
+					width: 41%
+		&.open
+			pointer-events: auto
+			opacity: 1
+		&.hiroshima
+			.Section
+				.icon
+					background-image: url('#{$path}aboutus/iconHiroshima.png')
+		&.brewing
+			.Section
+				.icon
+					background-image: url('#{$path}aboutus/iconBrewing.png')
+		&.neighborly
+			.Section
+				.icon
+					background-image: url('#{$path}aboutus/iconNeighborly.png')
+
+
+
 	section#KV
 		.Section
 			.Header
@@ -2174,7 +2267,6 @@ nav#sideMenu
 								font-size: 1.65rem
 								line-height: 3.15rem
 
-
 	
 
 	section#Vision 
@@ -2217,6 +2309,52 @@ nav#sideMenu
 							@include fontEN
 							font-size: 1.65rem
 							line-height: 3.15rem
+			.popupContents
+				@include flexC
+				justify-content: space-between
+				margin: 13rem 0
+				h3
+					width: 35.28%
+					@include fontEN
+					@include weightB
+					font-size: 7rem
+					line-height: 7.5rem
+					display: inline-block
+					.row
+						display: inline-block
+						position: relative
+						&::after
+							content: ''
+							width: 100%
+							height: 8px
+							background-color: $black
+							position: absolute
+							left: 0
+							bottom: 1rem
+				.Block 
+					width: 57.75%
+					aspect-ratio: 2491 / 2301
+					background-image: url('#{$path}aboutus/popup.png')
+					position: relative
+					ul 
+						li
+							position: absolute
+							width: 8rem
+							aspect-ratio: 1 / 1
+							background-image: url('#{$path}aboutus/btnMore.png')
+							transition: .25s
+							&.hiroshima
+								top: 0
+								right: 28.5%
+							&.brewing
+								top: 53.5%
+								right: 0
+							&.neighborly
+								top: 53.5%
+								left: 0
+							&:hover
+								@include hover
+								transform: scale(1.1)
 					
 
 	
@@ -2229,49 +2367,6 @@ nav#sideMenu
 
 	
 
-	section#Link 
-		.Section
-			margin: 14rem auto 0
-			.Contents 
-				display: flex
-				flex-wrap: wrap
-				gap: 5rem
-				.Block
-					border: 2.5px solid $black
-					@include fontEN
-					@include weightB
-					@include textUpper
-					color: $black
-					padding: 5.5rem 6.9rem
-					width: 100%
-					background-clip: $white
-					transition: .5s
-					position: relative
-					h3
-						font-size: 8.2rem
-						transform: translateX(-.4rem)
-					p
-						font-size: 1.45rem
-						margin: 1.5rem 0 0
-					.arrow
-						background-image: url('#{$path}aboutus/arrow.png')
-						background-size: 100% 100%
-						width: 20rem
-						height: 6rem
-						position: absolute
-						top: 0
-						right: 6.9rem
-						bottom: 0
-						margin: auto
-					&:hover
-						background-color: $black
-						color: $white
-						.arrow
-							filter: brightness(0) invert(1)
-
-
-
-	
 	section#Company 
 		.Section
 			margin: 19.5rem auto 0
@@ -2558,8 +2653,6 @@ nav#sideMenu
 
 
 
-
-
 	section#Beer
 		margin: 14rem 0 0
 		.Section 
@@ -2638,8 +2731,6 @@ nav#sideMenu
 					aspect-ratio: 1 / 1
 					&:hover
 						transform: scale(1.05)
-
-
 
 
 
@@ -2813,8 +2904,6 @@ nav#sideMenu
 
 
 
-
-
 	section#Brewer
 		margin: 14rem 0 0
 		.Section 
@@ -2834,7 +2923,7 @@ nav#sideMenu
 				background-image: url('#{$path}common/cover.png')
 				background-size: .7rem .7rem
 				background-repeat: repeat
-				opacity: .3
+				// opacity: .3
 				position: absolute
 				width: 100%
 				height: 100%
@@ -2903,7 +2992,6 @@ nav#sideMenu
 						background-color: $white
 						color: $black
 		
-
 
 
 	section#Link
@@ -2982,13 +3070,959 @@ nav#sideMenu
 					padding: 0
 					border: unset
 					border: 2.5px solid $black
-		
+
+
+
+	section.ourbeerSec
+		margin: 19.5rem 0 0
+		.Section
+			@include weightB
+			margin: 0 auto 8.35rem
+			.Header
+				@include fontEN
+				position: relative
+				// border-bottom: 2px solid $black
+				// padding: 0 0 2.95rem
+				margin: 0 0 10.8rem
+				.sub
+					background-image: url('#{$path}common/cover.png')
+					background-size: .5rem .5rem
+					background-repeat: repeat
+					font-size: 2rem
+					color: $white
+					display: inline-block
+					padding: .5rem 2rem
+				h2
+					font-size: 7.5rem
+					margin: 2.35rem 0 0
+					.row
+				h3
+					@include weightB
+					font-size: 1.8rem
+
+		&#Partners
+			.Section
+				@include weightB
+				margin: 0 auto 8.35rem
+				.Contents 
+					.Block
+						display: flex
+						flex-wrap: wrap
+						p
+							width: 50%
+							&.JP 
+								font-size: 1.8rem
+								line-height: 3.15rem
+							&.EN
+								@include fontEN
+								font-size: 1.65rem
+								line-height: 3.15rem
+				.imgHolder 
+					@include flexC
+					flex-wrap: wrap
+					gap: 7.35rem 4rem
+					margin: 16.8rem 0 0
+					.Block
+						width: calc((100% - 4rem * 2) / 3)
+						img
+						p
+							@include weightM
+							font-size: 1.35rem
+							margin: 2rem 0 0
+						&:nth-child(1)
+							width: 100%
+
+		&#Projects
+			.Section
+				.Contents
+					.Block
+						padding: 6.5rem 7.5rem
+						position: relative
+						@include flexC
+						flex-wrap: wrap
+						justify-content: space-between
+						align-items: flex-start
+						margin: 0 0 8.6rem
+						&::before
+							content: ""
+							// background-color: #fef100
+							position: absolute
+							width: 100%
+							height: 100%
+							top: 0
+							left: 0
+							z-index: -1
+						&::after
+							content: ""
+							background-image: url('#{$path}common/cover.png')
+							background-size: .7rem .7rem
+							background-repeat: repeat
+							// opacity: .3
+							position: absolute
+							width: 100%
+							height: 100%
+							top: 2rem
+							left: 2rem
+							z-index: -2
+						.point
+							position: absolute
+							top: 2rem
+							right: -5.5rem
+							@include fontEN
+							@include weightB
+							@include writing
+							font-size: 2.2rem
+							color: $black
+						.Header
+							width: 44%
+							margin: 0
+							.Logo
+								margin: 0 0 5.5rem
+							p 
+								@include weightB
+								font-size: 1.55rem
+								line-height: 3rem
+								letter-spacing: .06em
+								&.note
+									position: relative
+									@include weightR
+									font-size: 1rem
+									line-height: 1.45rem
+									padding: 0 0 0 1rem
+									margin: 3.8rem 0 0
+									&::before
+										content: '※'
+										position: absolute
+										top: 0
+										left: 0
+						img
+							width: 50%
+							margin: 0 0 0 auto
+
+						.detailsContents 
+							width: 100%
+							display: none
+							
+						.ViewBtn 
+							width: 5.7rem
+							height: 4.8rem
+							position: relative
+							margin: 2.6rem auto 0
+							span
+								position: absolute
+								top: 0
+								right: 0
+								left: 0
+								margin: auto
+								display: inline-block
+								text-align: center
+								&.open
+									opacity: 1
+								&.close
+									opacity: 0
+							.icon
+								margin: 2.25rem auto 0
+								background-image: url('#{$path}ourbeer/viewBtn.png')
+								transition: .25s
+								width: 2.55rem
+								aspect-ratio: 1 / 1
+							&:hover
+								@include hover
+								.icon
+									transform: scale(1.1)
+									
+
+	
+						&__00001
+							color: $black
+							&::before
+								content: ""
+								background-color: #fef100
+							.Header
+								.Logo
+									width: 36.2rem
+
+							.detailsContents 
+								.imgHolder 
+									@include flexC
+									gap: .25rem
+									margin: 8rem auto 4.1rem
+									img
+										width: calc((100% - .25rem * 3) / 4)
+								.Inner 
+									@include flexC
+									flex-wrap: wrap
+									justify-content: space-between
+									align-items: flex-start
+									.textArea 
+										width: 58.77%
+										p
+											@include weightM
+											font-size: 1.35rem
+											line-height: 2.8rem
+											margin: 0 0 7rem
+										a
+											color: $black
+											@include weightB
+											font-size: 1.35rem
+											background-image: url('#{$path}ourbeer/arrow.png')
+											background-size: 100% auto
+											width: 100%
+											margin: 0 0 1.8rem
+											span
+												padding: 0 2rem 0 0
+												background-color: #fef100
+									.imgArea
+										width: 36.15%
+										img
+											width: 100%
+									.btnArea
+										width: 58.72%
+										margin: 7rem auto 9rem
+										a
+											@include weightB
+											font-size: 1.55rem
+											width: 100%
+											aspect-ratio: 1077 / 126
+											background-color: $black
+											border: 1px solid $black
+											color: $white
+											text-align: center
+											@include flexC
+											padding: 0 0 .5rem
+											position: relative
+											transition: .25s
+											&::after
+												content: ""
+												position: absolute
+												width: 2rem
+												height: 2rem
+												background-image: url('#{$path}ourbeer/btnArrow.png')
+												background-size: 100%
+												top: 1rem
+												right: 1rem
+											&:hover
+												@include hover
+												background-color: $white
+												color: $black
+										p.note
+											@include weightR
+											font-size: 1.15rem
+											margin: 2.8rem auto 0
+											text-align: center
+								
+							.ViewBtn 
+
+
+						&__00002
+							color: $white
+							&::before
+								content: ""
+								background-color: #51346f
+							.Header
+								.Logo
+									width: 39.75rem
+
+							.detailsContents 
+								.Inner
+									margin: 7.5rem 0
+									padding: 0 0 7.5rem
+									border-bottom: 1px solid $white
+									@include flexC
+									align-items: flex-start
+									justify-content: space-between
+									.num
+										width: 14.72%
+										aspect-ratio: 1 / 1
+										background-color: $black
+										border-radius: 50%
+										@include flexC
+										span
+											@include weightM
+											font-size: 2.5rem
+											display: inline-block
+											transform: translateY(1rem)
+											&:nth-child(2)
+												@include fontEN
+												@include weightB
+												font-size: 8rem
+												transform: translateY(-.8rem)
+									.details 
+										width: 41.22%
+										margin: 0 auto
+										.Logo 
+											background-image: url('#{$path}ourbeer/LogoRinkiouhen.png')
+											width: 70.89%
+											aspect-ratio: 537 / 133
+										.Name 
+											@include weightR
+											font-size: 1.85rem
+											margin: 1.5rem 0 0
+										p 
+											@include weightM
+											font-size: 1.25rem
+											line-height: 2.8rem
+											margin: 6.25rem 0 4.5rem
+										a
+											@include weightB
+											font-size: 1.55rem
+											width: 100%
+											aspect-ratio: 756 / 77
+											background-color: $black
+											border: 1px solid $black
+											color: $white
+											text-align: center
+											@include flexC
+											padding: 0 0 0.25rem
+											position: relative
+											transition: .25s
+											&::after
+												content: ""
+												position: absolute
+												width: 2rem
+												height: 2rem
+												background-image: url('#{$path}ourbeer/btnArrow.png')
+												background-size: 100%
+												background-repeat: no-repeat
+												top: 0
+												right: 1rem
+												bottom: 0
+												margin: auto
+											&:hover
+												@include hover
+												background-color: $white
+												color: $black
+									img
+										width: 32.71%
+									&__00001
+									&__00002
+										margin: 0 0 7.5rem
+										padding: 0
+										border-bottom: none
+
+								.projectInner
+									border: 1rem solid $black
+									padding: 5rem
+									.textArea 
+										display: flex
+										flex-wrap: wrap
+										.Header
+											width: calc(100% - 29.69%)
+											display: flex
+											flex-wrap: wrap
+											.Logo 
+												width: 12.35rem
+												height: 12.35rem
+												background-image: url('#{$path}ourbeer/LogoHBRP.png')
+												margin: 0
+											.title
+												margin: 0 0 0 2.5rem
+												h3 
+													font-size: 4.1rem
+													line-height: 4.25rem
+													margin: 0 0 2rem
+												span
+													@include weightR
+													font-size: 1.5rem
+											p
+												@include weightM
+												font-size: 1.35rem
+												line-height: 2.8rem
+												width: 90%
+										img
+											width: 29.69%
+									.makerList
+										background-color: $white
+										position: relative
+										padding: 3rem 0 3rem 3rem
+										margin: 5rem auto 0
+										h3 
+											background-color: $black
+											height: 100%
+											aspect-ratio: 68 / 620
+											position: absolute
+											top: 0
+											left: 0
+											z-index: 2
+											@include writing
+											@include flexC
+											font-size: 1.55rem
+											letter-spacing: .1em
+										.makerSlider
+											.swiper-wrapper
+												.swiper-slide
+													width: 25rem
+													padding: 1rem 2.3rem
+													border-right: 1px solid $black
+													color: $black
+													text-align: center
+													.img
+														height: 16.5rem
+														width: 80%
+														margin: 0 auto 1rem
+														background-size: contain
+													h4
+														@include weightB
+														height: 3.6rem
+														@include flexC
+														&.EN
+															@include fontEN
+															font-size: 1.8rem
+														&.JP
+															font-size: 1.7rem
+													p
+														@include weightL
+														margin: 1rem auto 0
+								
+								
+							.ViewBtn 
+								.icon
+									filter: brightness(0) invert(1)
+
+
+						&.open
+							// .detailsContents
+							// 	height: auto
+							// 	opacity: 1
+							.ViewBtn
+								span
+									&.open
+										opacity: 0
+									&.close
+										opacity: 1
+								.icon
+									transform: rotate(45deg)
 
 
 
 	section#Link
 		.Section .Contents .Block
 			&.ourbeer
+				display: none
+
+
+
+
+
+
+
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+//  restaurantPage
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+#restaurantPage
+
+
+
+	@mixin shopDetails
+		.shopDetails
+			@include flexC
+			flex-wrap: wrap
+			align-items: flex-start
+			justify-content: space-between
+			.Logo
+				width: 21.14%
+				aspect-ratio: 434 / 575
+				border: 1px solid $black
+				background-image: url('#{$path}common/shopLogoHB.png')
+				background-size: 85%
+			.Contents
+				width: 51.02%
+				margin: 0 auto 0 4%
+				.Name
+					margin: 0 0 2.25rem
+					h3
+						@include weightB
+						font-size: 3.1rem
+						letter-spacing: .08em
+						margin: 0 0 1.5rem
+					.sub
+						@include weightR
+						font-size: 2rem
+						span
+							@include weightL
+							font-size: 1.5rem
+				.details 
+					display: flex
+					flex-wrap: wrap
+					.Inner 
+						width: 100%
+						display: flex
+						margin: 0 0 1.6rem
+						.th
+							width: 11.5rem
+							@include weightT
+							@include fontEN
+							font-size: 4.2rem
+						.td
+							width: calc(100% - 11.5rem)
+							@include weightB
+							@include fontEN
+							font-size: 4.4rem
+							a
+								color: $black
+							span
+								@include weightL
+								font-size: 1.5rem
+						&:last-child
+							margin: 0 0 3.15rem
+					.Floor 
+						@include weightB
+						display: flex
+						flex-wrap: wrap
+						width: 17rem
+						gap: .5rem 0
+						span
+							@include weightB
+							&:nth-child(odd)
+								@include fontEN
+								font-size: 2rem
+								background-color: $black
+								color: $white
+								@include flexC
+								width: 6rem
+							&:nth-child(even)
+								font-size: 2.25rem
+								margin: 0 0 0 1rem
+					.btn
+						@include weightB
+						@include flexC
+						font-size: 1.75rem
+						position: relative
+						border: 1px solid $black
+						background-color: $white
+						width: 16.02rem
+						aspect-ratio: 3 / 1
+						margin: 0 0 0 2rem
+						&::after
+							content: ""
+							position: absolute
+							width: 100%
+							height: 100%
+							top: .5rem
+							left: .5rem
+							z-index: -2
+							border: 1px solid $black
+						&.targetBlank
+							color: $black
+							&::after
+								background-image: url('#{$path}common/cover.png')
+								background-size: .7rem .7rem
+								background-repeat: repeat
+								transition: .25s
+							&::before
+								content: ''
+								background-image: url('#{$path}restaurant/btnArrow.png')
+								background-size: 100%
+								width: 2rem
+								height: 2rem
+								position: absolute
+								top: .5rem
+								right: .5rem
+							&:hover
+								&::after
+									transform: translate(calc(-.5rem + -1px), calc(-.5rem + -1px))
+				.note 
+					@include weightR
+					margin: 2.15rem 0 0
+			.reserve
+				width: 16.01%
+				aspect-ratio: 815 / 1103
+				background-image: url('#{$path}restaurant/iconReserve.png')
+			.LinkHolder 
+				width: 100%
+				aspect-ratio: 2154 / 114
+				border: 2.5px solid $black
+				border-radius: 30rem
+				@include flexC
+				margin: 5.3rem auto 0
+				p
+					@include weightB
+					font-size: 2rem
+					margin: 0 3rem 0 0
+					letter-spacing: 0.08em
+				ul 
+					@include flexC
+					flex-wrap: wrap
+					gap: 1.25rem
+					li
+						background-size: 100% 100%
+						a
+							width: 100%
+							height: 100%
+						&.ig
+							background-image: url('#{$path}common/snsIG.png')
+							height: 2.35rem
+							aspect-ratio: 1 / 1
+						&.x
+							background-image: url('#{$path}common/snsX.png')
+							height: 2.35rem
+							aspect-ratio: 1 / 1
+						&.fb
+							background-image: url('#{$path}common/snsFB.png')
+							height: 2.35rem
+							aspect-ratio: 21 / 40
+						&.note
+							background-image: url('#{$path}common/snsNote.png')
+							height: 2.35rem
+							aspect-ratio: 1 / 1
+
+
+
+	section#KV
+		.Section
+			.Header
+				.icon
+					background-image: url('#{$path}restaurant/KVicon.png')
+					width: 10.5rem
+					aspect-ratio: 422 / 349
+
+
+
+	section#About
+		.Section
+		
+			.Contents
+				@include weightB
+				width: 100%
+				.icon
+					position: absolute
+				.Header
+					padding: 2.5rem
+					.JP
+						font-size: 4.9rem
+						line-height: 6.2rem
+						.row
+					.EN
+						@include fontEN
+						font-size: 2.1rem
+						line-height: 2.9rem
+						margin: 1.8rem 0 0
+				.imgHolder
+					img
+						position: absolute
+				.Holder
+					padding: 2.5rem
+					p
+						font-size: 1.5rem
+						line-height: 3.1rem
+						&.JP
+						&.EN
+							@include fontEN
+							margin: 3.15rem 0 0
+
+				&__00001
+					.icon
+						width: 10.15rem
+						right: 5rem
+						bottom: 5rem
+					.Logo 
+						position: absolute
+						width: 33rem
+						height: 33rem
+						border: 2.5px solid $black
+						background-color: $white
+						@include flexC
+						top: -17rem
+						right: -3rem
+						&::after
+							content: ""
+							background-image: url('#{$path}common/cover.png')
+							background-size: .7rem .7rem
+							background-repeat: repeat
+							// opacity: .3
+							position: absolute
+							width: 100%
+							height: 100%
+							top: 1rem
+							left: 1rem
+							z-index: -2
+						img
+							width: 23rem
+					.Header
+						.JP
+							font-size: 3.55rem
+							line-height: 5rem
+						.EN
+							margin: 2.95rem 0 0
+
+				&__00002
+					.Header
+						.JP
+							.row
+								font-size: 4.9rem
+								line-height: 6.2rem
+								&:nth-child(3)
+									font-size: 6.8rem
+									line-height: 7.1rem
+					.Holder
+						margin: 0 0 4rem
+					.imgHolder
+						img
+							width: calc(50% - 2.5rem)
+							top: 2.5rem
+							right: 2.5rem
+
+				&__00003
+					.Header
+						@include writing
+						margin: 0 5rem
+						.JP
+							.row
+								&:nth-child(1)
+									font-size: 2.8rem
+									line-height: 4.35rem
+						.EN
+							margin: 0 1.8rem 0 0
+					.Holder
+						display: flex
+						// align-items: flex-start
+						flex-wrap: wrap
+						margin: 8rem auto 0
+						p
+							width: 50%
+							&.EN
+								margin: 0
+					.imgHolder
+						img
+							width: calc(60.07% - 2.5rem)
+							top: 2.5rem
+							right: 2.5rem
+
+				&__00004
+					.icon
+						width: 15.85rem
+						right: 5rem
+						top: 15.5rem
+
+					.Header
+						width: calc((100% - 5rem) / 2)
+						margin: 0 0 0 auto
+						.JP
+							.row
+								&:nth-child(1)
+									.Split
+										&:nth-child(2),
+										&:nth-child(3)
+											font-size: 6.25rem
+											@include fontEN
+					.Holder
+						width: calc((100% - 5rem) / 2)
+						margin: 0 0 0 auto
+						
+					.imgHolder
+						img
+							width: calc(50% - 2.5rem)
+							top: 2.5rem
+							left: 2.5rem
+
+				&__00005
+					border-bottom: 2.5px solid $black
+					.Header
+						width: calc((100% - 5rem) / 2)
+						margin: 0 auto 0 0
+						.JP
+							.row
+								font-size: 6.8rem
+								line-height: 7.15rem
+								&:nth-child(3)
+									font-size: 2.8rem
+									line-height: 4.35rem
+					.icon
+						position: unset
+						width: calc(27.1rem + 2.5rem * 2)
+						padding: 2.5rem
+					.Holder
+						width: calc((100% - 5rem) / 2)
+						margin: 0 auto 3rem 0
+					.imgHolder
+						img
+							width: calc(50% - 2.5rem)
+							top: 2.5rem
+							right: 2.5rem
+
+
+
+	section#Shop
+		.Section
+			margin: 9.8rem auto 0
+		@include shopDetails
+
+
+
+	section#Goods
+		.Section
+			@include weightB
+			margin: 19rem auto 0
+			.online
+				position: absolute
+				top: 2rem
+				right: 0
+				width: 13.5rem
+				background-color: $black
+				aspect-ratio: 275 / 412
+				border-radius: .5rem
+				color: $white
+				text-align: center
+				@include flexC
+				flex-wrap: wrap
+				align-content: center
+				.icon
+					background-image: url('#{$path}common/iconEC.png')
+					width: 4.3rem
+					aspect-ratio: 57 / 50
+					margin: 0 1rem 1rem 0
+					filter: brightness(0) invert(1)
+				span
+					text-decoration: underline
+					@include fontEN
+					@include textUpper
+					font-size: 2.5rem
+					line-height: 3rem
+					transition: .5s
+				&:hover
+					span
+						letter-spacing: .1em
+			.Header
+				margin: 0 0 7rem
+				h2
+					.row
+						font-size: 5.5rem
+						.Split
+							@for $i from 1 through 7
+								&:nth-child(#{$i})
+									font-size: 10.35rem
+			.subHeader
+				padding: 0 0 0 5.5rem
+				position: relative
+				.JP
+					font-size: 4.9rem
+					line-height: 6.2rem
+					.row
+						&:nth-child(1)
+							font-size: 2.1rem
+							line-height: 3.25rem
+				.EN
+					@include fontEN
+					font-size: 2.1rem
+					line-height: 2.9rem
+					margin: 1.8rem 0 0
+				&::after
+					content: ""
+					width: .9rem
+					height: 100%
+					background-color: $yellow
+					position: absolute
+					top: 0
+					left: 0
+			.Contents
+				h3
+					font-size: 2.8rem
+					line-height: 4.7rem
+					margin: 5.4rem 0 6.3rem
+				.Holder
+					p
+						font-size: 1.5rem
+						line-height: 3.1rem
+						&.JP
+						&.EN
+							@include fontEN
+							margin: 3.15rem 0 0
+				.imgHolder 
+					width: 100%
+					@include flexC
+					margin: 7.5rem auto 0
+					gap: .5rem
+					img
+						width: calc((100% - .5rem * 2) / 3)
+
+
+
+
+
+
+	section#Details
+		margin: 14rem 0 0
+		.Section 
+			padding: 7.5rem 0 15rem
+			&::after
+				content: ""
+				background-image: url('#{$path}common/cover.png')
+				background-size: .7rem .7rem
+				background-repeat: repeat
+				// opacity: .3
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				z-index: -1
+			.Header
+				h2
+					font-size: 9.1rem
+					color: $white
+					@include fontBebas
+					@include weightR
+					@include flexC
+					.Split
+						&:nth-child(12)
+							width: 6.5rem
+							margin: 0 1.5rem
+							aspect-ratio: 272 / 282
+							background-image: url('#{$path}common/iconAnd.png')
+			.detailsContents
+				max-width: 126.1rem
+				width: 87.6%
+				margin: 0 auto
+				padding: 7.5rem 0
+				background-color: $white
+				@include shopDetails
+				.shopDetails
+					width: 85%
+				.gm
+					width: 85%
+					aspect-ratio: 2154 / 1106
+					overflow: hidden
+					@include flexC
+					position: relative
+					margin: 7.4rem auto 0
+					iframe
+						width: 100%
+						height: auto
+						aspect-ratio: 1 / 1
+						filter: grayscale(1)
+					p
+						@include weightM
+						font-size: 1.5rem
+						color: $white
+						background-color: $black
+						width: 62.48%
+						aspect-ratio: 1346 / 72
+						position: absolute
+						bottom: 0
+						right: 0
+						@include flexC
+						justify-content: flex-end
+						padding: 0 3rem 0 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	section#Link
+		.Section .Contents .Block
+			&.restaurant
 				display: none
 					
 

@@ -340,6 +340,52 @@ $(window).on('load', function() {
 
 
 
+	//-_-_-_-_-  aboutusPage
+	if ( window.document.body.id === 'aboutusPage' ) {
+		const popup = $('#popup');
+		const popupBtnOpen = $('section#Vision .Section .popupContents .Block ul li');
+		const popupBtnClose = $('#popup .Section .Btn');
+
+
+		popupBtnOpen.click(function(){
+			popup.addClass('open');
+	
+			const thisClass = $(this).attr('class');
+			const titleJP = $(this).data('title_jp');
+			const titleEN = $(this).data('title_en');
+			const textJP = $(this).data('text_jp');
+			const textEN = $(this).data('text_en');
+			const img = $(this).data('image');
+
+
+			popup.addClass(thisClass);
+			popup.find('.Header h3').html(titleJP);
+			popup.find('.Header .sub').html(titleEN);
+			popup.find('.textArea p.JP').html(textJP);
+			popup.find('.textArea p.EN').html(textEN);
+			popup.find('img').attr('src', img);
+		});
+	
+		popupBtnClose.click(function(){
+			popup.removeClass();
+			popup.addClass('widthM');
+		});
+			
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 	//-_-_-_-_-  breweryPage
 	if ( window.document.body.id === 'breweryPage' ) {
 
@@ -377,6 +423,88 @@ $(window).on('load', function() {
 
 
 	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	//-_-_-_-_-  ourbeerPage
+	if ( window.document.body.id === 'ourbeerPage' ) {
+
+
+
+		const viewBtn = $('section.ourbeerSec#Projects .Section .Contents .Block .ViewBtn');
+		viewBtn.click(function(){
+			$(this).parent('.Block').toggleClass('open');
+			$(this).parent('.Block').find('.detailsContents').slideToggle();
+			const thisTop = $(this).parent('.Block').offset().top;
+			$("html, body").animate({scrollTop:thisTop}, 250);
+		});
+
+
+
+		$(function(){
+
+			const slideLength = document.querySelectorAll('.makerSlider .swiper-slide').length;
+
+			const swiper = new Swiper('.makerSlider', {
+				slidesPerView: 'auto',
+				// spaceBetween: 16,
+				loop: true,
+				loopedSlides: slideLength,
+				speed: 8000,
+				autoplay: {
+					delay: 0,
+					disableOnInteraction: false,
+				},
+				freeMode: {
+					enabled: true,
+					momentum: false,
+				},
+				grabCursor: true,
+				// breakpoints: {
+				// 	1025: {
+				// 		spaceBetween: 32,
+				// 	}
+				// },
+				on: {
+					touchEnd: (swiper) => {
+						swiper.slideTo(swiper.activeIndex + 1);
+					}
+				}
+			});
+			window.addEventListener('load', function(){
+				swiper(); // ページ読み込み後に初期化
+			});
+
+			
+
+		});
+	
+			
+
+
+	}
+
+
+	
+
+	//-_-_-_-_-  LowPage
+	if($('body').hasClass('LowPage')) {
+		$('nav#sideMenu').removeClass('KV');
+	};
+
+
+
+
 
 
 

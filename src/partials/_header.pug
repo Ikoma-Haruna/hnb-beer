@@ -90,16 +90,6 @@ nav#sideMenu.KV
 					li.x: a.targetBlank(href='https://twitter.com/hnb_beer')
 					li.fb: a.targetBlank(href='https://www.facebook.com/hiroshimaNB/')
 					li.note: a.targetBlank(href='https://note.com/hiroshima_hnb/')
-			if body == 'topPage'
-			else
-				.menuBtnHolder
-					ul 
-						li: a(href=`${path}aboutus/`) about us
-						li: a(href=`${path}ourbeer/`) our beer
-						li: a(href=`${path}brewery/`) BREWERY
-						li: a(href=`${path}restaurant/`) restaurant
-						li: a.targetBlank(href='https://hiroshima.beer/pages/contact') CONTACT
-
 		.RightBlock 
 			.menuOpen 
 				.icon
@@ -107,6 +97,9 @@ nav#sideMenu.KV
 					span 
 					span
 				span menu
+
+
+
 		ul.BottomBlock.sp
 			li.lwp.OurBeer
 				span our beer
@@ -116,3 +109,18 @@ nav#sideMenu.KV
 				span instagram
 			li.lwp.ShopAccess
 				span shop & access
+
+		if body == 'topPage'
+		else
+			.menuBtnBlock.pc
+				ul 
+					li: a(href=`${path}aboutus/`) about us
+					li: a(href=`${path}ourbeer/`) our beer
+					li: a(href=`${path}brewery/`) BREWERY
+					li: a(href=`${path}restaurant/`) restaurant
+					li: a.targetBlank(href='https://hiroshima.beer/pages/contact') CONTACT
+
+		if body == 'breweryPage'
+			a.reserveBlock.targetBlank(href="")
+		else if body == 'restaurantPage'
+			a.reserveBlock.targetBlank(href="")

@@ -1,0 +1,196 @@
+-
+	var title = 'RESTAURANT'
+	var discription = '広島の象徴である平和公園の東側、元安橋から本通りに入ってすぐのところに、2020年8月に、マイクロブルワリー（クラフトビールの醸造所）を自社のオリジナルビールと炭火焼きが楽しめるパブ＆炭火居酒屋をOPEN！'
+	//- var keyword = ''
+	var url = 'https://hnb.beer/restaurant/'
+
+	var path = '../'
+	var img = '../assets/img/'
+
+	var body = 'restaurantPage'
+
+
+
+
+
+
+doctype html
+html(lang='ja')
+
+
+
+
+	include ../partials/_head
+
+
+
+				
+		include ../partials/_meta
+
+
+
+
+	body#restaurantPage.LowPage.LowTemplate.LoadingNow
+
+
+
+
+
+
+		include ../partials/_header
+
+
+
+
+
+		#wrapper
+
+
+
+
+
+			main#main
+
+
+
+
+
+				section#KV
+					.Section.widthM
+						.Header.spanAnim.titleAnim
+							h1.pageTitle.row restaurant.
+							p.fadeIn Craftbeer and sumibi harebare.
+							.icon
+						.Contents 
+							img.fadeIn(src=`${img}restaurant/KV.jpg`)
+
+
+
+				section#About
+					.Section.widthM
+					
+						.Contents.Contents__00001
+							img.icon.fadeIn(src=`${img}restaurant/aboutIcon00001.png`)
+							.Logo 
+								img(src=`${img}common/shopLogoHB.png`)
+							.Header
+								.JP.spanAnim.textAnim 
+									.row Hiroshima Neighborly Brewing(HNB)の
+									.row ビールが飲める!
+									.row 炭火料理が楽しめる! 
+									.row ブリューパブ&レストラン
+									.row 「CRAFT BEER と炭火 はればれ」
+								.EN.fadeIn About Craftbeer and Sumibi Harebare<br>A brewpub and restaurant where<br>you can enjoy Hiroshima Neighborly Brewing's (HNB)<br>craft beer and charcoal-grilled dishes.
+				
+						.Contents.Contents__00002
+							.Header
+								.JP.spanAnim.textAnim 
+									.row HNBの
+									.row オリジナルビールで
+									.row 乾杯!
+								.EN.fadeIn Cheers with HNB's Original Beers!
+							.Holder
+								p.JP.fadeIn 地元の素材をふんだんに活かした<br>HNBのオリジナルビールを樽生でご提供。<br>定番の5種類に加え、限定商品を含めて<br>随時約8~10種類のビールをお楽しみいただけます。
+								p.EN.fadeIn HNB's original beer,<br>which makes full use of local ingredients,<br>is served on tap. In addition to the five core beers,<br>enjoy 8 to 10 types of beer at any given time,<br>including seasonal specialties and limited editions.<br>The lineup is a must for beer lovers!
+							.imgHolder
+								img.fadeIn(src=`${img}restaurant/about00001.jpg`)
+				
+						.Contents.Contents__00003
+							.Header
+								.JP.spanAnim.textAnim 
+									.row ブルワリーの魅力と
+									.row 炭火料理、
+									.row 多彩なメニュー。
+								.EN.fadeIn Charcoal Grilled Delights and a Diverse Menu
+							.Holder
+								p.JP.fadeIn HNB のオリジナルビールを片手に、<br class="pc">炭火焼料理やパブメニューを楽しむ特別な空間。<br>新鮮な肉や野菜を炭火でじっくり焼き上げた料理は、<br class="pc">ビールとの相性抜群です!<br>さらに、フィッシュ&チップスやハンバーガー、<br class="pc">ヴィーガンメニュー、デザートまで幅広い メニューも勢揃い。<br>ドリンクメニューは、ビール以外にも、<br class="pc">レモンサワーやハイボール、<br class="pc">ワイン、日本酒、ソフトドリンクなどもお楽しみいただけます。<br>醸造設備を眺めながら、<br class="pc">『まさにビール工場の中で飲める!楽しめる!』です。
+								p.EN.fadeIn Savor HNB's original beers in a special space designed<br class="pc"> for enjoying charcoal-grilled dishes and pub-style menus.<br>Our dishes, featuring fresh meats and vegetables grilled over charcoal, <br class="pc">pair perfectly with our beers! Additionally, <br class="pc">we offer a wide range of menu items including Fish & Chips, <br class="pc">hamburgers, vegan options, and desserts.<br>Our drink menu goes beyond beers to include Lemon Sours, <br class="pc">Highballs, wines, sake, soft drinks, and more.<br>You can savor our beers with a view of the brewing <br class="pc">facilities̶a destination where the brewery experience comes to life!
+							.imgHolder
+								img.fadeIn(src=`${img}restaurant/about00002.jpg`)
+				
+						.Contents.Contents__00004
+							img.icon.fadeIn(src=`${img}restaurant/aboutIcon00002.png`)
+							.Header
+								.JP.spanAnim.textAnim 
+									.row 昼12時から夜まで
+									.row 楽しめる!
+								.EN.fadeIn Open from Noon to Night!
+							.Holder
+								p.JP.fadeIn 平和公園のすぐ近くに位置し、<br>地元の皆さんをはじめ、<br>県内外から海外の方までたくさんのお客様に<br>ご利用いただいています。<br>昼のランチタイムから夜のお食事まで、<br>美味しいビールと多彩なメニューを<br>お楽しみいただけます。
+								p.EN.fadeIn Located near Hiroshima Peace Park,<br>we are frequented by locals and visitors<br>from across Japan and overseas.<br>From lunchtime to dinner,<br>enjoy delicious beers and a diverse menu.
+							.imgHolder
+								img.fadeIn(src=`${img}restaurant/about00003.png`)
+				
+						.Contents.Contents__00005
+							.Header
+								.JP.spanAnim.textAnim 
+									.row パーティや
+									.row 宴会も!
+									.row 少人数から大人数まで対応可能。
+								.EN.fadeIn Parties, banquets, <br>and small to large groups̶all sizes welcome!
+							img.icon.fadeIn(src=`${img}restaurant/aboutIcon00003.png`)
+							.Holder
+								p.JP.fadeIn 1階と1.5階に広がる多数の席数を誇り、<br class="pc">少人数から大人数まで幅広くお迎えできる空間です。<br>オリジナルビールを存分に楽しめる<br class="pc">飲み放題プランもご用意しており、<br class="pc">各種パー ティや忘年会、新年会などの宴会、会合など、<br class="pc">さまざまなシーンでご利用いただけます。<br>立食形式やご予算に合わせたプランなどのご要望も、<br class="pc">お気軽にご相談ください。
+								p.EN.fadeIn Our restaurant features extensive <br class="pc">seating across the 1st and 1.5th floors,<br class="pc">accommodating groups of all sizes.<br>It's ideal for various occasions such as parties,<br class="pc">year-end gatherings, New Year celebrations,<br class="pc">meetings, and more.
+							.imgHolder
+								img.fadeIn(src=`${img}restaurant/about00004.png`)
+
+
+
+				section#Shop
+					.Section.shopDetails.widthM
+						include ../partials/_con-shopDetails
+
+
+
+
+				section#Goods
+					.Section.widthM
+						a.online.targetBlank(href='https://hiroshima.beer/')
+							.icon 
+							span online shop
+						.Header
+							h2.spanAnim.titleAnim: .row TO GO. BEER & GOODS
+						.subHeader
+							.JP.spanAnim.textAnim 
+								.row 缶・ボトル・量り売りなどの
+								.row HNBビールやグッズも販売中!
+							.EN.fadeIn HNB Beers (Cans, Bottles, Growlers) and Goods On Sale !
+						.Contents
+							h3.fadeIn Myグラウラー持参で、<br>HNBをご自宅や広島の街や公園で楽しめる!<br>その他、Tシャツなど多数取り揃えております。
+							.Holder
+								p.JP.fadeIn オリジナルビールは、ボトルやグラウラーでの量り売りでも販売中です！<br>ぜひ、ビールを持っておでかけを♪<br>HNB Growler 持参でのHNBビール量り売りでご購入いただいた場合は、<br>ビールを5％OFFにさせていただきます！
+								p.EN.fadeIn We offer HNB beers in cans, bottles, and growlers for purchase. <br>Explore our selection of HNB original merchandise, <br>including T-shirts, glasses, and more!
+							.imgHolder 
+								img.fadeIn01(src=`${img}restaurant/goodsImg00001.jpg`)
+								img.fadeIn01(src=`${img}restaurant/goodsImg00002.jpg`)
+								img.fadeIn01(src=`${img}restaurant/goodsImg00003.jpg`)
+
+
+
+				section#Details
+					.Section 
+						.Header.spanAnim.titleAnim
+							h2.row RESERVATION CONTACT
+						.detailsContents
+							.shopDetails.widthM
+								include ../partials/_con-shopDetails
+							.gm.widthM
+								iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3292.2823600564334!2d132.45306111229087!3d34.39416839948431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355aa3bcfd7a15fd%3A0xe49dd0c2a2d5c992!2zQ1JBRlQgQkVFUuOBqOeCreeBqyDjga_jgozjgbDjgow!5e0!3m2!1sja!2sjp!4v1743096085487!5m2!1sja!2sjp", width="800", height="600", style="border:0;", allowfullscreen="", loading="lazy", referrerpolicy="no-referrer-when-downgrade")
+								p バス・電停「紙屋町」「本通り」徒歩３分 ／ 広島バスセンター 徒歩３分
+
+
+
+				include ../partials/_sec-Link
+
+
+
+
+
+
+				include ../partials/_footer
+
+
+			
+
+		include ../partials/_foot

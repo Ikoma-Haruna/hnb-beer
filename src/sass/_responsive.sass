@@ -28,9 +28,12 @@
 	//  common
 	//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 	html
-		font-size: 130%
-		font-size: 1.3vw
-		// 10(px) / 1000(px) * 100 = 1.197
+		font-size: 119.7%
+		font-size: 1.197vw
+		// 10(px) / 835(px) * 100 = 1.197
+		&.topPage
+			font-size: 130%
+			font-size: 1.3vw
 
 
 	@mixin widthL
@@ -426,7 +429,6 @@
 							font-size: 1.4rem
 							color: $black
 
-
 				.BottomBlock
 					position: absolute
 					bottom: 0
@@ -481,6 +483,10 @@
 								height: 2.65rem
 								aspect-ratio: 68 / 55
 
+				.reserveBlock
+					bottom: auto
+					top: 1.75rem
+					right: 9rem
 
 			&.KV
 				.Contents
@@ -808,6 +814,239 @@
 
 
 
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  LowPage
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		&.LowPage
+			section#Link .Section .Contents .Block
+				padding: 4.5rem 4.9rem
+				h3
+					font-size: 6rem
+			#Footer
+				margin: 15rem 0 0
+
+
+
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  LowTemplate
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		&.LowTemplate
+			
+			section#KV
+				.Section
+					margin: 18.5rem auto 0
+					.Header h1.pageTitle
+						font-size: 14rem
+
+
+
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  aboutusPage
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		&#aboutusPage
+
+
+			#popup
+				padding: 5rem
+				top: 19rem
+				.Section
+					.icon
+						display: none
+					.Btn
+						top: -3rem
+						right: -3rem
+					.Header
+						padding: 0 0 4.5rem
+					.Contents
+						justify-content: space-between
+						.textArea
+							width: 60%
+						img
+							width: 35%
+
+			section#KV
+				.Section .Header
+					margin: 22.15rem auto 6.85rem
+
+
+			section#Concept
+				.Section
+					margin: 11.75rem auto 15rem
+					.Contents
+						.Block
+							p
+								&.JP
+									font-size: 1.4rem
+									line-height: 2.8rem
+								&.EN
+									font-size: 1.5rem
+									line-height: 3.15rem
+						&__00001
+							margin: 0 0 9.5rem
+							.Header
+								margin: 0 0 5.5rem -.8rem
+								.row
+									font-size: 9.5rem
+						&__00002
+							.Header
+								img
+									top: 17.5rem
+
+
+			section#Vision
+				.Section
+					.Header
+						margin: 0 0 6.5rem
+					.Contents
+						.Block
+							p
+								&.JP
+									font-size: 1.4rem
+									line-height: 2.8rem
+								&.EN
+									font-size: 1.5rem
+									line-height: 3.15rem
+					.popupContents
+						flex-wrap: wrap
+						h3
+							width: 50%
+							margin: 0 auto
+						.Block
+							width: 80%
+							margin: 3rem auto 0
+
+
+			section#Company
+				.Section
+					margin: 15rem auto 0
+					padding: 0 0 15rem
+
+
+			section#Contact
+				.Section
+					margin: 15rem auto 0
+					.Contents
+						margin: 6.5rem auto 0
+						.Block
+							width: 100%
+							margin: 0 0 5rem
+
+
+
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		//  restaurantPage
+		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+		&#restaurantPage
+			@mixin shopDetails
+				.shopDetails
+					position: relative
+					.Contents
+						width: 74.5%
+						margin: 0 0 0 auto
+						.details
+							.Floor
+								width: 15rem
+					.reserve
+						position: absolute
+						bottom: -.5rem
+						left: 1.25rem
+						width: 18.01%
+					.LinkHolder
+						width: 74.5%
+						margin: 4rem 0 0 auto
+						aspect-ratio: 2154 / 204
+
+
+			section#About
+				.Section
+					.Contents
+						.Holder
+							p
+								font-size: 1.4rem
+								line-height: 2.8rem
+						&__00001
+							.Logo
+								width: 20rem
+								height: 20rem
+								img
+									width: 15rem
+							.Header
+								.JP
+									font-size: 3.4rem
+						&__00002
+							.Holder
+								margin: 0
+							.imgHolder
+								img
+									width: calc(40% - 2.5rem)
+									top: auto
+									bottom: calc(2.5rem * 2)
+						&__00003
+							.Header
+								margin: 0
+							.Holder
+								margin: 0
+								p
+									width: 100%
+									&.EN
+										margin: 3rem auto 0
+						&__00004
+							.icon
+								width: 12.85rem
+								right: 3rem
+								top: 12.25rem
+						&__00005
+							.Header
+								width: calc((100% - 5rem) / 2 + 20%)
+								.JP
+									.row
+										font-size: 5.8rem
+										line-height: 6.5rem
+							.Holder
+								width: 100%
+								margin: 1rem auto 0
+							.imgHolder
+								img
+									width: calc(37% - 2.5rem)
+
+
+			section#Goods
+				.Section
+					margin: 15rem auto 0
+					.online
+						top: -6.5rem
+					.Header
+						margin: 0 0 5rem
+						h2
+						.row
+							font-size: 4.5rem
+							.Split
+								@for $i from 1 through 7
+									&:nth-child(#{$i})
+										font-size: 9rem
+								&:nth-child(7)
+									display: block
+									height: 0
+									padding: 0
+
+
+			section#Shop
+				@include shopDetails
+
+
+			section#Details
+				.Section
+					.detailsContents
+						width: 90%
+						@include shopDetails
+						.shopDetails
+							width: 95%
+						.gm
+							width: 95%
+							p
+								width: 80%
+
+
 
 		//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 		//  _Footer
@@ -832,12 +1071,13 @@
 	//  common
 	//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 	html
-		// font-size: 266.6%
-		// font-size: 2.666vw
+		font-size: 266.6%
+		font-size: 2.666vw
 		// // 10(px) / 375(px) * 100 = 2.666
-		font-size: 200%
-		font-size: 2vw
-		// 10(px) / 500(px) * 100 = 2
+		&.topPage
+			font-size: 200%
+			font-size: 2vw
+			// 10(px) / 500(px) * 100 = 2
 
 	.pc
 		display: none

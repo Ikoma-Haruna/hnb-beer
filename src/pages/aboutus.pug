@@ -43,6 +43,24 @@ html(lang='ja')
 
 
 
+		#popup.widthM
+			.Section
+				.icon
+				.Btn
+				.Header 
+					h3 
+					.sub 
+				.Contents 
+					.textArea 
+						p.JP 
+						p.EN 
+					img(src="")
+				
+
+
+
+
+
 		#wrapper
 
 
@@ -119,7 +137,7 @@ html(lang='ja')
 							.sub ABOUT US  001
 							h2.spanAnim.titleAnim: .row OUR VISIOIN
 							img(src=`${img}common/Logo_kanaderu.png`)
-						.Contents 
+						.Contents
 							.Block
 								p.JP.fadeIn
 									| 広島 本通り。<br>広島平和公園のすぐそばにブルワリーを構える<br>わたしたちはそう思います。
@@ -137,6 +155,34 @@ html(lang='ja')
 									br
 									br
 									| Like flowers in bloom, like circles forming,<br>we want our beer to be a place where people from<br>all walks of life can truly relax, <br>with smiles naturally blossoming.
+						.popupContents
+							h3.spanAnim.titleAnim
+								.row APPROACH
+								.row AND
+								.row PASSION
+							.Block 
+								ul 
+									li.hiroshima(
+										data-title_jp='TEST01：自然に笑顔に、いつでもそばに。',
+										data-title_en='Natural Smiles, Always Close By',
+										data-text_jp='いつでも、みんなのそばに。地域のHUBとなる、コミュニティ。<br>HIROSHIMA NEIGHBORLY BREWINGや<br>併設のブルーパブ&レストラン<br>「CRAFT BEER と炭火 はればれ」は、そうありたいと願っています。<br> 「食」と「ビール」を通じて、 誰もが気軽に集まり、<br>ワイワイと自由に楽しめ、仲良くなり、笑顔になる。<br> こうした空間であり、モノや体験を<br>創造する所として存在したいと考えています。',
+										data-text_en='Always close by,A community serving as the local hub.<br>HIROSHIMA NEIGHBORLY BREWING<br>and CRAFT BEER and Charcoal Grill "Harebare"<br>are a brewpub and restaurant, We aspire to embody this ideal.<br>Through "food" and "beer," where everyone gathers casually,<br>enjoys freely, bonds closely, and smiles.<br>We aim to thrive as a place that creates goods<br>and experiences in such spaces.',
+										data-image=`${img}aboutus/Intro00001.jpg`
+										)
+									li.brewing(
+										data-title_jp='TEST02：自然に笑顔に、いつでもそばに。',
+										data-title_en='Natural Smiles, Always Close By',
+										data-text_jp='いつでも、みんなのそばに。地域のHUBとなる、コミュニティ。<br>HIROSHIMA NEIGHBORLY BREWINGや<br>併設のブルーパブ&レストラン<br>「CRAFT BEER と炭火 はればれ」は、そうありたいと願っています。<br> 「食」と「ビール」を通じて、 誰もが気軽に集まり、<br>ワイワイと自由に楽しめ、仲良くなり、笑顔になる。<br> こうした空間であり、モノや体験を<br>創造する所として存在したいと考えています。',
+										data-text_en='Always close by,A community serving as the local hub.<br>HIROSHIMA NEIGHBORLY BREWING<br>and CRAFT BEER and Charcoal Grill "Harebare"<br>are a brewpub and restaurant, We aspire to embody this ideal.<br>Through "food" and "beer," where everyone gathers casually,<br>enjoys freely, bonds closely, and smiles.<br>We aim to thrive as a place that creates goods<br>and experiences in such spaces.',
+										data-image=`${img}aboutus/Intro00002.jpg`
+										)
+									li.neighborly(
+										data-title_jp='TEST03：自然に笑顔に、いつでもそばに。',
+										data-title_en='Natural Smiles, Always Close By',
+										data-text_jp='いつでも、みんなのそばに。地域のHUBとなる、コミュニティ。<br>HIROSHIMA NEIGHBORLY BREWINGや<br>併設のブルーパブ&レストラン<br>「CRAFT BEER と炭火 はればれ」は、そうありたいと願っています。<br> 「食」と「ビール」を通じて、 誰もが気軽に集まり、<br>ワイワイと自由に楽しめ、仲良くなり、笑顔になる。<br> こうした空間であり、モノや体験を<br>創造する所として存在したいと考えています。',
+										data-text_en='Always close by,A community serving as the local hub.<br>HIROSHIMA NEIGHBORLY BREWING<br>and CRAFT BEER and Charcoal Grill "Harebare"<br>are a brewpub and restaurant, We aspire to embody this ideal.<br>Through "food" and "beer," where everyone gathers casually,<br>enjoys freely, bonds closely, and smiles.<br>We aim to thrive as a place that creates goods<br>and experiences in such spaces.',
+										data-image=`${img}aboutus/Intro00003.jpg`
+										)
 								
 
 
@@ -145,8 +191,8 @@ html(lang='ja')
 					.Section
 						.Contents
 							img.fadeIn01(src=`${img}aboutus/Intro00001.jpg`)
-							img.fadeIn02(src=`${img}aboutus/Intro00002.jpg`)
-							img.fadeIn03(src=`${img}aboutus/Intro00003.jpg`)
+							img.fadeIn01(src=`${img}aboutus/Intro00002.jpg`)
+							img.fadeIn01(src=`${img}aboutus/Intro00003.jpg`)
 
 
 
