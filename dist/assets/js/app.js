@@ -349,6 +349,7 @@ $(window).on('load', function() {
 
 		popupBtnOpen.click(function(){
 			popup.addClass('open');
+			$('#popup .Section .Contents').scrollTop(0);
 	
 			const thisClass = $(this).attr('class');
 			const titleJP = $(this).data('title_jp');
@@ -369,6 +370,7 @@ $(window).on('load', function() {
 		popupBtnClose.click(function(){
 			popup.removeClass();
 			popup.addClass('widthM');
+			$('#popup .Section .Contents').scrollTop(0);
 		});
 			
 
@@ -393,8 +395,17 @@ $(window).on('load', function() {
 
 		$(function(){
 
+			if (windowWidth <= windowSP) {
+				// SP
+				slidesNum = '1'
+			} else {
+				// PC
+				slidesNum = '3'
+			}
+				
+
 			const swiper = new Swiper('.brandSlider', {
-				slidesPerView: 3,
+				slidesPerView: slidesNum,
 				spaceBetween: 1,
 				grabCursor: true,
 				// pagination: {
@@ -440,13 +451,15 @@ $(window).on('load', function() {
 	if ( window.document.body.id === 'ourbeerPage' ) {
 
 
-
 		const viewBtn = $('section.ourbeerSec#Projects .Section .Contents .Block .ViewBtn');
+		const headerHeight = $('#Header').height();
+
 		viewBtn.click(function(){
 			$(this).parent('.Block').toggleClass('open');
 			$(this).parent('.Block').find('.detailsContents').slideToggle();
 			const thisTop = $(this).parent('.Block').offset().top;
-			$("html, body").animate({scrollTop:thisTop}, 250);
+			const thisHead = thisTop - headerHeight - 50 + 'px';
+			$("html, body").animate({scrollTop:thisHead}, 250);
 		});
 
 

@@ -40,8 +40,8 @@
 					li: a(href=`${path}brewery/`) BREWERY
 					li: a(href=`${path}restaurant/`) restaurant
 					li: a.targetBlank(href='https://hiroshima.beer/collections/goods') ORIGINAL GOODS
-					li: a(href=`${path}?News/`) NEWS
-					li: a(href=`${path}?ShopAccess/`) shop&access
+					li: a.lwp.News(href=`${path}?News`) NEWS
+					li: a.lwp.ShopAccess(href=`${path}?ShopAccess`) shop&access
 					li: a.targetBlank(href='https://en-gage.net/kanaderu/') recruit
 					li: a.targetBlank(href='https://hiroshima.beer/pages/contact') CONTACT
 
