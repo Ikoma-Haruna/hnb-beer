@@ -9810,6 +9810,7 @@ footer#Footer .Section .Foot p span {
   }
   body#topPage section#ConceptMovie .Section .Contents .Holder .ttlEN {
     text-align: center;
+    margin: 0 auto 8.75rem;
   }
   body#topPage section#ConceptMovie .Section .Contents .Holder .Header {
     text-align: center;

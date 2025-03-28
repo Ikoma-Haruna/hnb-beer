@@ -136,19 +136,19 @@ html.topPage(lang='ja')
 									span.row ビールは平和だからこそ、おいしい
 								p.slideUp
 									| HIROSHIMA NEIGHBORLY BREWING（ヒロシマネイバリーブリューイング）は、
-									br
+									br.pc.tablet
 									| 広島の象徴でもある平和公園の東側、
-									br
+									br.pc.tablet
 									| 本通りに入ってすぐにあるブルワリー。
 									br
 									| この地にあるからこそ「まちに根付いたものを作りたい」と、
-									br
+									br.pc.tablet
 									| 広島県産の素材も使い、何度でも飲みたくなるビールを目指しています。
 									br
 									| また、醸造設備を眺めながら楽しめる、
-									br
+									br.pc.tablet
 									| 併設のブリューパブ＆居酒屋「Craftbeer と炭火はればれ」もあり、
-									br
+									br.pc.tablet
 									| 『まさにビール工場の中で飲める！楽しめる！』場所です。
 							//- .btn
 							.bg 
@@ -178,7 +178,7 @@ html.topPage(lang='ja')
 								.name
 									.change
 										span main cotents
-							a.Block.Block01.slideUp.targetBlank#OurBeer(href=`${path}ourbeer/`) 
+							a.Block.Block01.slideUp#OurBeer(href=`${path}ourbeer/`) 
 								.Header
 									.ttl OUR BEER 
 									.sub MAIN CONTENTS  |  <span>001</span>
@@ -187,7 +187,7 @@ html.topPage(lang='ja')
 									.more View More 
 								.bg(style=`background-image: url('${img}index/main00001.jpg');`)
 							.Holder
-								a.Block.Block02.slideUp.targetBlank(href=`${path}restaurant/`)
+								a.Block.Block02.slideUp(href=`${path}restaurant/`)
 									.Header
 										.ttl RESTAURANT
 										.sub MAIN CONTENTS  |  <span>002</span>
@@ -196,7 +196,7 @@ html.topPage(lang='ja')
 										.more View More 
 									.bg(style=`background-image: url('${img}index/main00002.jpg');`)
 								.inBlock
-									a.Block.Block03.slideUp.targetBlank(href=`${path}brewery/`)
+									a.Block.Block03.slideUp(href=`${path}brewery/`)
 										.Header
 											//- h3
 											//- 	span our 
