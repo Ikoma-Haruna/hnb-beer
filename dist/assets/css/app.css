@@ -9821,11 +9821,9 @@ footer#Footer .Section .Foot p span {
     bottom: 1rem;
     right: 1rem;
   }
-  body#topPage section#ConceptMovie .Section .Contents .bg img {
-    width: auto;
-    height: 100%;
-    bottom: 0;
-    right: -22%;
+  body#topPage section#ConceptMovie .Section .Contents .bg {
+    background-position: right center;
+    background-size: auto 123%;
   }
   body#topPage section#MainContents .Section {
     padding: 22.5rem 0 6.5rem;
@@ -11030,6 +11028,10 @@ footer#Footer .Section .Foot p span {
   }
   body#topPage section#ConceptMovie .Section .Contents .Holder p {
     margin: 2rem auto 0;
+  }
+  body#topPage section#ConceptMovie .Section .Contents .bg {
+    background-position: right 9% center;
+    background-size: cover;
   }
   body#topPage section#Instagram .Section .Contents .Holder .Block {
     width: calc((100% - 1rem) / 2);
