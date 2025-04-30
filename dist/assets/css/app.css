@@ -4283,6 +4283,7 @@ nav#sideMenu .Contents .reserveBlock:hover {
 }
 #topPage section#KV .Section {
   padding: 3.5rem 4rem;
+  min-height: 100rem;
 }
 #topPage section#KV .Section .Contents {
   position: relative;
@@ -4555,6 +4556,7 @@ nav#sideMenu .Contents .reserveBlock:hover {
 #topPage section#ConceptMovie .Section {
   padding: 19.5rem 0;
   overflow: hidden;
+  min-height: 100rem;
 }
 #topPage section#ConceptMovie .Section .Contents {
   position: absolute;
@@ -9098,6 +9100,733 @@ footer#Footer .Section .Foot p span {
   font-weight: 700;
 }
 
+@media only screen and (min-width: 1440px) {
+  html {
+    font-size: 11.97px;
+  }
+  html.topPage {
+    font-size: 7%;
+    font-size: 0.7vw;
+  }
+  body.LowPage .widthM {
+    max-width: 1070px;
+  }
+  body.LowPage #Header .Contents {
+    font-size: 9.5px;
+  }
+  body.LowPage #Header .Contents .copy {
+    height: 160px;
+  }
+  body.LowPage #Header .Contents .Logo {
+    width: 107.5px;
+  }
+  body.LowPage #Header .Contents .sec .num {
+    width: 95px;
+    height: 87.5px;
+    font-size: 120px;
+    line-height: 87.5px;
+  }
+  body.LowPage #Header .Contents .sec .name {
+    width: 95px;
+  }
+  body.LowPage #Header .Contents .sec .name .change {
+    width: 475px;
+  }
+  body.LowPage #Header .Contents .sec .name .change span {
+    width: 95px;
+  }
+  body.LowPage #Menu .Section .Contents .ConpanyMenu .LinkHolder {
+    width: 250px;
+  }
+  body.LowPage #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li {
+    height: 26px !important;
+  }
+  body.LowPage #Menu .Section .Contents .ConpanyMenu .LinkHolder ul li.note {
+    height: 40px !important;
+  }
+  body.LowPage #Menu .Section .Contents .MainMenu li {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  body.LowPage #Menu .Section .Contents .online {
+    width: 115px;
+  }
+  body.LowPage #Menu .Section .Contents .online .icon {
+    width: 43px;
+  }
+  body.LowPage #Menu .Section .Contents .online span {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  body.LowPage #Menu .Section .Contents .BtoB {
+    width: 244px;
+  }
+  body.LowPage #Menu .Section .Contents .BtoB span:nth-child(1) {
+    font-size: 110px;
+    line-height: 75px;
+  }
+  body.LowPage #Menu .Section .Contents .BtoB span:nth-child(2) {
+    font-size: 11.5px;
+  }
+  body.LowPage #Menu .Section .Contents .BtoB span.arrow {
+    width: 120px;
+  }
+  body.LowPage nav#sideMenu .Contents .RightBlock {
+    width: 90px;
+    height: 169px;
+  }
+  body.LowPage nav#sideMenu .Contents .RightBlock .menuOpen .icon {
+    width: 39px;
+  }
+  body.LowPage nav#sideMenu .Contents .RightBlock .menuOpen span {
+    font-size: 10px;
+  }
+  body.LowPage nav#sideMenu .Contents .LeftBlock .LinkHolder .online .icon {
+    width: 28px;
+  }
+  body.LowPage nav#sideMenu .Contents .LeftBlock .LinkHolder .online span {
+    font-size: 13.5px;
+  }
+  body.LowPage nav#sideMenu .Contents .LeftBlock .LinkHolder ul {
+    width: 19px;
+  }
+  body.LowPage nav#sideMenu .Contents .LeftBlock .LinkHolder ul li.ig {
+    width: 19px;
+  }
+  body.LowPage nav#sideMenu .Contents .LeftBlock .LinkHolder ul li.x {
+    width: 19px;
+  }
+  body.LowPage nav#sideMenu .Contents .LeftBlock .LinkHolder ul li.fb {
+    width: 9.5px;
+  }
+  body.LowPage nav#sideMenu .Contents .LeftBlock .LinkHolder ul li.note {
+    width: 19px;
+  }
+  body.LowPage nav#sideMenu .Contents .menuBtnBlock {
+    width: 145px;
+  }
+  body.LowPage nav#sideMenu .Contents .menuBtnBlock ul li a {
+    font-size: 12.5px;
+  }
+  body.LowPage nav#sideMenu .Contents .reserveBlock {
+    width: 74.5px;
+  }
+  body.LowPage section#Link .Section .Contents .Block h3 {
+    font-size: 82px;
+  }
+  body.LowPage section#Link .Section .Contents .Block p {
+    font-size: 14.5px;
+  }
+  body.LowPage section#Link .Section .Contents .Block .arrow {
+    width: 200px;
+    height: 60px;
+  }
+  body.LowPage section#Link .Section .Contents .backBtn {
+    font-size: 24px;
+  }
+  body.LowPage section#Link .Section .Contents .snsHolder p {
+    font-size: 20px;
+  }
+  body.LowPage section#Link .Section .Contents .snsHolder ul li {
+    height: 23.5px !important;
+  }
+  body.LowPage footer#Footer .Section .Contents {
+    max-width: 1070px;
+  }
+  body.LowPage footer#Footer .Section .Contents .ConpanyMenu .Logo {
+    width: 200px;
+  }
+  body.LowPage footer#Footer .Section .Contents .ConpanyMenu .LinkHolder {
+    width: calc(100% - 163px - 14.5%);
+  }
+  body.LowPage footer#Footer .Section .Contents .ConpanyMenu .LinkHolder li.ig {
+    height: 26px;
+  }
+  body.LowPage footer#Footer .Section .Contents .ConpanyMenu .LinkHolder li.x {
+    height: 26px;
+  }
+  body.LowPage footer#Footer .Section .Contents .ConpanyMenu .LinkHolder li.fb {
+    height: 26px;
+  }
+  body.LowPage footer#Footer .Section .Contents .ConpanyMenu .LinkHolder li.note {
+    height: 40px;
+  }
+  body.LowPage footer#Footer .Section .Contents .ConpanyMenu .BtoB {
+    width: calc(100% - 173px - 14.5%);
+  }
+  body.LowPage footer#Footer .Section .Contents .ConpanyMenu .BtoB span:nth-child(1) {
+    font-size: 50px;
+  }
+  body.LowPage footer#Footer .Section .Contents .ConpanyMenu .BtoB span:nth-child(2) {
+    font-size: 8px;
+  }
+  body.LowPage footer#Footer .Section .Contents .ConpanyMenu .cw {
+    font-size: 13px;
+  }
+  body.LowPage footer#Footer .Section .Contents .MainMenu h2 {
+    font-size: 34px;
+  }
+  body.LowPage footer#Footer .Section .Contents .MainMenu ul {
+    font-size: 20px;
+    line-height: 24.5px;
+  }
+  body.LowPage footer#Footer .Section .Contents .online {
+    width: 135px;
+  }
+  body.LowPage footer#Footer .Section .Contents .online .icon {
+    width: 43px;
+  }
+  body.LowPage footer#Footer .Section .Contents .online span {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  body.LowPage footer#Footer .Section .Foot p {
+    font-size: 11.5px;
+  }
+  body.LowPage #LinkHolder a {
+    width: 335px;
+  }
+  body.LowPage #LinkHolder a.online .icon {
+    width: 43px;
+  }
+  body.LowPage #LinkHolder a.online span {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  body.LowPage #LinkHolder a.BtoB span {
+    font-size: 20px;
+  }
+  body.LowTemplate section#KV .Section .Header h1.pageTitle {
+    font-size: 190px;
+  }
+  body.LowTemplate section#KV .Section .Header p {
+    font-size: 15px;
+  }
+  body#aboutusPage #popup .Section .icon {
+    width: 130px;
+  }
+  body#aboutusPage #popup .Section .Btn {
+    width: 63px;
+  }
+  body#aboutusPage #popup .Section .Header h3 {
+    font-size: 31.5px;
+  }
+  body#aboutusPage #popup .Section .Header .sub {
+    font-size: 18px;
+  }
+  body#aboutusPage #popup .Section .Contents .textArea p {
+    font-size: 13.5px;
+    line-height: 29px;
+  }
+  body#aboutusPage section#KV .Section .Header h1 {
+    font-size: 115px;
+  }
+  body#aboutusPage section#KV .Section .Contents img {
+    max-width: 1200px;
+  }
+  body#aboutusPage section#Concept .Section .Contents .Block p.JP {
+    font-size: 18px;
+    line-height: 31.5px;
+  }
+  body#aboutusPage section#Concept .Section .Contents .Block p.EN {
+    font-size: 22.3px;
+    line-height: 37.5px;
+  }
+  body#aboutusPage section#Concept .Section .Contents__00001 .Header .row {
+    font-size: 137px;
+  }
+  body#aboutusPage section#Concept .Section .Contents__00002 .Header .row {
+    font-size: 60px;
+    line-height: 84px;
+  }
+  body#aboutusPage section#Concept .Section .Contents__00002 .Header .EN {
+    font-size: 25.5px;
+  }
+  body#aboutusPage section#Concept .Section .Contents__00002 .Header img {
+    width: 400px;
+  }
+  body#aboutusPage section#Concept .Section .Contents__00002 .Block p.EN {
+    font-size: 16.5px;
+    line-height: 31.5px;
+  }
+  body#aboutusPage section#Vision .Section .Header .sub {
+    font-size: 20px;
+  }
+  body#aboutusPage section#Vision .Section .Header h2 {
+    font-size: 75px;
+  }
+  body#aboutusPage section#Vision .Section .Header img {
+    width: 195px;
+  }
+  body#aboutusPage section#Vision .Section .Contents .Block p.JP {
+    font-size: 18px;
+    line-height: 31.5px;
+  }
+  body#aboutusPage section#Vision .Section .Contents .Block p.EN {
+    font-size: 16.5px;
+    line-height: 31.5px;
+  }
+  body#aboutusPage section#Vision .Section .popupContents h3 {
+    font-size: 70px;
+    line-height: 75px;
+  }
+  body#aboutusPage section#Intro .Section {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  body#aboutusPage section#Company .Section .Header h2 {
+    font-size: 150px;
+  }
+  body#aboutusPage section#Company .Section .Contents table tr th {
+    font-size: 17.5px;
+  }
+  body#aboutusPage section#Company .Section .Contents table tr td {
+    font-size: 20px;
+  }
+  body#aboutusPage section#Company .Section .Contents table tr td a.gm {
+    font-size: 13px;
+    width: 130px;
+  }
+  body#aboutusPage section#Contact .Section .Header h2 {
+    font-size: 150px;
+  }
+  body#aboutusPage section#Contact .Section .Contents p {
+    font-size: 18px;
+  }
+  body#aboutusPage section#Contact .Section .Contents .Block h4 {
+    font-size: 12.5px;
+    height: 44px;
+  }
+  body#aboutusPage section#Contact .Section .Contents .Block__00001 .Inner span {
+    font-size: 26px;
+  }
+  body#aboutusPage section#Contact .Section .Contents .Block__00001 .Inner a {
+    font-size: 48.5px;
+  }
+  body#aboutusPage section#Contact .Section .Contents .Block__00001 .Inner .note p:nth-child(1) {
+    font-size: 11px;
+  }
+  body#aboutusPage section#Contact .Section .Contents .Block__00001 .Inner .note p:nth-child(2) {
+    font-size: 21px;
+  }
+  body#aboutusPage section#Contact .Section .Contents .Block__00002 .Inner a {
+    font-size: 31px;
+  }
+  body#aboutusPage section#Contact .Section .Contents .Block__00002 .Inner a::after {
+    width: 20px;
+  }
+  body#ourbeerPage section#KV .Section .Header .icon {
+    width: 69px;
+  }
+  body#ourbeerPage section#About .Section h2 {
+    font-size: 35px;
+  }
+  body#ourbeerPage section#About .Section .Contents .Holder p {
+    font-size: 15px;
+    line-height: 31px;
+  }
+  body#ourbeerPage section#About .Section .Contents__00001 {
+    padding: 125px 25px 105px 12.99%;
+  }
+  body#ourbeerPage section.ourbeerSec .Section .Header .sub {
+    font-size: 20px;
+  }
+  body#ourbeerPage section.ourbeerSec .Section .Header h2 {
+    font-size: 75px;
+  }
+  body#ourbeerPage section.ourbeerSec .Section .Header h3 {
+    font-size: 18px;
+  }
+  body#ourbeerPage section.ourbeerSec#Partners .Section .Contents .Block p.JP {
+    font-size: 18px;
+    line-height: 31.5px;
+  }
+  body#ourbeerPage section.ourbeerSec#Partners .Section .Contents .Block p.EN {
+    font-size: 16.5px;
+    line-height: 31.5px;
+  }
+  body#ourbeerPage section.ourbeerSec#Partners .Section .imgHolder .Block p {
+    font-size: 13.5px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block .point {
+    font-size: 22px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block .Header p {
+    font-size: 15px;
+    line-height: 30px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block .Header p.note {
+    font-size: 10px;
+    line-height: 14.5px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block .ViewBtn {
+    width: 57px;
+    height: 48px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block .ViewBtn span {
+    font-size: 10px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block .ViewBtn .icon {
+    width: 25.5px;
+    margin: 22.5px auto 0;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00001 .Header .Logo {
+    width: 362px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00001 .detailsContents .Inner .textArea p {
+    font-size: 13.5px;
+    line-height: 28px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00001 .detailsContents .Inner .textArea a {
+    font-size: 13.5px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00001 .detailsContents .Inner .btnArea a {
+    font-size: 15.5px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00001 .detailsContents .Inner .btnArea a::after {
+    width: 20px;
+    height: 20px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00001 .detailsContents .Inner .btnArea p.note {
+    font-size: 11.5px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00002 .Header .Logo {
+    width: 397.5px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00002 .detailsContents .Inner .num span {
+    font-size: 25px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00002 .detailsContents .Inner .num span:nth-child(2) {
+    font-size: 80px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00002 .detailsContents .Inner .details .Name {
+    font-size: 18.5px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00002 .detailsContents .Inner .details p {
+    font-size: 12.5px;
+    line-height: 28px;
+    margin: 55px 0 41px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00002 .detailsContents .Inner .details a {
+    font-size: 15.5px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00002 .detailsContents .Inner .details a::after {
+    width: 20px;
+    height: 20px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00002 .detailsContents .projectInner .textArea .Header .Logo {
+    width: 123.5px;
+    height: 123.5px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00002 .detailsContents .projectInner .textArea .Header .title {
+    margin: 0 0 0 10px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00002 .detailsContents .projectInner .textArea .Header .title h3 {
+    font-size: 38px;
+    line-height: 42.5px;
+    margin: 0 0 20px;
+  }
+  body#ourbeerPage section.ourbeerSec#Projects .Section .Contents .Block__00002 .detailsContents .projectInner .textArea .Header p {
+    font-size: 13.5px;
+    line-height: 28px;
+  }
+  body#breweryPage section#KV .Section .Header .icon {
+    width: 110px;
+  }
+  body#breweryPage section#About .Section .Contents .Header .JP {
+    font-size: 49px;
+    line-height: 62px;
+  }
+  body#breweryPage section#About .Section .Contents .Header .EN {
+    font-size: 21px;
+    line-height: 29px;
+  }
+  body#breweryPage section#About .Section .Contents .Holder p {
+    font-size: 15px;
+    line-height: 31px;
+  }
+  body#breweryPage section#About .Section .Contents__00001 .Header .JP {
+    font-size: 35.5px;
+    line-height: 50px;
+  }
+  body#breweryPage section#About .Section .Contents__00001 .Header .JP .row:nth-child(3) {
+    font-size: 36px;
+  }
+  body#breweryPage section#About .Section .Contents__00001 .Header h3 {
+    font-size: 80px;
+  }
+  body#breweryPage section#Beer .Section .Header h2 {
+    font-size: 91px;
+  }
+  body#breweryPage section#Beer .Section .Header h2 .Split:nth-child(14) {
+    width: 65px;
+  }
+  body#breweryPage section#Beer .Section .Contents .point {
+    font-size: 15px;
+  }
+  body#breweryPage section#Beer .Section .Contents .Holder h3 {
+    font-size: 36px;
+    line-height: 55px;
+  }
+  body#breweryPage section#Beer .Section .Contents .Holder .textArea p.JP {
+    font-size: 16.5px;
+    line-height: 32.5px;
+  }
+  body#breweryPage section#Beer .Section .Contents .Holder .textArea p.EN {
+    font-size: 15px;
+    line-height: 26px;
+  }
+  body#breweryPage section#Beer .Section .Contents .contactBtn {
+    width: 291.5px;
+  }
+  body#breweryPage section#Brand .Section .Header .textArea h2 .EN {
+    font-size: 35px;
+  }
+  body#breweryPage section#Brand .Section .Header .textArea h2 .JP {
+    font-size: 15.5px;
+  }
+  body#breweryPage section#Brand .Section .Header .textArea .LinkHolder a.online .icon {
+    width: 43px;
+  }
+  body#breweryPage section#Brand .Section .Header .textArea .LinkHolder a.online span {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  body#breweryPage section#Brand .Section .Header .textArea .LinkHolder a.BtoB span {
+    font-size: 20px;
+    line-height: 25px;
+  }
+  body#breweryPage section#Brand .Section .Header .textArea .LinkHolder a.BtoB span .arrow {
+    font-size: 15px;
+  }
+  body#breweryPage section#Brand .Section .Header .textArea .snsHolder .Block p {
+    font-size: 14.5px;
+    line-height: 21px;
+  }
+  body#breweryPage section#Brand .Section .Header .textArea .snsHolder .Block ul {
+    margin: 4px auto 0;
+  }
+  body#breweryPage section#Brand .Section .Header .textArea .snsHolder .Block ul li {
+    height: 35px !important;
+  }
+  body#breweryPage section#Brand .Section .Contents p {
+    font-size: 15.5px;
+    line-height: 34.5px;
+  }
+  body#breweryPage section#Brand .Section .Contents .brandSlider .swiper-controller .swiper-button-next,
+  body#breweryPage section#Brand .Section .Contents .brandSlider .swiper-controller .swiper-button-prev {
+    width: 80px;
+    height: 70px;
+  }
+  body#breweryPage section#Brewer .Section .point {
+    font-size: 22px;
+  }
+  body#breweryPage section#Brewer .Section .note {
+    font-size: 18px;
+  }
+  body#breweryPage section#Brewer .Section .Header h2 {
+    font-size: 140px;
+  }
+  body#breweryPage section#Brewer .Section .Header .Name .JP {
+    font-size: 22px;
+  }
+  body#breweryPage section#Brewer .Section .Header .Name .EN {
+    font-size: 18px;
+  }
+  body#breweryPage section#Brewer .Section .Contents p {
+    font-size: 16.5px;
+    line-height: 33px;
+  }
+  body#breweryPage section#Brewer .Section #LinkHolder a span {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  body#restaurantPage section#KV .Section .Header .icon {
+    width: 105px;
+  }
+  body#restaurantPage section#About .Section .Contents .Header .JP {
+    font-size: 49px;
+    line-height: 62px;
+  }
+  body#restaurantPage section#About .Section .Contents .Header .EN {
+    font-size: 21px;
+    line-height: 29px;
+  }
+  body#restaurantPage section#About .Section .Contents .Holder p {
+    font-size: 15px;
+    line-height: 31px;
+  }
+  body#restaurantPage section#About .Section .Contents__00001 .icon {
+    width: 101.5px;
+  }
+  body#restaurantPage section#About .Section .Contents__00001 .Logo {
+    width: 330px;
+    height: 330px;
+  }
+  body#restaurantPage section#About .Section .Contents__00001 .Logo img {
+    width: 230px;
+  }
+  body#restaurantPage section#About .Section .Contents__00001 .Header .JP {
+    font-size: 35px;
+    line-height: 50px;
+  }
+  body#restaurantPage section#About .Section .Contents__00002 .Header .JP .row {
+    font-size: 49px;
+    line-height: 62px;
+  }
+  body#restaurantPage section#About .Section .Contents__00002 .Header .JP .row:nth-child(3) {
+    font-size: 68px;
+    line-height: 71px;
+  }
+  body#restaurantPage section#About .Section .Contents__00003 .Header .JP .row:nth-child(1) {
+    font-size: 28px;
+    line-height: 43.5px;
+  }
+  body#restaurantPage section#About .Section .Contents__00004 .icon {
+    width: 158.5px;
+  }
+  body#restaurantPage section#About .Section .Contents__00004 .Header .JP .row:nth-child(1) .Split:nth-child(2), body#restaurantPage section#About .Section .Contents__00004 .Header .JP .row:nth-child(1) .Split:nth-child(3) {
+    font-size: 62.5px;
+  }
+  body#restaurantPage section#About .Section .Contents__00005 .icon {
+    width: 321px;
+  }
+  body#restaurantPage section#About .Section .Contents__00005 .Header .JP .row {
+    font-size: 68px;
+    line-height: 71.5px;
+  }
+  body#restaurantPage section#About .Section .Contents__00005 .Header .JP .row:nth-child(3) {
+    font-size: 28px;
+    line-height: 43.5px;
+  }
+  body#restaurantPage section#Shop .shopDetails .Contents .Name h3 {
+    font-size: 31px;
+  }
+  body#restaurantPage section#Shop .shopDetails .Contents .Name .sub {
+    font-size: 20px;
+  }
+  body#restaurantPage section#Shop .shopDetails .Contents .details .Inner .th {
+    width: 115px;
+    font-size: 42px;
+  }
+  body#restaurantPage section#Shop .shopDetails .Contents .details .Inner .td {
+    width: calc(100% - 115px);
+    font-size: 44px;
+  }
+  body#restaurantPage section#Shop .shopDetails .Contents .details .Inner .td span {
+    font-size: 15px;
+  }
+  body#restaurantPage section#Shop .shopDetails .Contents .details .Floor {
+    width: 170px;
+  }
+  body#restaurantPage section#Shop .shopDetails .Contents .details .Floor span:nth-child(odd) {
+    font-size: 20px;
+    width: 60px;
+  }
+  body#restaurantPage section#Shop .shopDetails .Contents .details .Floor span:nth-child(2n) {
+    font-size: 22.5px;
+  }
+  body#restaurantPage section#Shop .shopDetails .Contents .details .btn {
+    font-size: 17.5px;
+    width: 160.2px;
+  }
+  body#restaurantPage section#Shop .shopDetails .Contents .details .btn.targetBlank:before {
+    width: 20px;
+    height: 20px;
+  }
+  body#restaurantPage section#Shop .shopDetails .LinkHolder p {
+    font-size: 20px;
+  }
+  body#restaurantPage section#Shop .shopDetails .LinkHolder ul li {
+    height: 23.5px !important;
+  }
+  body#restaurantPage section#Goods .Section .Header h2 .row {
+    font-size: 55px;
+  }
+  body#restaurantPage section#Goods .Section .online {
+    width: 135px;
+  }
+  body#restaurantPage section#Goods .Section .online .icon {
+    width: 43px;
+  }
+  body#restaurantPage section#Goods .Section .online span {
+    font-size: 25px;
+    line-height: 30px;
+  }
+  body#restaurantPage section#Goods .Section .subHeader .JP {
+    font-size: 49px;
+    line-height: 62px;
+  }
+  body#restaurantPage section#Goods .Section .subHeader .JP .row:nth-child(1) {
+    font-size: 21px;
+    line-height: 32.5px;
+  }
+  body#restaurantPage section#Goods .Section .subHeader .EN {
+    font-size: 21px;
+    line-height: 29px;
+  }
+  body#restaurantPage section#Goods .Section .Contents h3 {
+    font-size: 28px;
+    line-height: 47px;
+  }
+  body#restaurantPage section#Goods .Section .Contents .Holder p {
+    font-size: 15px;
+    line-height: 31px;
+  }
+  body#restaurantPage section#Details .Section .Header h2 {
+    font-size: 91px;
+  }
+  body#restaurantPage section#Details .Section .Header h2 .Split:nth-child(12) {
+    width: 65px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents {
+    max-width: 1261px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .Contents .Name h3 {
+    font-size: 31px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .Contents .Name .sub {
+    font-size: 20px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .Contents .details .Inner .th {
+    width: 115px;
+    font-size: 42px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .Contents .details .Inner .td {
+    width: calc(100% - 115px);
+    font-size: 44px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .Contents .details .Inner .td span {
+    font-size: 15px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .Contents .details .Floor {
+    width: 170px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .Contents .details .Floor span:nth-child(odd) {
+    font-size: 20px;
+    width: 60px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .Contents .details .Floor span:nth-child(2n) {
+    font-size: 22.5px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .Contents .details .btn {
+    font-size: 17.5px;
+    width: 160.2px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .Contents .details .btn.targetBlank:before {
+    width: 20px;
+    height: 20px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .LinkHolder p {
+    font-size: 20px;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .shopDetails .LinkHolder ul li {
+    height: 23.5px !important;
+  }
+  body#restaurantPage section#Details .Section .detailsContents .gm p {
+    font-size: 15px;
+  }
+}
 @media only screen and (max-width: 835px) {
   html {
     font-size: 119.7%;
