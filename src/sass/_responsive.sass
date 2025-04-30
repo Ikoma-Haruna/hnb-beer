@@ -9,71 +9,83 @@
 			font-size: 0.7vw
 	
 	body
-		&.LowPage
-			.widthM
-				max-width: 1070px
+		.widthM
+			max-width: 1070px
 
-			#Header
-				.Contents
-					font-size: 9.5px
-					.copy
-						height: 160px
-					.Logo
-						width: 107.5px
-					.sec
-						.num
-							width: 95px
-							height: 87.5px
-							font-size: 120px
-							line-height: 87.5px
-						.name
-							width: 95px
-							.change
-								width: 475px
-								span
-									width: 95px
-
-			#Menu .Section .Contents
-				.ConpanyMenu .LinkHolder
-					width: 250px
-					ul
-						li
-							height: 26px !important
-							&.note
-								height: 40px !important
-				.MainMenu li
-					font-size: 50px
-					line-height: 50px
-				.online
-					width: 115px
-					.icon
-						width: 43px
-					span
-						font-size: 20px
-						line-height: 25px
-				.BtoB
-					width: 244px
-					span
-						&:nth-child(1)
-							font-size: 110px
-							line-height: 75px
-						&:nth-child(2)
-							font-size: 11.5px
-						&.arrow
-							width: 120px
-
-
-			nav#sideMenu
-				.Contents
-					.RightBlock
-						width: 90px
-						height: 169px
-						.menuOpen
-							.icon
-								width: 39px
+		#Header
+			.Contents
+				font-size: 9.5px
+				.copy
+					height: 160px
+				.Logo
+					height: 107.5px
+				.sec
+					.num
+						width: 95px
+						height: 87.5px
+						font-size: 120px
+						line-height: 87.5px
+					.name
+						width: 95px
+						.change
+							width: 475px
 							span
-								font-size: 10px
-					.LeftBlock .LinkHolder
+								width: 95px
+					@for $i from 1 through 5
+						&.sec0#{$i}
+							.num .change
+								transform: translateY(-87.5px * ($i - 1))
+							.name .change
+								transform: translateX(-95px * ($i - 1))
+
+		#Menu
+			width: 955px
+			.Section
+				width: calc(100% - 90px)
+				.Contents
+					.ConpanyMenu .LinkHolder
+						width: 250px
+						ul
+							li
+								height: 26px !important
+								&.note
+									height: 40px !important
+					.MainMenu li
+						font-size: 50px
+						line-height: 50px
+					.online
+						width: 115px
+						.icon
+							width: 43px
+						span
+							font-size: 20px
+							line-height: 25px
+					.BtoB
+						width: 244px
+						span
+							&:nth-child(1)
+								font-size: 110px
+								line-height: 75px
+							&:nth-child(2)
+								font-size: 11.5px
+							&.arrow
+								width: 120px
+
+
+		nav#sideMenu
+			.Contents
+				.RightBlock
+					width: 90px
+					height: 169px
+					.menuOpen
+						.icon
+							width: 39px
+						span
+							font-size: 10px
+				.LeftBlock
+					width: 46px
+					height: 235px
+					.LinkHolder
 						.online
 							.icon
 								width: 28px
@@ -90,86 +102,210 @@
 									width: 9.5px
 								&.note
 									width: 19px
-					.menuBtnBlock
-						width: 145px
-						ul li a
-							font-size: 12.5px
-					.reserveBlock
-						width: 74.5px
+				.menuBtnBlock
+					width: 145px
+					ul li a
+						font-size: 12.5px
+				.reserveBlock
+					width: 74.5px
 
-			section#Link
-				.Section .Contents
-					.Block
-						h3
-							font-size: 82px
-						p
-							font-size: 14.5px
-						.arrow
+		section#Link
+			.Section .Contents
+				.Block
+					h3
+						font-size: 82px
+					p
+						font-size: 14.5px
+					.arrow
+						width: 200px
+						height: 60px
+				.backBtn
+					font-size: 24px
+				.snsHolder
+					p
+						font-size: 20px
+					ul
+						li
+							height: 23.5px !important
+
+		footer#Footer
+			.Section
+				.Contents
+					max-width: 1070px
+					.ConpanyMenu
+						.Logo
 							width: 200px
-							height: 60px
-					.backBtn
-						font-size: 24px
-					.snsHolder
-						p
-							font-size: 20px
-						ul
+						.LinkHolder
+							width: calc(100% - 163px - 14.5%)
 							li
-								height: 23.5px !important
+								&.ig
+									height: 26px
+								&.x
+									height: 26px
+								&.fb
+									height: 26px
+								&.note
+									height: 40px
+						.BtoB
+							width: calc(100% - 173px - 14.5%)
+							span
+								&:nth-child(1)
+									font-size: 50px
+								&:nth-child(2)
+									font-size: 8px
+						.cw
+							font-size: 13px
+					.MainMenu
+						h2
+							font-size: 34px
+						ul
+							font-size: 20px
+							line-height: 24.5px
+					.online
+						width: 135px
+						.icon
+							width: 43px
+						span
+							font-size: 25px
+							line-height: 30px
+				.Foot p
+					font-size: 11.5px
 
-			footer#Footer
-				.Section
-					.Contents
-						max-width: 1070px
-						.ConpanyMenu
+		#LinkHolder a
+			width: 335px
+			&.online
+				.icon
+					width: 43px
+				span
+					font-size: 24px
+					line-height: 30px
+			&.BtoB
+				span
+					font-size: 20px
+
+
+
+		&#topPage
+			section .Footer li
+				width: 47.5px
+				.secLink
+					font-size: 10px
+					&::after
+						width: 25px
+				.andMore
+					font-size: 10px
+					&::after
+						width: 25px
+
+			section#ConceptMovie .Section .Contents
+				height: calc(100% - 900px)
+				.Holder
+					.ttlEN
+						font-size: 33.5px
+					.Header
+						font-size: 17.5px
+						line-height: 29px
+					p
+						font-size: 13.5px
+						line-height: 26px
+
+			section#MainContents .Section .Contents
+				.Block
+					.Header
+						.sub
+							font-size: 10px
+						.ttl
+							font-size: 25px
+					.text
+						p
+							font-size: 13.5px
+							line-height: 26px
+						.more
+							font-size: 12.5px
+							&::after
+								width: 132px
+					&.Block01 .Header .ttl
+						font-size: 90px
+					&.Block02 .Header .ttl
+						font-size: 49px
+					&.Block03 .Header .ttl
+						font-size: 75px
+				.ECbanner .inner
+					.icon
+						width: 52px
+					p
+						font-size: 25px
+
+			section#Instagram .Section .Contents
+				.Header
+					font-size: 35.5px
+				.ig
+					font-size: 32px
+					width: 170px
+					&::before
+						width: 50px
+
+			section#News .Section .Contents
+				.Header
+					font-size: 35.5px
+				.Holder .Block span
+					&.date
+						font-size: 12.5px
+					&.ttl
+						font-size: 15px
+
+			section#ShopAccess .Section .Contents
+				gap: 100px
+				.Holder
+					.textArea
+						.online
 							.Logo
-								width: 200px
-							.LinkHolder
-								width: calc(100% - 163px - 14.5%)
-								li
-									&.ig
-										height: 26px
-									&.x
-										height: 26px
-									&.fb
-										height: 26px
-									&.note
-										height: 40px
-							.BtoB
-								width: calc(100% - 173px - 14.5%)
+								width: 170px
+							.icon
+								font-size: 21.5px
 								span
 									&:nth-child(1)
-										font-size: 50px
-									&:nth-child(2)
-										font-size: 8px
-							.cw
-								font-size: 13px
-						.MainMenu
-							h2
-								font-size: 34px
+										width: 44px
+						.cat
+							font-size: 15.5px
+						.details .inBlock
+							.name span
+								&:nth-child(1)
+									font-size: 15px
+								&:nth-child(2)
+									font-size: 26.5px
+							.address,
+							.tel,
+							.open
+								font-size: 11.5px
+							.snsHolder
+								height: 19px
+						p
+							font-size: 13px
+							line-height: 25px
+						.reserve
 							ul
-								font-size: 20px
-								line-height: 24.5px
-						.online
-							width: 135px
-							.icon
-								width: 43px
-							span
-								font-size: 25px
-								line-height: 30px
-					.Foot p
-						font-size: 11.5px
-
-			#LinkHolder a
-				width: 335px
-				&.online
-					.icon
-						width: 43px
-					span
+								width: calc(100% - 147.5px)
+								li
+									span
+										&:nth-child(1)
+											font-size: 21px
+										&:nth-child(2)
+											font-size: 20px
+									&.note
+										font-size: 10px
+							a
+								width: 147.5px
+								font-size: 16px
+					.gmArea p
+						font-size: 12px
+				.shopList span
+					&:nth-child(1)
 						font-size: 24px
-						line-height: 30px
-				&.BtoB
-					span
-						font-size: 20px
+					&:nth-child(2)
+						font-size: 12.5px
+
+
 
 		&.LowTemplate
 			section#KV
